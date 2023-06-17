@@ -15,7 +15,7 @@
 
 .pan {
     border: solid;
-    position: absolute;
+    position: fixed;
     overflow-y: auto;
-    height: 800px;
+    height: 700px;
 }
