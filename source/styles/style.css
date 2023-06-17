@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: end;
+    justify-content: center;
+    background: rgb(241, 241, 241);
+    text-align: center;
+    padding: 5px;
+}
+
+img {
+    width: 60px;
+    padding: 10px;
+}
+
+.kart3 {
+    width: 74.5px;
+}
+
+.image-wrapper a {
+    text-decoration: none;
+}

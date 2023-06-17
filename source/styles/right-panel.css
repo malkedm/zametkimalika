@@ -1,0 +1,21 @@
+.all-panels {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr
+}
+
+.center {
+    grid-column: 1/10;
+    position: relative;
+}
+
+.right-panel {
+    grid-column: 10/13;
+}
+
+.pan {
+    border: solid;
+    position: absolute;
+    overflow-y: auto;
+    height: 800px;
+}
