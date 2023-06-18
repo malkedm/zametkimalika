@@ -1,21 +1,15 @@
 .all-panels {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr
-}
-
-.center {
-    grid-column: 1/10;
-    position: relative;
+    grid-template-columns: 5fr 2fr;
+    align-items: baseline;
 }
 
 .right-panel {
-    grid-column: 10/13;
-}
-
-.pan {
-    border: solid;
-    position: fixed;
+    position: sticky;
+    top: 0;
     overflow-y: auto;
-    height: 700px;
+    height: 100vh;
+    border: solid;
+    max-width: 100%;
+    margin: ;
 }
