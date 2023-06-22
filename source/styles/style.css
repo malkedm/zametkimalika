@@ -1,16 +1,15 @@
-* {
+body {
     margin: 0;
     padding: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 .image-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    align-items: end;
-    justify-content: center;
-    background: rgb(241, 241, 241);
     text-align: center;
-    padding: 5px;
+    border: solid;
 }
 
 img {
@@ -24,4 +23,53 @@ img {
 
 .image-wrapper a {
     text-decoration: none;
+}
+
+.block-content {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: 1;
+    height: calc(100vh - 15vh);
+    border: solid;
+}
+
+.left-panel {
+    height: calc(100vh - 15vh);
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    border: solid;
+}
+
+.left-panel-text {
+    margin: 10px;
+}
+
+.right-panel {
+    display: grid;
+    grid-template-rows: 20% 80%;
+    height: calc(100vh - 15vh);
+    margin: 0;
+    padding: 0;
+}
+
+.top-right-panel {
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.top-right-text {
+    margin: 10px;
+}
+
+.bottom-right-panel {
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    border: solid;
+}
+
+.bottom-right-text {
+    margin: 10px;
 }
