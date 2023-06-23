@@ -7,7 +7,7 @@ body {
 .image-container {
     display: grid;
     grid-template-columns: 0.5fr repeat(4, 1fr);
-    min-height: 10vh;
+    min-height: 8vh;
     align-items: end;
     text-align: center;
 }
@@ -43,6 +43,7 @@ img {
     padding: 0;
     margin: 0;
     height: calc(100vh - 10vh);
+    border: solid;
 }
 
 .left-panel-navigation {
@@ -55,7 +56,7 @@ img {
     overflow-y: auto;
     padding: 0;
     margin: 0;
-
+    border: solid;
 }
 
 .content-panel-text {
@@ -69,14 +70,14 @@ img {
     height: calc(100vh - 10vh);
     padding: 0;
     margin: 0;
-
+    border: solid;
 }
 
 .top-right-panel {
     overflow-y: auto;
     padding: 0;
     margin: 0;
-
+    border: solid;
 }
 
 .top-right-text {
@@ -88,7 +89,7 @@ img {
     overflow-y: auto;
     padding: 0;
     margin: 0;
-
+    border: solid;
 }
 
 .bottom-right-text {
