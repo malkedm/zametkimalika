@@ -1,75 +1,97 @@
 body {
     margin: 0;
     padding: 0;
-    width: 100vw;
     height: 100vh;
 }
 
 .image-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 0.5fr repeat(4, 1fr);
+    min-height: 10vh;
+    align-items: end;
     text-align: center;
-    border: solid;
+}
+
+.fix-text {
+    margin: 0;
+    padding: 0;
+    color: rgb(148, 148, 148);
 }
 
 img {
-    width: 60px;
-    padding: 10px;
+    width: 35px;
 }
 
 .kart3 {
-    width: 74.5px;
+    width: 44.5px;
 }
 
-.image-wrapper a {
+.image-content a {
     text-decoration: none;
 }
 
 .block-content {
     display: grid;
-    grid-template-columns: 5fr 2fr;
-    grid-template-rows: 1;
-    height: calc(100vh - 15vh);
-    border: solid;
+    grid-template-columns: 1fr 5fr 1.5fr;
+    height: calc(100vh - 10vh);
+    padding: 0;
+    margin: 0;
 }
 
 .left-panel {
-    height: calc(100vh - 15vh);
     overflow-y: auto;
-    margin: 0;
     padding: 0;
-    border: solid;
+    margin: 0;
+    height: calc(100vh - 10vh);
 }
 
-.left-panel-text {
-    margin: 10px;
+.left-panel-navigation {
+    margin: 5px;
+    padding: 0;
+}
+
+.content-center-panel {
+    height: calc(100vh - 10vh);
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+
+}
+
+.content-panel-text {
+    margin: 5px;
+    padding: 0;
 }
 
 .right-panel {
     display: grid;
     grid-template-rows: 20% 80%;
-    height: calc(100vh - 15vh);
-    margin: 0;
+    height: calc(100vh - 10vh);
     padding: 0;
+    margin: 0;
+
 }
 
 .top-right-panel {
     overflow-y: auto;
-    margin: 0;
     padding: 0;
+    margin: 0;
+
 }
 
 .top-right-text {
-    margin: 10px;
+    margin: 5px;
+    padding: 0;
 }
 
 .bottom-right-panel {
     overflow-y: auto;
-    margin: 0;
     padding: 0;
-    border: solid;
+    margin: 0;
+
 }
 
 .bottom-right-text {
-    margin: 10px;
+    margin: 5px;
+    padding: 0;
 }
