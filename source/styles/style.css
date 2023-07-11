@@ -161,6 +161,7 @@ textarea::placeholder {
     display: grid;
     width: 100%;
     height: 100%;
+    max-height: calc(100vh - 10vh - 60px)
     justify-content: center;
     align-items: center;
     background: #ccc;
@@ -176,7 +177,7 @@ textarea::placeholder {
     position: absolute;
     max-width: 100vw;
     min-width: 100vw;
-    height: calc(100vh - 10vh - 60px - 60px);
+    height: 100%;
     margin-left: -55.44px;
     margin-right: -55.44px;
     left: 0;
