@@ -57,15 +57,15 @@ textarea::placeholder {
     position: absolute;
     max-width: 100vw;
     min-width: 100vw;
-    max-height: calc(100vh - 10vh);
-    min-height: calc(100vh - 10vh);
+    max-height: calc(100vh - 20vh);
+    min-height: calc(100vh - 20vh);
 }
 
 .tabs {
     max-width: 100vw;
     min-width: 100vw;
-    max-height: calc(100vh - 10vh);
-    min-height: calc(100vh - 10vh);
+    max-height: calc(100vh - 20vh);
+    min-height: calc(100vh - 20vh);
 }
 
 .tabs-vkladki {
@@ -112,8 +112,8 @@ textarea::placeholder {
     position: absolute;
     max-width: 100vw;
     min-width: 100vw;
-    max-height: calc(100vh - 10vh - 60px);
-    min-height: calc(100vh - 10vh - 60px);
+    max-height: calc(100vh - 20vh - 60px);
+    min-height: calc(100vh - 20vh - 60px);
     margin-left: -55.44px;
     margin-right: -55.44px;
     left: 0;
