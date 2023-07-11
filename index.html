@@ -12,7 +12,7 @@
 <body>
     <div class="zametki">
         <textarea class="text-zametki"
-            placeholder="Здесь можно будет записывать свои заметки и мысли, чтобы для себя выледелить важные части основного материала."></textarea>
+            placeholder="Здесь можно будет записывать свои заметки и мысли, чтобы для себя выделить важные части основного материала."></textarea>
     </div>
 
 
@@ -23,12 +23,33 @@
         <div class="tabs-content">
             <div class="tabs">
                 <div class="tabs-vkladki">
+                    <header class="header">
+                        <div class="burger-menu">
+                            <div class="burger-menu__item"></div>
+                            <div class="burger-menu__item"></div>
+                            <div class="burger-menu__item"></div>
+                        </div>
+                    </header>
+
+
+                    <header class="header2">
+                        <div class="burger-menu2">
+                            <div class="burger-menu__item2"></div>
+                            <div class="burger-menu__item2"></div>
+                            <div class="burger-menu__item2"></div>
+                        </div>
+                    </header>
+
+
                     <div class="vkladki">
+
+
+
                         <div class="vkladka">
                             <input type="radio" id="tab1" name="tab-group" checked>
                             <label for="tab1" class="tab-title">Обучение</label>
                             <!-- этот класс ниже отдельно надо настроить, скорее всего отделить  -->
-                            <section class="tab-content">Один Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            <section class="content-tab">Один Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                                 Nostrum corporis minus explicabo voluptatem reprehenderit. Natus aliquid maiores
                                 dignissimos nemo officia magnam a, expedita nostrum sunt rerum, eligendi aspernatur,
                                 illum adipisci alias tenetur exercitationem voluptatum quisquam ad temporibus possimus
@@ -302,7 +323,7 @@
                             <input type="radio" id="tab2" name="tab-group">
                             <label for="tab2" class="tab-title">Команды</label>
                             <!-- этот класс ниже отдельно надо настроить, скорее всего отделить  -->
-                            <section class="tab-content">Два</section>
+                            <section class="content-tab">Два</section>
                         </div>
                     </div>
                 </div>
@@ -310,165 +331,30 @@
         </div>
 
 
-        <div class="container-panel">
 
-            <div class="left-panel">
-
-                <input type="checkbox" id="check">
-                <div class="container-left-panel">
-
-                    <div class="label-panel">
-                        <label for="check">
-                            <span id="cancel">&#9776</span>
-                        </label>
-                    </div>
-
-                    <div class="top-left-panel">
-                        <h4 class="header3-top-left-text">
-                            Тут что-то будет
-                        </h4>
-
-                        <div class="block-programs-left-panel">
-                            <h4 class="programs-left-text">
-                                Что-то
-                            </h4>
-
-                            <div class="text-programs">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta a reprehenderit quidem
-                                qui
-                                debitis. Magni iure labore eos corrupti porro. Enim facere facilis exercitationem amet
-                                sunt
-                                aspernatur numquam corrupti vero, illum architecto repellendus autem minus iusto veniam
-                                tempore repudiandae ut ab, dolore nostrum sapiente esse accusamus voluptatum in? Maiores
-                                adipisci modi distinctio in voluptates ullam nostrum aliquid tenetur recusandae?
-                                Praesentium
-                                blanditiis alias voluptate molestiae reprehenderit cum, saepe ea ut officiis?
-                                Reprehenderit
-                                vero veniam assumenda adipisci. Iste similique aut ipsam amet doloremque fugit.
-                                Assumenda
-                                odit cupiditate incidunt velit sapiente? Exercitationem voluptates nulla qui quos
-                                voluptatum
-                                vitae perferendis necessitatibus maxime quod dignissimos, possimus enim porro? Vel
-                                numquam
-                                quod est voluptatibus sint. Iure doloremque impedit illo modi rerum ut vero numquam! Eos
-                                maxime, sint debitis, quam, deleniti molestiae inventore dignissimos exercitationem
-                                maiores
-                                saepe earum optio odit cum perferendis? Deserunt itaque labore nam hic fugit quo ipsum
-                                recusandae laborum sint quia! Natus exercitationem quia distinctio quas animi ducimus
-                                expedita optio nostrum aliquam, saepe magnam. Dolore dolorum tempore est. Ab sequi
-                                consequatur quo itaque, id a soluta, odit, odio in ipsa nulla quam vel expedita quidem.
-                                Magnam at, voluptatibus earum magni labore fuga facere ipsum saepe adipisci deserunt
-                                nulla
-                                sunt consectetur veritatis modi ipsa expedita?
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bottom-left-panel">
-                        <h4>
-                            Тут что-то будет
-                        </h4>
-                    </div>
-
-
-                </div>
-
-                <label for="check">
-                    <span id="btn">&#9776</span>
-                </label>
-            </div>
-
-
-            <div class="right-panel">
-
-                <input type="checkbox" id="check2">
-                <div class="container-right-panel">
-
-                    <div class="label-panel2">
-                        <label for="check2">
-                            <span id="cancel2">&#9776</span>
-                        </label>
-                    </div>
-
-                    <div class="top-right-panel">
-                        <h3 class="header3-top-right-text">
-                            Содержимое
-                        </h3>
-
-                        <div class="block-programs-right-text">
-                            <h4 class="programs-right-text">
-                                Файлы и программы
-                            </h4>
-                            <div class="text-programs">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, odio?
-                            </div>
-                        </div>
-
-                        <div class="block-sites-top-right-text">
-                            <h4 class="sites-top-right-text">
-                                Полезные сайты
-                            </h4>
-
-                            <div class="text-sites">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, veritatis?
-                            </div>
-                        </div>
-
-                        <div class="block-video-top-right-text">
-                            <h4 class="video-top-right-text">
-                                Видео-обучение
-                            </h4>
-
-                            <div class="text-video">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, veritatis?
-                            </div>
-                        </div>
-
-                        <div class="block-discussions-top-right-text">
-                            <h4 class="discussions-top-right-text">
-                                Вопросы и Предложения
-                            </h4>
-
-                            <div class="text-sites">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, veritatis?
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="bottom-right-panel">
-
-                        <div class="header3-bottom-right-panel">
-                            <h3>
-                                Вопрос - решение
-                            </h3>
-                        </div>
-
-                        <div class="header4-bottom-right-panel">
-                            <h4>
-                                Как?
-                            </h4>
-                        </div>
-                        <div class="text-header4-bottom-right-panel">
-                            А вот так
-                        </div>
+    </div>
 
 
 
 
-                    </div>
-                </div>
-
-                <label for="check2" class="btn">
-                    <span id="btn2">&#9776</span>
-                </label>
-
-            </div>
+    <div class="overlay"></div>
+    <div class="sidebar">
+        <div class="close">
+            <div class="close__item"></div>
+            <div class="close__item"></div>
         </div>
     </div>
+
+    <div class="overlay2"></div>
+    <div class="sidebar2">
+        <div class="close2">
+            <div class="close__item2"></div>
+            <div class="close__item2"></div>
+        </div>
     </div>
 
+
+    <script src="./index.js"></script>
 </body>
 
 </html>
