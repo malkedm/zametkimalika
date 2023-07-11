@@ -19,7 +19,7 @@ body {
     grid-template-rows: 10vh 60px;
     width: 100vw;
     position: fixed;
-    height: 100vh;
+    height: 100%;
 }
 
 .zametki {
