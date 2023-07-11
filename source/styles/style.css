@@ -1,16 +1,24 @@
 body {
-    height: 100vh;
+    max-width: 100vw;
     width: 100vw;
-    overflow: hidden;
+    height: 100vh;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
 }
 
+.container-top-content {
+    display: grid;
+    grid-template-rows: 10vh 60px;
+    width: 100vw;
+    position: fixed;
+}
+
 .zametki {
     display: grid;
-    height: 10vh;
+    height: 100%;
     width: 100%;
     max-width: 100%;
 }
@@ -32,125 +40,22 @@ textarea::placeholder {
 }
 
 
-.container {
-    display: flex;
-    width: 100%;
-    height: calc(100vh - 20vh);
-}
-
-/* .tabs {
-    overflow-y: auto;
-    display: grid;
-    position: absolute;
-    max-width: 100%;
-    height: 60px;
-    margin-left: 55.44px;
-    margin-right: 55.44px;
-} */
-
-
-
-
-
-
-.tabs-content {
-    position: absolute;
-    max-width: 100vw;
-    min-width: 100vw;
-    max-height: calc(100vh - 20vh);
-    min-height: calc(100vh - 20vh);
-}
-
-.tabs {
-    max-width: 100vw;
-    min-width: 100vw;
-    max-height: calc(100vh - 20vh);
-    min-height: calc(100vh - 20vh);
-}
-
 .tabs-vkladki {
     display: grid;
-    max-width: 100%;
-    height: 100%;
-    height: 60px;
-}
-
-.vkladki {
-    position: relative;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    height: 60px;
-    margin-left: 55.44px;
-    margin-right: 55.44px;
-}
-
-.vkladka,
-.tab-title {
-    display: inline-block;
-}
-
-.vkladka input[type="radio"] {
-    display: none;
-}
-
-.tab-title {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    background: #ccc;
-    border: 1px solid #666;
-    border-bottom: none;
-    box-sizing: border-box;
-}
-
-.content-tab {
-    display: none;
-    border: 1px solid #666;
-    box-sizing: border-box;
-    position: absolute;
+    grid-template-columns: 55.44px 1fr 55.44px;
+    grid-template-rows: 60px;
     max-width: 100vw;
-    min-width: 100vw;
-    max-height: calc(100vh - 20vh - 60px);
-    min-height: calc(100vh - 20vh - 60px);
-    margin-left: -55.44px;
-    margin-right: -55.44px;
-    left: 0;
-    overflow-y: auto;
+    width: 100vw;
+    height: 100%;
 }
-
-.vkladka :checked+.tab-title {
-    position: relative;
-    background: #fff;
-    top: 1px;
-    z-index: 1;
-}
-
-.vkladka :checked~.content-tab {
-    display: block;
-}
-
-
-
-
-
-
-
-
-
-
 
 .header {
-    height: 60px;
-    width: 55.44px;
-    right: 0;
+    width: 100%;
+    height: 100%;
     opacity: 0.6;
-    display: flex;
     justify-content: space-between;
     box-sizing: border-box;
     opacity: 0.3;
-    position: absolute;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -234,17 +139,78 @@ textarea::placeholder {
     transform: rotate(45deg);
 }
 
+.vkladki {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.vkladka,
+.tab-title {
+    display: inline-block;
+}
+
+.vkladka input[type="radio"] {
+    display: none;
+}
+
+.tab-title {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #ccc;
+    border: 1px solid #666;
+    border-bottom: none;
+    box-sizing: border-box;
+}
+
+.content-tab {
+    display: none;
+    border: 1px solid #666;
+    box-sizing: border-box;
+    position: absolute;
+    max-width: 100vw;
+    min-width: 100vw;
+    max-height: calc(100vh - 10vh - 60px);
+    margin-left: -55.44px;
+    margin-right: -55.44px;
+    left: 0;
+    overflow-y: auto;
+}
+
+.vkladka :checked+.tab-title {
+    position: relative;
+    background: #fff;
+    top: 1px;
+    z-index: 1;
+}
+
+.vkladka :checked~.content-tab {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .header2 {
-    height: 60px;
-    width: 55.44px;
-    left: 0;
+    width: 100%;
+    height: 100%;
     opacity: 0.6;
-    display: flex;
     justify-content: space-between;
     box-sizing: border-box;
     opacity: 0.3;
-    position: absolute;
     text-align: center;
     align-items: center;
     justify-content: center;
