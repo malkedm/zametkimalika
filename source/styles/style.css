@@ -9,6 +9,15 @@ body {
     text-decoration: none;
 }
 
+.zam {
+    height: calc(10vh + 60px);
+}
+
+.text {
+    height: calc(100vh - 10vh - 60px);
+    overflow-y: auto;
+}
+
 #tab1,
 #tab2 {
     margin: 0;
@@ -160,7 +169,7 @@ textarea::placeholder {
 
 .vkladka {
     width: 100%;
-    max-height: calc(100vh - 10vh - 60px);
+    max-height: calc(100vh - 10vh);
 }
 
 .vkladka input[type="radio"] {
