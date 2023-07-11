@@ -306,3 +306,12 @@ textarea::placeholder {
         transition: width ease 400ms;
     }
 }
+
+@media (orientation: portrait) and (device-width: 1080px) and (device-height: 2400px) {
+    .content-tab {
+        max-height: calc(100vh - 10vh - 60px - 74px);
+        /* Учет высоты панели навигации на Xiaomi MIUI */
+        min-height: calc(100vh - 10vh - 60px - 74px);
+        /* Учет высоты панели навигации на Xiaomi MIUI */
+    }
+}
