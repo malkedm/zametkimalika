@@ -87,7 +87,7 @@ textarea::placeholder {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(175, 184, 193, 0.2);
     z-index: 999;
     display: none;
@@ -102,7 +102,7 @@ textarea::placeholder {
 
 .sidebar {
     width: 0;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     top: 0;
     right: 0;
@@ -247,7 +247,7 @@ textarea::placeholder {
     top: 0;
     right: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(175, 184, 193, 0.2);
     z-index: 999;
     display: none;
@@ -262,7 +262,7 @@ textarea::placeholder {
 
 .sidebar2 {
     width: 0;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
