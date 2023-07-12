@@ -186,7 +186,7 @@ textarea::placeholder {
     position: absolute;
     max-width: 100vw;
     min-width: 100vw;
-    height: calc(100vh - 10vh - 60px);
+    height: auto;
     margin-left: -55.44px;
     margin-right: -55.44px;
     left: 0;
