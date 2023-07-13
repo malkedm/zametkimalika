@@ -87,6 +87,7 @@ textarea::placeholder {
     z-index: 999;
     display: none;
     transition: width ease 600ms;
+    overflow: hidden;
 }
 
 .overlay-open {
@@ -97,7 +98,7 @@ textarea::placeholder {
 
 .sidebar {
     width: 0;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     top: 0;
     right: 0;
@@ -284,6 +285,7 @@ h4 {
     z-index: 999;
     display: none;
     transition: width ease 600ms;
+    overflow: hidden;
 }
 
 .overlay-open2 {
@@ -294,7 +296,7 @@ h4 {
 
 .sidebar2 {
     width: 0;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
