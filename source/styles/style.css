@@ -1,8 +1,3 @@
-html {
-    padding: 0;
-    margin: 0;
-}
-
 body {
     max-width: 100vw;
     width: 100vw;
@@ -118,6 +113,11 @@ textarea::placeholder {
     transition: width ease 400ms;
 }
 
+.block-close {
+    width: 100%;
+    height: 100%;
+}
+
 .close {
     width: 15px;
     height: 15px;
@@ -186,6 +186,7 @@ textarea::placeholder {
     margin-right: -55.44px;
     left: 0;
     overflow-y: auto;
+    padding: 10px;
 }
 
 .vkladka :checked+.tab-title {
@@ -199,9 +200,44 @@ textarea::placeholder {
     display: block;
 }
 
+.content-right-panel {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 6% 30% 64%;
+}
 
+.block-top-right-panel {
+    width: 100%;
+    height: 100%;
+}
 
+.block-top-right-text {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    border: solid 5px;
+    box-sizing: border-box;
+    padding: 10px;
+}
 
+.block-bottom-right-panel {
+    width: 100%;
+    height: 100%;
+}
+
+.block-bottom-right-text {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    border: solid 5px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+h4 {
+    margin-bottom: 0;
+}
 
 
 
@@ -274,6 +310,11 @@ textarea::placeholder {
     transition: width ease 400ms;
 }
 
+.block-close2 {
+    width: 100%;
+    height: 100%;
+}
+
 .close2 {
     width: 15px;
     height: 15px;
@@ -298,6 +339,33 @@ textarea::placeholder {
 
 .close2 div:last-child {
     transform: rotate(45deg);
+}
+
+.content-left-panel {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 6% 30% 64%;
+}
+
+.top-left-panel {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.bottom-left-panel {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.header3-top-right-text {
+    text-align: center;
+}
+
+.header3-bottom-right-text {
+    text-align: center;
 }
 
 @media (max-width: 1200px) {
