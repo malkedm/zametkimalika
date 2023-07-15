@@ -82,7 +82,7 @@ textarea::placeholder {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(175, 184, 193, 0.2);
     z-index: 999;
     display: none;
@@ -324,7 +324,7 @@ h4 {
     top: 0;
     right: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(175, 184, 193, 0.2);
     z-index: 999;
     display: none;
