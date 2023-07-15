@@ -102,13 +102,13 @@ textarea::placeholder {
     z-index: 999;
     /* box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.2); */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25), 0px -12px 30px rgba(0, 0, 0, 0.12), 0px 4px 6px rgba(0, 0, 0, 0.12), 0px 12px 13px rgba(0, 0, 0, 0.17), 0px -3px 5px rgba(0, 0, 0, 0.09);
-    transition: right ease 200ms;
+    transition: right ease 300ms;
     overflow: hidden;
 }
 
 .sidebar-open {
     right: 0;
-    transition: right ease 200ms;
+    transition: right ease 300ms;
 }
 
 .block-close {
@@ -368,7 +368,7 @@ h4 {
 
     .sidebar-open {
         right: 0;
-        transition: right ease 200ms;
+        transition: right ease 300ms;
     }
 
     .sidebar2 {
@@ -378,6 +378,6 @@ h4 {
 
     .sidebar-open2 {
         left: 0;
-        transition: left ease 200ms;
+        transition: left ease 300ms;
     }
 }
