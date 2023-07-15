@@ -86,12 +86,12 @@ textarea::placeholder {
     background-color: rgba(175, 184, 193, 0.2);
     z-index: 999;
     display: none;
-    transition: width ease 400ms;
+    transition: width ease 500ms;
 }
 
 .overlay-open {
     display: block;
-    transition: width ease 400ms;
+    transition: width ease 500ms;
     /* z-index: 999; */
 }
 
@@ -328,12 +328,12 @@ h4 {
     background-color: rgba(175, 184, 193, 0.2);
     z-index: 999;
     display: none;
-    transition: width ease 400ms;
+    transition: width ease 500ms;
 }
 
 .overlay-open2 {
     display: block;
-    transition: width ease 400ms;
+    transition: width ease 500ms;
     /* z-index: 999; */
 }
 
@@ -418,12 +418,12 @@ h4 {
     .sidebar-open {
         width: 70%;
         right: 0;
-        transition: right ease 300ms;
+        transition: right ease 400ms;
     }
 
     .sidebar-open2 {
         width: 70%;
         left: 0;
-        transition: left ease 300ms;
+        transition: left ease 400ms;
     }
 }
