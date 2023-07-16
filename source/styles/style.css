@@ -137,7 +137,7 @@ textarea::placeholder {
 }
 
 .close__item {
-    font-size: 200%;
+    font-size: 150%;
     width: 100%;
     color: #656D76;
     cursor: pointer;
@@ -376,7 +376,7 @@ h4 {
 }
 
 .close__item2 {
-    font-size: 200%;
+    font-size: 150%;
     width: 100%;
     color: #656D76;
     cursor: pointer;
