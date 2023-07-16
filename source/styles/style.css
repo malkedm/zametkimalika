@@ -216,10 +216,8 @@ textarea::placeholder {
 
 .block-top-right-panel {
     background: rgba(42, 42, 42, 30%);
-    box-shadow: 0 0 10px 5px rgba(69, 69, 69, 0.2);
+    box-shadow: 0 0 10px 5px rgba(186, 0, 124, 0.2);
     border-radius: 20px;
-    border: solid 1px rgb(255, 0, 183);
-    box-sizing: border-box;
     position: relative;
     left: 5%;
     display: grid;
@@ -231,6 +229,9 @@ textarea::placeholder {
     width: 100%;
     height: 100%;
     overflow-y: auto;
+    border: solid 1px rgb(255, 0, 183);
+    border-radius: 20px;
+    box-sizing: border-box;
     padding: 10px;
 }
 
@@ -241,7 +242,7 @@ textarea::placeholder {
 .block-top-right-text::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: rgb(73, 0, 147);
-    border: 3px solid #d4d4d4;
+    border: 3px solid #ffffff;
 }
 
 .block-top-right-text::-webkit-scrollbar-track {
@@ -252,7 +253,7 @@ textarea::placeholder {
 
 .block-bottom-right-panel {
     background: rgba(42, 42, 42, 30%);
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px 5px rgba(186, 0, 124, 0.2);
     border-radius: 20px;
     position: relative;
     left: 5%;
@@ -266,6 +267,7 @@ textarea::placeholder {
     height: 100%;
     overflow-y: auto;
     border: solid 1px rgb(255, 0, 183);
+    border-radius: 20px;
     box-sizing: border-box;
     padding: 10px;
 }
@@ -277,7 +279,7 @@ textarea::placeholder {
 .block-bottom-right-text::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: rgb(73, 0, 147);
-    border: 3px solid #d4d4d4;
+    border: 3px solid #ffffff;
 }
 
 .block-bottom-right-text::-webkit-scrollbar-track {
