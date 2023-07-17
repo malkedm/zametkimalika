@@ -90,12 +90,12 @@ textarea::placeholder {
     background-color: rgba(110, 118, 129, 40%);
     z-index: 999;
     display: none;
-    transition: display 400ms ease;
+    transition: all 400ms ease;
 }
 
 .overlay-open2 {
     display: block;
-    transition: display 400ms ease;
+    transition: all 400ms ease;
 }
 
 .sidebar2 {
@@ -110,7 +110,7 @@ textarea::placeholder {
     /* box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.2); */
     box-shadow: 0 0 0 1px #30363d, 0 16px 32px rgba(1, 4, 9, 0.85);
     /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25), 0px -12px 30px rgba(0, 0, 0, 0.12), 0px 4px 6px rgba(0, 0, 0, 0.12), 0px 12px 13px rgba(0, 0, 0, 0.17), 0px -3px 5px rgba(0, 0, 0, 0.09); */
-    transition: transform 300ms ease;
+    transition: all 300ms ease;
     overflow: hidden;
     border-radius: 12px;
     border-bottom-right-radius: 0;
@@ -119,7 +119,7 @@ textarea::placeholder {
 
 .sidebar-open2 {
     transform: translateX(0);
-    transition: transform 300ms ease;
+    transition: all 300ms ease;
 }
 
 .block-close2 {
@@ -332,12 +332,12 @@ h4 {
     background-color: rgba(175, 184, 193, 0.2);
     z-index: 999;
     display: none;
-    transition: display 400ms ease;
+    transition: all 400ms ease;
 }
 
 .overlay-open {
     display: block;
-    transition: display 400ms ease;
+    transition: all 400ms ease;
 }
 
 .sidebar {
@@ -352,7 +352,7 @@ h4 {
     /* box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.2); */
     box-shadow: 0 0 0 1px #30363d, 0 16px 32px rgba(1, 4, 9, 0.85);
     /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25), 0px -12px 30px rgba(0, 0, 0, 0.12), 0px 4px 6px rgba(0, 0, 0, 0.12), 0px 12px 13px rgba(0, 0, 0, 0.17), 0px -3px 5px rgba(0, 0, 0, 0.09); */
-    transition: left linear 200ms;
+    transition: all 300ms ease;
     overflow: hidden;
     border-radius: 12px;
     border-bottom-left-radius: 0;
@@ -361,7 +361,7 @@ h4 {
 
 .sidebar-open {
     transform: translateX(0);
-    transition: transform 300ms ease;
+    transition: all 300ms ease;
 }
 
 .block-close {
@@ -425,7 +425,7 @@ h4 {
 
     .sidebar-open {
         transform: translateX(0);
-        transition: transform 300ms ease;
+        transition: all 300ms ease;
     }
 
     .sidebar2 {
@@ -436,6 +436,6 @@ h4 {
 
     .sidebar-open2 {
         transform: translateX(0);
-        transition: transform 300ms ease;
+        transition: all 300ms ease;
     }
 }
