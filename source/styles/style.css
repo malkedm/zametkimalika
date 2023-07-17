@@ -54,7 +54,7 @@ textarea::placeholder {
     background: #212121;
 }
 
-.header {
+.header2 {
     width: 100%;
     height: 100%;
     opacity: 0.6;
@@ -69,19 +69,19 @@ textarea::placeholder {
 }
 
 
-.burger-menu {
+.burger-menu2 {
     height: 100%;
     width: 100%;
     position: relative;
 }
 
-.burger-menu__item {
+.burger-menu__item2 {
     height: 5px;
     background-color: #ccc;
     margin-bottom: 5px;
 }
 
-.overlay {
+.overlay2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -90,36 +90,39 @@ textarea::placeholder {
     background-color: rgba(110, 118, 129, 40%);
     z-index: 999;
     display: none;
+    transition: display 400ms ease;
 }
 
-.overlay-open {
+.overlay-open2 {
     display: block;
+    transition: display 400ms ease;
 }
 
-.sidebar {
+.sidebar2 {
     width: 40%;
     height: 100vh;
     position: absolute;
     top: 0;
-    transform: translateX(50%);
+    right: 0;
+    transform: translateX(140%);
     background: #161b22;
     z-index: 999;
     /* box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.2); */
     box-shadow: 0 0 0 1px #30363d, 0 16px 32px rgba(1, 4, 9, 0.85);
     /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25), 0px -12px 30px rgba(0, 0, 0, 0.12), 0px 4px 6px rgba(0, 0, 0, 0.12), 0px 12px 13px rgba(0, 0, 0, 0.17), 0px -3px 5px rgba(0, 0, 0, 0.09); */
-    transition: all linear 0.3s;
+    transition: transform 300ms ease;
     overflow: hidden;
     border-radius: 12px;
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
 
-.sidebar-open {
+.sidebar-open2 {
     transform: translateX(0);
-    transition: all linear 0.3s;
+    transition: transform 300ms ease;
 }
 
-.block-close {
+.block-close2 {
     display: grid;
     justify-content: left;
     left: 20px;
@@ -128,7 +131,7 @@ textarea::placeholder {
     position: relative;
 }
 
-.close {
+.close2 {
     width: 100%;
     height: 100%;
     display: grid;
@@ -136,7 +139,7 @@ textarea::placeholder {
     align-items: center;
 }
 
-.close__item {
+.close__item2 {
     font-size: 150%;
     width: 100%;
     color: #656D76;
@@ -293,7 +296,7 @@ h4 {
 
 
 
-.header2 {
+.header {
     width: 100%;
     height: 100%;
     opacity: 0.6;
@@ -308,19 +311,19 @@ h4 {
 }
 
 
-.burger-menu2 {
+.burger-menu {
     height: 100%;
     width: 100%;
     position: relative;
 }
 
-.burger-menu__item2 {
+.burger-menu__item {
     height: 5px;
     background-color: #ccc;
     margin-bottom: 5px;
 }
 
-.overlay2 {
+.overlay {
     position: absolute;
     top: 0;
     right: 0;
@@ -329,18 +332,21 @@ h4 {
     background-color: rgba(175, 184, 193, 0.2);
     z-index: 999;
     display: none;
+    transition: display 400ms ease;
 }
 
-.overlay-open2 {
+.overlay-open {
     display: block;
+    transition: display 400ms ease;
 }
 
-.sidebar2 {
+.sidebar {
     width: 40%;
     height: 100vh;
     position: absolute;
     top: 0;
-    left: -50%;
+    left: 0;
+    transform: translateX(-140%);
     background: #161b22;
     z-index: 999;
     /* box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.2); */
@@ -353,12 +359,12 @@ h4 {
     border-top-left-radius: 0;
 }
 
-.sidebar-open2 {
-    left: 0;
-    transition: left linear 200ms;
+.sidebar-open {
+    transform: translateX(0);
+    transition: transform 300ms ease;
 }
 
-.block-close2 {
+.block-close {
     display: grid;
     justify-content: right;
     right: 20px;
@@ -367,7 +373,7 @@ h4 {
     position: relative;
 }
 
-.close2 {
+.close {
     width: 100%;
     height: 100%;
     display: grid;
@@ -375,7 +381,7 @@ h4 {
     align-items: center;
 }
 
-.close__item2 {
+.close__item {
     font-size: 150%;
     width: 100%;
     color: #656D76;
@@ -413,21 +419,23 @@ h4 {
 
     .sidebar {
         width: 70%;
-        right: -80%;
+        left: 0;
+        transform: translateX(-140%);
     }
 
     .sidebar-open {
-        right: 0;
-        transition: right linear 200ms;
+        transform: translateX(0);
+        transition: transform 300ms ease;
     }
 
     .sidebar2 {
         width: 70%;
-        left: -80%;
+        right: 0;
+        transform: translateX(140%);
     }
 
     .sidebar-open2 {
-        left: 0;
-        transition: left ease 200ms;
+        transform: translateX(0);
+        transition: transform 300ms ease;
     }
 }
