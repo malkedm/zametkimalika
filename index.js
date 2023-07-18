@@ -8,19 +8,18 @@ const burgerMenu2 = document.querySelector(".header2");
 const closeIcon2 = document.querySelector(".close2");
 const overlay2 = document.querySelector(".overlay2");
 
-let isSidebarVisible = false;
-let isSidebar2Visible = false;
+const toggleClass = (element, currentClass) => {
+    element.classList.toggle(currentClass);
+};
 
 const toggleSidebarVisible = () => {
-    isSidebarVisible = !isSidebarVisible;
-    sidebar.style.transform = isSidebarVisible ? "translateX(0)" : "translateX(-140%)";
-    overlay.classList.toggle("overlay-open", isSidebarVisible);
+    toggleClass(sidebar, "sidebar-open");
+    toggleClass(overlay, "overlay-open");
 };
 
 const toggleSidebar2Visible = () => {
-    isSidebar2Visible = !isSidebar2Visible;
-    sidebar2.style.transform = isSidebar2Visible ? "translateX(0)" : "translateX(140%)";
-    overlay2.classList.toggle("overlay-open2", isSidebar2Visible);
+    toggleClass(sidebar2, "sidebar-open2");
+    toggleClass(overlay2, "overlay-open2");
 };
 
 burgerMenu.addEventListener("click", toggleSidebarVisible);
