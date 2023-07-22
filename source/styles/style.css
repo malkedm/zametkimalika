@@ -40,10 +40,15 @@ textarea::placeholder {
     text-align: center;
 }
 
+.burgers {
+    display: flex;
+    justify-content: space-between;
+    background: #212121;
+}
+
 
 .tabs-vkladki {
     display: grid;
-    grid-template-columns: 55.44px calc(100% - 55.44px - 55.44px) 55.44px;
     grid-template-rows: 60px;
     max-width: 100vw;
     width: 100vw;
@@ -59,24 +64,13 @@ textarea::placeholder {
 
 
 .header {
-    width: 100%;
+    width: 55.44px;
     height: 100%;
     opacity: 0.6;
-    justify-content: space-between;
     box-sizing: border-box;
     opacity: 0.3;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
     padding: 15px;
     cursor: pointer;
-}
-
-
-.burger-menu {
-    height: 100%;
-    width: 100%;
-    position: relative;
 }
 
 .burger-menu__item {
@@ -184,10 +178,8 @@ textarea::placeholder {
     box-sizing: border-box;
     max-width: 100vw;
     min-width: 100vw;
-    max-height: calc(100dvh - 20dvh - 60px);
-    min-height: calc(100dvh - 20dvh - 60px);
-    margin-left: -55.44px;
-    margin-right: -55.44px;
+    max-height: calc(100dvh - 20dvh - 60px - 60px);
+    min-height: calc(100dvh - 20dvh - 60px - 60px);
     left: 0;
     overflow-y: auto;
     padding: 10px;
@@ -221,6 +213,8 @@ textarea::placeholder {
     background: rgba(42, 42, 42, 30%);
     box-shadow: 0 0 10px 5px rgba(186, 0, 124, 0.2);
     border-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     position: relative;
     left: 5%;
     display: grid;
@@ -234,6 +228,8 @@ textarea::placeholder {
     overflow-y: auto;
     border: solid 1px rgb(255, 0, 183);
     border-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     box-sizing: border-box;
     padding: 10px;
 }
@@ -250,7 +246,7 @@ textarea::placeholder {
 
 .block-top-right-text::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     background-color: #b9b9b9;
 }
 
@@ -258,6 +254,8 @@ textarea::placeholder {
     background: rgba(42, 42, 42, 30%);
     box-shadow: 0 0 10px 5px rgba(186, 0, 124, 0.2);
     border-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     position: relative;
     left: 5%;
     display: grid;
@@ -271,6 +269,8 @@ textarea::placeholder {
     overflow-y: auto;
     border: solid 1px rgb(255, 0, 183);
     border-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     box-sizing: border-box;
     padding: 10px;
 }
@@ -287,7 +287,7 @@ textarea::placeholder {
 
 .block-bottom-right-text::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     background-color: #b9b9b9;
 }
 
@@ -305,24 +305,13 @@ h4 {
 
 
 .header2 {
-    width: 100%;
+    width: 55.44px;
     height: 100%;
     opacity: 0.6;
-    justify-content: space-between;
     box-sizing: border-box;
     opacity: 0.3;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
     padding: 15px;
     cursor: pointer;
-}
-
-
-.burger-menu2 {
-    height: 100%;
-    width: 100%;
-    position: relative;
 }
 
 .burger-menu__item2 {
