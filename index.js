@@ -1,4 +1,6 @@
 const myList = document.getElementById("myList");
+const addButton = document.getElementById("addButton"); // Кнопка для закрепления элемента
+
 let draggingElement = null;
 
 // Функции для перемещения элементов
@@ -42,41 +44,45 @@ listItems.forEach(item => {
     item.addEventListener("dragstart", handleDragStart);
     item.addEventListener("dragover", handleDragOver);
     item.addEventListener("drop", handleDrop);
+    item.addEventListener("dblclick", handleDoubleClick); // Добавляем обработчик события "dblclick" для каждого элемента
 
-    // Добавляем обработчик события "dblclick" для каждого элемента
-    item.addEventListener("dblclick", handleDoubleClick);
-
-    // Добавляем обработчики тач-событий для мобильных устройств
-    item.addEventListener("touchstart", handleTouchStart, false);
-    item.addEventListener("touchmove", handleTouchMove, false);
-    item.addEventListener("touchend", handleTouchEnd, false);
+    // Добавляем обработчики сенсорных событий для мобильных устройств
+    item.addEventListener("touchstart", handleTouchStart, { passive: false });
+    item.addEventListener("touchmove", handleTouchMove, { passive: false });
+    item.addEventListener("touchend", handleTouchEnd);
 });
 
 let touchStartY = 0;
 let touchStartItem = null;
 
 function handleTouchStart(event) {
-    touchStartY = event.changedTouches[0].pageY;
-    touchStartItem = event.target.closest("li");
+    const target = event.target.closest("li");
+    if (target) {
+        touchStartY = event.touches[0].clientY;
+        touchStartItem = target;
+    }
 }
 
 function handleTouchMove(event) {
-    event.preventDefault();
-    const touchY = event.changedTouches[0].pageY;
-    const deltaY = touchY - touchStartY;
-    if (Math.abs(deltaY) > 10) {
-        touchStartItem.classList.add("dragging");
+    if (!touchStartItem) return;
+
+    const touchCurrentY = event.touches[0].clientY;
+    const yOffset = touchCurrentY - touchStartY;
+    touchStartY = touchCurrentY;
+
+    const rect = touchStartItem.getBoundingClientRect();
+    const currentIndex = [...myList.children].indexOf(touchStartItem);
+
+    if (yOffset < 0 && currentIndex > 0) {
+        myList.insertBefore(touchStartItem, myList.children[currentIndex - 1]);
+    } else if (yOffset > 0 && currentIndex < myList.children.length - 1) {
+        myList.insertBefore(touchStartItem, myList.children[currentIndex + 2]);
     }
 }
 
-function handleTouchEnd(event) {
-    touchStartItem.classList.remove("dragging");
-    const touchY = event.changedTouches[0].pageY;
-    const deltaY = touchY - touchStartY;
-    if (Math.abs(deltaY) > 50) {
-        const target = document.elementFromPoint(event.changedTouches[0].clientX, touchY);
-        if (target && target !== touchStartItem) {
-            myList.insertBefore(touchStartItem, target);
-        }
-    }
+function handleTouchEnd() {
+    touchStartItem = null;
 }
+
+// Добавляем обработчик события для кнопки закрепления элемента в начале списка
+addButton.addEventListener("click", handleDoubleClick);
