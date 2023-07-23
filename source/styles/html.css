@@ -466,6 +466,39 @@ img {
     text-align: center;
 }
 
+
+
+.text-header4-bottom-right-panel {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.details-question {
+    margin: 10px;
+    background: rgba(69, 82, 97, 0.858);
+    border: solid 1px rgba(69, 82, 97, 0.858);
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.header-summary-brp {
+    padding: 10px;
+}
+
+.text-question {
+    margin: 0;
+    padding: 10px;
+    background: #7e8691;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+
+
 @media (max-width: 1200px) {
 
     .sidebar {
