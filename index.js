@@ -29,3 +29,35 @@ overlay.addEventListener("click", toggleSidebarVisible);
 burgerMenu2.addEventListener("click", toggleSidebar2Visible);
 closeIcon2.addEventListener("click", toggleSidebar2Visible);
 overlay2.addEventListener("click", toggleSidebar2Visible);
+
+// Создаем массив для хранения закрепленных элементов
+const pinnedElements = [];
+
+// Добавляем обработчик клика на кнопку с emoji &#x1F4CC;
+const buttons = document.querySelectorAll(".header-summary-brp button");
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const parentSummary = button.closest("summary");
+        const parentDetails = button.closest("details");
+        const parentList = parentDetails.parentElement;
+
+        // Проверяем, является ли элемент summary закрепленным
+        const isPinned = pinnedElements.includes(parentDetails);
+
+        if (isPinned) {
+            // Если элемент уже закреплен, то удаляем его из списка закрепленных
+            const index = pinnedElements.indexOf(parentDetails);
+            if (index > -1) {
+                pinnedElements.splice(index, 1);
+            }
+            button.classList.remove("active");
+        } else {
+            // Если элемент не закреплен, то добавляем его в начало списка закрепленных
+            pinnedElements.unshift(parentDetails);
+            button.classList.add("active");
+        }
+
+        // Перемещаем закрепленные элементы в нужное место в основном списке
+        parentList.prepend(...pinnedElements);
+    });
+});

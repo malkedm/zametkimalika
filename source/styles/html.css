@@ -212,7 +212,7 @@ textarea::placeholder {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 6% 30% 64%;
+    grid-template-rows: 10% 28% 62%;
 }
 
 .block-top-right-panel {
@@ -266,7 +266,7 @@ textarea::placeholder {
     left: 5%;
     display: grid;
     width: 90%;
-    height: 90%;
+    height: 96%;
 }
 
 .block-bottom-right-text {
@@ -477,7 +477,7 @@ img {
 .details-question {
     margin: 10px;
     background: rgba(69, 82, 97, 0.858);
-    border: solid 1px rgba(69, 82, 97, 0.858);
+    border: solid 1px rgba(144, 160, 179, 0.86);
     box-sizing: border-box;
     border-radius: 20px;
 }
@@ -496,7 +496,26 @@ img {
     border-top-right-radius: 0;
 }
 
+.header-summary-brp button {
+    background: none;
+    border: 0;
+    padding: 0;
+    margin-left: 20px;
+}
 
+/* Добавляем стили для активной кнопки */
+.header-summary-brp button.active {
+    background-color: #00828e;
+    padding: 1px 6px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    /* Здесь вы можете установить другой цвет для активной кнопки */
+}
+
+.spisok {
+    padding: 0;
+    margin: 0;
+}
 
 
 @media (max-width: 1200px) {
@@ -504,7 +523,7 @@ img {
     .sidebar {
         opacity: 0;
         transition: opacity 0s;
-        width: 70%;
+        width: 85%;
         left: 0;
         transform: translateX(-140%);
         transition: transform 300ms ease;
@@ -519,7 +538,7 @@ img {
     .sidebar2 {
         opacity: 0;
         transition: opacity 0s;
-        width: 70%;
+        width: 85%;
         right: 0;
         transform: translateX(140%);
         transition: transform 300ms ease;
