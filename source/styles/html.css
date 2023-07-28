@@ -484,6 +484,7 @@ img {
 
 .header-summary-brp {
     padding: 10px;
+    display: flex;
 }
 
 .text-question {
@@ -501,6 +502,7 @@ img {
     border: 0;
     padding: 0;
     margin-left: 20px;
+    align-self: flex-start;
 }
 
 /* Добавляем стили для активной кнопки */
@@ -515,6 +517,26 @@ img {
 .spisok {
     padding: 0;
     margin: 0;
+}
+
+.block-open-close-details {
+    text-align: center;
+}
+
+.open-close-details {
+    color: rgb(222, 222, 222);
+    background: none;
+    border: solid 1px rgba(144, 160, 179, 0.86);
+    border-radius: 20px;
+    padding: 6px;
+}
+
+summary {
+    cursor: default;
+}
+
+.words-open-close {
+    color: green;
 }
 
 
