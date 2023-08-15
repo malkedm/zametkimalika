@@ -529,11 +529,10 @@ img {
 .button-open-close-details-right-panel {
     color: red;
     background: none;
-    border: none;
     padding: 6px;
-    display: flex;
     width: 100%;
-    display: ;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .words-button-open-close-right-panel {
@@ -542,6 +541,7 @@ img {
     box-sizing: border-box;
     font-size: 15px;
     padding: 10px;
+    cursor: default;
 }
 
 
