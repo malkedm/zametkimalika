@@ -527,10 +527,10 @@ img {
 }
 
 .button-open-close-details-right-panel {
+    width: 100%;
     color: red;
     background: none;
-    padding: 6px;
-    width: 100%;
+    border: none;
     display: flex;
     justify-content: flex-end;
 }
@@ -541,6 +541,7 @@ img {
     box-sizing: border-box;
     font-size: 15px;
     padding: 10px;
+    margin: 10px;
     cursor: default;
 }
 
@@ -551,6 +552,36 @@ summary {
 
 .words-open-close {
     color: green;
+}
+
+
+.block-header-open-close {
+    display: flex;
+}
+
+
+.open-close-details-left-panel {
+    display: grid;
+}
+
+.button-open-close-details-left-panel {
+    color: red;
+    background: none;
+    border: none;
+    padding: 6px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.words-button-open-close-left-panel {
+    border: solid 1px rgba(144, 160, 179, 0.86);
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 15px;
+    padding: 10px;
+    cursor: default;
 }
 
 

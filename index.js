@@ -82,6 +82,14 @@ openCloseDetailsButton.forEach(function (left) {
             }
         });
 
+        openCloseDetailsQuestion.forEach(details => {
+            if (isOpenDetailsLeftPanel) {
+                details.removeAttribute("open");
+            } else {
+                details.setAttribute("open", true)
+            }
+        });
+
         isOpenDetailsLeftPanel = !isOpenDetailsLeftPanel;
 
 
@@ -98,8 +106,31 @@ openCloseDetailsButton.forEach(function (left) {
 });
 
 
-openCloseDetailsButton.forEach(function (right) {
-    right.addEventListener("click", function () {
-        openCloseDetailsQuestion.forEach(openCloseDetailsQuestion => openCloseDetailsQuestion.open = !openCloseDetailsQuestion.open);
+// const BlockBottomRightPanel = document.querySelector(".block-bottom-right-panel");
+// BlockBottomRightPanel.addEventListener("click", function)
+
+const blockBottomRightPanel = document.querySelector(".block-bottom-right-panel");
+blockBottomRightPanel.addEventListener("click", event => {
+    const target = event.target;
+    const isDetailsQuestion = target.closest(".details-question");
+    const isButton = target.classList.contains("butt");
+
+    if (!isOpenDetailsLeftPanel && !(isDetailsQuestion || isButton)) {
+        // Если open-close-details неактивна и клик был на другом элементе, разрешаем удаление значения open
+        const detailsList = document.querySelectorAll(".details-question");
+        detailsList.forEach(details => {
+            details.removeAttribute("open");
+        });
+    }
+});
+
+// Добавляем обработчик клика на элементы details с классом details-question
+const detailsList = document.querySelectorAll(".details-question");
+detailsList.forEach(details => {
+    details.addEventListener("click", event => {
+        // Проверяем, активно ли open-close-details
+        if (isOpenDetailsLeftPanel) {
+            event.preventDefault(); // Предотвращаем удаление значения open
+        }
     });
 });

@@ -430,12 +430,14 @@ h4 {
 
 .header-summary {
     padding: 10px;
+    cursor: default;
 }
 
 .text-sphere {
     margin: 0;
     padding: 10px;
     background: #7e8691;
+    cursor: default;
     /* border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     box-sizing: border-box; */
@@ -486,6 +488,7 @@ img {
     box-sizing: border-box;
     font-size: 15px;
     padding: 10px;
+    cursor: default;
 }
 
 @media (max-width: 1200px) {
