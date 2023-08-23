@@ -63,38 +63,41 @@ buttons.forEach(button => {
 });
 
 
+// Начало кода...
+// Ищем все кнопки button(отвечающие за открытие/закрытие всех элементов details) и сами элементы details
+const openCloseDetailsButtonLeft = document.querySelectorAll("[data-button-open-close-left-panel]"); // Поиск всех кнопок левой панели
+const openCloseDetailsButtonRight = document.querySelectorAll("[data-button-open-close-right-panel]"); // Поиск всех кнопок правой панели
+const openCloseDetailsSpheres = document.querySelectorAll(".details-spheres"); // Поиск всех details левой панели(поиск всех элементов учебных сфер)
+const openCloseDetailsQuestion = document.querySelectorAll(".details-question"); // Поиск всех details правой панели(поиск всех элементов вопрос - ответ)
 
-const openCloseDetailsButton = document.querySelectorAll("[data-button]");
-const openCloseDetailsSpheres = document.querySelectorAll(".details-spheres");
-const openCloseDetailsQuestion = document.querySelectorAll(".details-question");
-// const wordsButtonOpenClose = document.querySelectorAll(".words-button-open-close");
-// const wordsOpenCloseLeftPanel = document.querySelector(".words-open-close-left-panel");
 
-let isOpenDetailsLeftPanel = false;
+// Делаем полноценные функции для левой панели
+/* let isOpenDetailsLeftPanel = false;   !!!!!!!!!!! ВНИМАНИЕ! НЕ СЛЕДУЕТ ИСПОЛЬЗОВАТЬ ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ВНЕ ФУНКЦИЙ,
+ИНАЧЕ БУДУТ КОНФЛИКТЫ ДВУХ ФУНКЦИЙ(а точнее двух кнопок в функциях.
+Данную тему надо более подробно изучить.
+Но скорее всего, это происходит из за того, что при создании глобальной переменной и указании состояния,
+она применяется сразу ко всему коду, который находится снизу.) */
 
-openCloseDetailsButton.forEach(function (left) {
+
+
+openCloseDetailsButtonLeft.forEach(function (left) {
+    // Делаем полноценные функции для левой панели
+    let isOpen = false; // комментарий выше относится к данной переменной.
     left.addEventListener("click", function () {
-        openCloseDetailsSpheres.forEach(details => {
-            if (isOpenDetailsLeftPanel) {
-                details.removeAttribute("open");
+        openCloseDetailsSpheres.forEach(openCloseDetailsSpheres => {
+            if (isOpen) {
+                openCloseDetailsSpheres.removeAttribute("open");
             } else {
-                details.setAttribute("open", true)
+                openCloseDetailsSpheres.setAttribute("open", true)
             }
         });
 
-        openCloseDetailsQuestion.forEach(details => {
-            if (isOpenDetailsLeftPanel) {
-                details.removeAttribute("open");
-            } else {
-                details.setAttribute("open", true)
-            }
-        });
 
-        isOpenDetailsLeftPanel = !isOpenDetailsLeftPanel;
+        isOpen = !isOpen;
 
 
         // Вот здесь меняем текст кнопки в зависимости от isOpenDetailsLeftPanel
-        if (isOpenDetailsLeftPanel) {
+        if (isOpen) {
             left.innerHTML = "&#9660"; // "открыто"
             left.style.color = "green"
         } else {
@@ -103,34 +106,99 @@ openCloseDetailsButton.forEach(function (left) {
         }
     });
 
-});
 
+    // Добавляем функции для закрытия открытых элементов при нажатии на любую область блока и запрещаем, если кнопка открытия/закрытия активна.
+    const blockBottomLeftPanel = document.querySelector(".content-top-left-panel");
+    blockBottomLeftPanel.addEventListener("click", event => {
+        const target = event.target;
+        const isDetailsSpheres = target.closest(".details-spheres");
 
-// const BlockBottomRightPanel = document.querySelector(".block-bottom-right-panel");
-// BlockBottomRightPanel.addEventListener("click", function)
-
-const blockBottomRightPanel = document.querySelector(".block-bottom-right-panel");
-blockBottomRightPanel.addEventListener("click", event => {
-    const target = event.target;
-    const isDetailsQuestion = target.closest(".details-question");
-    const isButton = target.classList.contains("butt");
-
-    if (!isOpenDetailsLeftPanel && !(isDetailsQuestion || isButton)) {
-        // Если open-close-details неактивна и клик был на другом элементе, разрешаем удаление значения open
-        const detailsList = document.querySelectorAll(".details-question");
-        detailsList.forEach(details => {
-            details.removeAttribute("open");
-        });
-    }
-});
-
-// Добавляем обработчик клика на элементы details с классом details-question
-const detailsList = document.querySelectorAll(".details-question");
-detailsList.forEach(details => {
-    details.addEventListener("click", event => {
-        // Проверяем, активно ли open-close-details
-        if (isOpenDetailsLeftPanel) {
-            event.preventDefault(); // Предотвращаем удаление значения open
+        if (!isOpen && !isDetailsSpheres) {
+            // Если open-close-details неактивна и клик был на другом элементе, разрешаем удаление значения open
+            const detailsList = document.querySelectorAll(".details-spheres");
+            detailsList.forEach(details => {
+                details.removeAttribute("open");
+            });
         }
+    });
+
+    // Добавляем обработчик клика на элементы details с классом details-question
+    const detailsList = document.querySelectorAll(".details-spheres");
+    detailsList.forEach(details => {
+        details.addEventListener("click", event => {
+            // Проверяем, активно ли open-close-details
+            if (isOpen) {
+                event.preventDefault(); // Предотвращаем удаление значения open
+            }
+        });
+    });
+
+    const summaryList = document.querySelectorAll("img");
+    summaryList.forEach(img => {
+        img.addEventListener("click", event => {
+            event.stopPropagation();
+        });
+    });
+});
+
+
+// Делаем полноценные функции для правой панели
+/* let isOpenDetailsRightPanel = false;   !!!!!!!!!!! ВНИМАНИЕ! НЕ СЛЕДУЕТ ИСПОЛЬЗОВАТЬ ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ВНЕ ФУНКЦИЙ,
+ИНАЧЕ БУДУТ КОНФЛИКТЫ ДВУХ ФУНКЦИЙ(а точнее двух кнопок в функциях.
+Данную тему надо более подробно изучить.
+Но скорее всего, это происходит из за того, что при создании глобальной переменной и указании состояния,
+она применяется сразу ко всему коду, который находится снизу.) */
+
+openCloseDetailsButtonRight.forEach(function (right) {
+    // Делаем полноценные функции для правой панели
+
+    let isOpen = false; // комментарий выше относится к данной переменной.
+    right.addEventListener("click", function () {
+        openCloseDetailsQuestion.forEach(openCloseDetailsQuestion => {
+            if (isOpen) {
+                openCloseDetailsQuestion.removeAttribute("open");
+            } else {
+                openCloseDetailsQuestion.setAttribute("open", true)
+            }
+        });
+
+
+        isOpen = !isOpen;
+
+        // Вот здесь меняем текст кнопки в зависимости от isOpenDetailsLeftPanel
+        if (isOpen) {
+            right.innerHTML = "&#9660"; // "открыто"
+            right.style.color = "green"
+        } else {
+            right.innerHTML = "&#9658"; // "закрыто"
+            right.style.color = "red"
+        }
+    });
+
+    // Добавляем функции для закрытия открытых элементов при нажатии на любую область блока и запрещаем, если кнопка открытия/закрытия активна.
+    const blockBottomRightPanel = document.querySelector(".block-bottom-right-panel");
+    blockBottomRightPanel.addEventListener("click", event => {
+        const target = event.target;
+        const isDetailsQuestion = target.closest(".details-question");
+        const isButton = target.classList.contains("butt");
+
+        if (!isOpen && !(isDetailsQuestion || isButton)) {
+            // Если open-close-details неактивна и клик был на другом элементе, разрешаем удаление значения open
+            const detailsList = document.querySelectorAll(".details-question");
+            detailsList.forEach(details => {
+                details.removeAttribute("open");
+            });
+        }
+    });
+
+    // Добавляем обработчик клика на элементы details с классом details-question
+    const detailsList = document.querySelectorAll(".details-question");
+    detailsList.forEach(details => {
+        details.addEventListener("click", event => {
+            // Проверяем, активно ли open-close-details
+            if (isOpen) {
+                event.preventDefault(); // Предотвращаем удаление значения open
+            }
+        });
     });
 });
