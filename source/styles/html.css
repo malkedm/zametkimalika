@@ -460,6 +460,7 @@ h4 {
 }
 
 .header-summary {
+    display: flex;
     padding: 10px;
     cursor: pointer;
 }
@@ -500,14 +501,16 @@ img {
 
 .details-question {
     margin: 10px;
-    background: rgba(195, 195, 195, 0.2);
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(100deg, rgba(0, 247, 255, 0.25), #161b22);
+    /* background: rgba(0, 247, 255, 0.25); #161b22 */
+    border: 1px solid #0ef;
+    box-shadow: 0 0 5px 2px rgba(0, 247, 255, 0.25);
     box-sizing: border-box;
     border-radius: 20px;
 }
 
 .details-question:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 247, 255, 0.214);
 }
 
 .header-summary-brp {
@@ -519,7 +522,7 @@ img {
 .text-question {
     margin: 0;
     padding: 10px;
-    background: rgba(101, 101, 101, 0.2);
+    background: rgba(0, 247, 255, 0.25);
     box-sizing: border-box;
     border-radius: 20px;
     border-top-left-radius: 0;
@@ -535,14 +538,16 @@ img {
 }
 
 .header-summary-brp button:hover {
-    background: #acacac;
+    background-color: rgba(0, 247, 255, 0.224);
+    box-shadow: 0 0 5px 2px rgba(0, 247, 255, 0.224);
     box-sizing: border-box;
     border-radius: 12px;
 }
 
 /* Добавляем стили для активной кнопки */
 .header-summary-brp button.active {
-    background-color: #00828e;
+    background-color: rgba(0, 247, 255, 0.45);
+    box-shadow: 0 0 5px 2px rgba(0, 247, 255, 0.25);
     padding: 1px 6px;
     box-sizing: border-box;
     border-radius: 12px;
