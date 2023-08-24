@@ -447,25 +447,29 @@ h4 {
     overflow-y: auto;
 }
 
-.sphere {
+.details-spheres {
     margin: 10px;
-    background: rgba(69, 82, 97, 0.858);
-    border: solid 1px rgba(69, 82, 97, 0.858);
-    /* border-radius: 12px;
-    box-sizing: border-box; */
+    background: rgba(195, 195, 195, 0.2);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.details-spheres:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .header-summary {
     padding: 10px;
+    cursor: pointer;
 }
 
 .text-sphere {
     margin: 0;
     padding: 10px;
-    background: #7e8691;
-    /* border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    box-sizing: border-box; */
+    background: rgba(195, 195, 195, 0.2);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 img {
@@ -496,21 +500,26 @@ img {
 
 .details-question {
     margin: 10px;
-    background: rgba(69, 82, 97, 0.858);
-    border: solid 1px rgba(144, 160, 179, 0.86);
+    background: rgba(195, 195, 195, 0.2);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     border-radius: 20px;
+}
+
+.details-question:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .header-summary-brp {
     padding: 10px;
     display: flex;
+    cursor: pointer;
 }
 
 .text-question {
     margin: 0;
     padding: 10px;
-    background: #7e8691;
+    background: rgba(101, 101, 101, 0.2);
     box-sizing: border-box;
     border-radius: 20px;
     border-top-left-radius: 0;
@@ -520,9 +529,15 @@ img {
 .header-summary-brp button {
     background: none;
     border: 0;
-    padding: 0;
+    padding: 1px 6px;
     margin-left: 20px;
     align-self: flex-start;
+}
+
+.header-summary-brp button:hover {
+    background: #acacac;
+    box-sizing: border-box;
+    border-radius: 12px;
 }
 
 /* Добавляем стили для активной кнопки */
