@@ -79,6 +79,14 @@ textarea::placeholder {
     margin-bottom: 5px;
 }
 
+.header:hover {
+    opacity: 0.5;
+}
+
+.header:hover .burger-menu__item {
+    background: #ffffff;
+}
+
 .overlay {
     position: absolute;
     top: 0;
@@ -168,6 +176,10 @@ textarea::placeholder {
     box-sizing: border-box;
 }
 
+.tabs label:hover {
+    background: #171717;
+}
+
 .tabs .text-tab {
     display: none;
 }
@@ -191,14 +203,14 @@ textarea::placeholder {
 
 .tabs input[type="radio"]:checked+label {
     background: #212121;
-    border: 1px solid rgb(154, 154, 154);
+    border: 1px solid rgb(187, 187, 187);
     border-bottom: none;
     box-sizing: border-box;
 }
 
 .tabs input[type="radio"]:checked+label+.text-tab {
     display: block;
-    border: 1px solid rgb(154, 154, 154);
+    border: 1px solid rgb(187, 187, 187);
     box-sizing: border-box;
 }
 
@@ -318,6 +330,14 @@ h4 {
     height: 5px;
     background-color: #ccc;
     margin-bottom: 5px;
+}
+
+.header2:hover {
+    opacity: 0.5;
+}
+
+.header2:hover .burger-menu__item2 {
+    background: #ffffff;
 }
 
 .overlay2 {

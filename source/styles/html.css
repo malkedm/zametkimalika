@@ -72,17 +72,25 @@ textarea::placeholder {
 .header {
     width: 55.44px;
     height: 100%;
-    opacity: 0.6;
     box-sizing: border-box;
     opacity: 0.3;
     padding: 15px;
     cursor: pointer;
 }
 
+
 .burger-menu__item {
     height: 5px;
     background-color: #ccc;
     margin-bottom: 5px;
+}
+
+.header:hover {
+    opacity: 0.5;
+}
+
+.header:hover .burger-menu__item {
+    background: #ffffff;
 }
 
 .overlay {
@@ -174,6 +182,10 @@ textarea::placeholder {
     box-sizing: border-box;
 }
 
+.tabs label:hover {
+    background: #171717;
+}
+
 .tabs .text-tab {
     display: none;
 }
@@ -197,14 +209,14 @@ textarea::placeholder {
 
 .tabs input[type="radio"]:checked+label {
     background: #212121;
-    border: 1px solid rgb(154, 154, 154);
+    border: 1px solid rgb(187, 187, 187);
     border-bottom: none;
     box-sizing: border-box;
 }
 
 .tabs input[type="radio"]:checked+label+.text-tab {
     display: block;
-    border: 1px solid rgb(154, 154, 154);
+    border: 1px solid rgb(187, 187, 187);
     box-sizing: border-box;
 }
 
@@ -216,8 +228,8 @@ textarea::placeholder {
 }
 
 .block-top-right-panel {
-    background: rgba(42, 42, 42, 30%);
-    box-shadow: 0 0 10px 5px rgba(186, 0, 124, 0.2);
+    /* background: rgba(42, 42, 42, 30%); */
+    box-shadow: 0 0 10px 2px rgb(187, 187, 187, 0.2);
     border-radius: 20px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -232,7 +244,7 @@ textarea::placeholder {
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    border: solid 1px rgb(255, 0, 183);
+    border: solid 1px rgb(187, 187, 187);
     border-radius: 20px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -246,19 +258,19 @@ textarea::placeholder {
 
 .block-top-right-text::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: rgb(73, 0, 147);
-    border: 3px solid #b9b9b9;
+    background-color: #929292;
+    border: 3px solid #161b22;
 }
 
-.block-top-right-text::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-    /* border-radius: 10px; */
-    background-color: #b9b9b9;
-}
+/* .block-top-right-text::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2); */
+/* border-radius: 10px; */
+/* background-color: #b9b9b9;
+} */
 
 .block-bottom-right-panel {
-    background: rgba(42, 42, 42, 30%);
-    box-shadow: 0 0 10px 5px rgba(186, 0, 124, 0.2);
+    /* background: rgba(42, 42, 42, 30%); */
+    box-shadow: 0 0 10px 2px rgb(187, 187, 187, 0.2);
     border-radius: 20px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -273,7 +285,7 @@ textarea::placeholder {
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    border: solid 1px rgb(255, 0, 183);
+    border: solid 1px rgb(187, 187, 187);
     border-radius: 20px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -287,15 +299,15 @@ textarea::placeholder {
 
 .block-bottom-right-text::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: rgb(73, 0, 147);
-    border: 3px solid #b9b9b9;
+    background-color: #929292;
+    border: 3px solid #161b22;
 }
 
-.block-bottom-right-text::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-    /* border-radius: 10px; */
-    background-color: #b9b9b9;
-}
+/* .block-bottom-right-text::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2); */
+/* border-radius: 10px; */
+/* background-color: #b9b9b9;
+} */
 
 
 h4 {
@@ -324,6 +336,14 @@ h4 {
     height: 5px;
     background-color: #ccc;
     margin-bottom: 5px;
+}
+
+.header2:hover {
+    opacity: 0.5;
+}
+
+.header2:hover .burger-menu__item2 {
+    background: #ffffff;
 }
 
 .overlay2 {
