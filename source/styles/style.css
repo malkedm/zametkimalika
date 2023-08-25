@@ -140,8 +140,8 @@ textarea::placeholder {
 .close__item {
     text-align: center;
     font-size: 24px;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     cursor: pointer;
     color: #656D76;
 }
@@ -383,8 +383,8 @@ h4 {
 }
 
 .close__item2 {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     text-align: center;
     font-size: 24px;
     color: #656D76;
