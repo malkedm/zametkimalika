@@ -386,7 +386,7 @@ h4 {
 
 .sidebar-open2 {
     transform: translateX(0);
-    transition: transform 300ms ease;
+    transition: all 300ms ease;
     opacity: 1;
 }
 
@@ -451,7 +451,7 @@ h4 {
     margin: 10px;
     background: rgba(195, 195, 195, 0.2);
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
+    border-radius: 5px;
     box-sizing: border-box;
 }
 
@@ -469,8 +469,9 @@ h4 {
     margin: 0;
     padding: 10px;
     background: rgba(195, 195, 195, 0.2);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    box-shadow: inset 0px 1px 3px rgba(2, 2, 2, 0.25);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 img {
@@ -503,14 +504,14 @@ img {
     margin: 10px;
     background: rgba(255, 255, 255, 0.1);
     /* background: rgba(0, 247, 255, 0.25); #161b22 */
-    border: 1px solid #0ef;
-    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.1);
+    /* border: 1px solid #0ef; */
+    box-shadow: 0 0 5px 2px rgba(2, 2, 2, 0.25);
     box-sizing: border-box;
     border-radius: 20px;
 }
 
 .details-question:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .header-summary-brp {
@@ -519,10 +520,15 @@ img {
     cursor: pointer;
 }
 
+/* .details-question[open] .text-question {
+    box-shadow: inset 0px 2px 3px rgba(2, 2, 2, 0.25);
+} */
+
 .text-question {
     margin: 0;
     padding: 10px;
     background: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0px 1px 3px rgba(2, 2, 2, 0.25);
     box-sizing: border-box;
     border-radius: 20px;
     border-top-left-radius: 0;
@@ -538,8 +544,8 @@ img {
 }
 
 .header-summary-brp button:hover {
-    background-color: rgba(0, 247, 255, 0.224);
-    box-shadow: 0 0 5px 2px rgba(0, 247, 255, 0.224);
+    background-color: rgba(129, 129, 129, 0.224);
+    /* box-shadow: 0 0 5px 2px rgba(0, 247, 255, 0.224); */
     box-sizing: border-box;
     border-radius: 12px;
 }
