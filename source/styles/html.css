@@ -504,13 +504,13 @@ img {
     background: rgba(255, 255, 255, 0.1);
     /* background: rgba(0, 247, 255, 0.25); #161b22 */
     border: 1px solid #0ef;
-    box-shadow: 0 0 5px 2px rgba(0, 247, 255, 0.25);
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.1);
     box-sizing: border-box;
     border-radius: 20px;
 }
 
 .details-question:hover {
-    background: rgba(0, 247, 255, 0.214);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .header-summary-brp {
@@ -522,7 +522,7 @@ img {
 .text-question {
     margin: 0;
     padding: 10px;
-    background: rgba(0, 247, 255, 0.25);
+    background: rgba(255, 255, 255, 0.1);
     box-sizing: border-box;
     border-radius: 20px;
     border-top-left-radius: 0;
