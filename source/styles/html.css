@@ -112,7 +112,6 @@ textarea::placeholder {
 
 .sidebar {
     opacity: 0;
-    transition: opacity 0s;
     width: 40%;
     height: 100dvh;
     position: absolute;
@@ -356,7 +355,6 @@ h4 {
 
 .sidebar2 {
     opacity: 0;
-    transition: opacity 0s;
     width: 40%;
     height: 100dvh;
     position: absolute;
@@ -618,11 +616,10 @@ summary {
 
     .sidebar {
         opacity: 0;
-        transition: opacity 0s;
         width: 85%;
         left: 0;
         transform: translateX(-140%);
-        transition: transform 300ms ease;
+        transition: transform, opacity 300ms ease;
     }
 
     .sidebar-open {
@@ -633,7 +630,6 @@ summary {
 
     .sidebar2 {
         opacity: 0;
-        transition: opacity 0s;
         width: 85%;
         right: 0;
         transform: translateX(140%);
