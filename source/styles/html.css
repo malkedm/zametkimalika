@@ -7,7 +7,7 @@ body {
     padding: 0;
     list-style: none;
     text-decoration: none;
-    background: #1F1F1F;
+    background: rgb(29, 29, 32);
     color: rgb(222, 222, 222);
 }
 
@@ -35,7 +35,7 @@ body {
     box-sizing: border-box;
     overflow-y: auto;
     z-index: 10;
-    background: #1f1f1f;
+    background: rgb(29, 29, 32);
     color: rgb(222, 222, 222);
     /* resize: vertical; */
 }
@@ -48,7 +48,7 @@ textarea::placeholder {
 .burgers {
     display: flex;
     justify-content: space-between;
-    background: #212121;
+    /* background: #212121; */
 }
 
 
@@ -58,7 +58,7 @@ textarea::placeholder {
     max-width: 100vw;
     width: 100vw;
     height: 100%;
-    background: #212121;
+    /* background: #212121; */
 }
 
 
@@ -158,36 +158,54 @@ textarea::placeholder {
 
 .tabs label {
     display: grid;
-    background: #010409;
-    /* font-weight: bold; */
-    transition: background ease 0.2s;
     width: 100%;
     height: 100%;
     text-align: center;
     align-items: center;
-    border: 1px solid #666;
+    /* border: 1px solid #4c4c4c; */
     box-sizing: border-box;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .tabs label:hover {
-    background: #171717;
+    background: rgba(42, 42, 44, 0.572);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-.tabs .text-tab {
+.tabs .text-tab2 {
     display: none;
 }
 
 .text-tab {
     position: absolute;
-    border: 1px solid #666;
+    background: rgb(42, 42, 44);
     box-sizing: border-box;
     max-width: 100vw;
     min-width: 100vw;
     max-height: calc(100dvh - 20dvh - 60px - 60px);
     min-height: calc(100dvh - 20dvh - 60px - 60px);
     left: 0;
+    /* padding: 10px; */
+    z-index: 995;
+}
+
+.text-tab2 {
+    position: absolute;
+    background: rgb(29, 29, 32);
+    box-sizing: border-box;
+    max-width: calc(100vw - 10px);
+    min-width: calc(100vw - 10px);
+    max-height: calc(100dvh - 20dvh - 60px - 60px - 10px);
+    min-height: calc(100dvh - 20dvh - 60px - 60px - 10px);
+    left: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
     overflow-y: auto;
-    padding: 10px;
+    padding: 15px;
+    box-shadow: 0 0 2px 1px rgba(2, 2, 2, 0.25);
+    z-index: 997;
 }
 
 .tabs input[type="radio"] {
@@ -195,16 +213,24 @@ textarea::placeholder {
 }
 
 .tabs input[type="radio"]:checked+label {
-    background: #212121;
-    border: 1px solid rgb(187, 187, 187);
-    border-bottom: none;
+    background: rgb(42, 42, 44);
     box-sizing: border-box;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-.tabs input[type="radio"]:checked+label+.text-tab {
+.tabs input[type="radio"]:checked+label+.text-tab2 {
     display: block;
-    border: 1px solid rgb(187, 187, 187);
-    box-sizing: border-box;
+}
+
+.text-tab2::-webkit-scrollbar {
+    width: 10px;
+}
+
+.text-tab2::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #929292;
+    border: 3px solid rgb(29, 29, 32);
 }
 
 .content-right-panel {
