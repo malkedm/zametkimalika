@@ -110,6 +110,7 @@ textarea::placeholder {
     top: 0;
     left: 0;
     transform: translateX(-140%);
+    will-change: transform;
     background: #161b22;
     z-index: 999;
     box-shadow: 0 0 0 1px #30363d, 0 16px 32px rgba(1, 4, 9, 0.85);
@@ -349,6 +350,7 @@ h4 {
     top: 0;
     right: 0;
     transform: translateX(140%);
+    will-change: transform;
     background: #161b22;
     z-index: 999;
     box-shadow: 0 0 0 1px #30363d, 0 16px 32px rgba(1, 4, 9, 0.85);
