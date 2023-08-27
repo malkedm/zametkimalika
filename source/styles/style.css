@@ -123,7 +123,7 @@ textarea::placeholder {
 
 .sidebar-open {
     transform: translateX(0);
-    transition: transform 300ms ease;
+    transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear;
     visibility: visible;
 }
 
@@ -363,7 +363,7 @@ h4 {
 
 .sidebar-open2 {
     transform: translateX(0);
-    transition: transform 300ms ease;
+    transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear;
     visibility: visible;
 }
 
