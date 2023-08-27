@@ -476,8 +476,7 @@ img {
 .details-question {
     margin: 10px;
     background: rgba(255, 255, 255, 0.1);
-    /* background: rgba(0, 247, 255, 0.25); #161b22 */
-    /* border: 1px solid #0ef; */
+    border: 1px solid rgba(0, 238, 255, 0.49);
     box-shadow: 0 0 5px 2px rgba(2, 2, 2, 0.25);
     box-sizing: border-box;
     border-radius: 20px;
