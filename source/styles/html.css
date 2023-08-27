@@ -166,6 +166,7 @@ textarea::placeholder {
     box-sizing: border-box;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    padding: 3px;
 }
 
 .tabs label:hover {
