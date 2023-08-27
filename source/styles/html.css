@@ -7,7 +7,7 @@ body {
     padding: 0;
     list-style: none;
     text-decoration: none;
-    background: #1F1F1F;
+    background: rgb(17 17 33);
     color: rgb(222, 222, 222);
 }
 
@@ -35,7 +35,7 @@ body {
     box-sizing: border-box;
     overflow-y: auto;
     z-index: 10;
-    background: #1f1f1f;
+    background: rgb(17 17 33);
     color: rgb(222, 222, 222);
     /* resize: vertical; */
 }
@@ -117,7 +117,7 @@ textarea::placeholder {
     left: 0;
     transform: translateX(-140%);
     will-change: transform;
-    background: #161b22;
+    background: rgb(17 17 33);
     z-index: 999;
     box-shadow: 0 0 0 1px #30363d, 0 16px 32px rgba(1, 4, 9, 0.85);
     overflow: hidden;
@@ -158,7 +158,7 @@ textarea::placeholder {
 
 .tabs label {
     display: grid;
-    background: #010409;
+    background: rgb(17 17 33);
     /* font-weight: bold; */
     transition: background ease 0.2s;
     width: 100%;
@@ -357,7 +357,7 @@ h4 {
     right: 0;
     transform: translateX(140%);
     will-change: transform;
-    background: #161b22;
+    background: rgb(17 17 33);
     z-index: 999;
     box-shadow: 0 0 0 1px #30363d, 0 16px 32px rgba(1, 4, 9, 0.85);
     overflow: hidden;
