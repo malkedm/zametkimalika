@@ -95,17 +95,15 @@ textarea::placeholder {
     height: 100dvh;
     background-color: rgba(175, 184, 193, 0.2);
     z-index: 999;
-    display: none;
-    transition: all 400ms ease;
+    display: block;
+    visibility: hidden;
 }
 
 .overlay-open {
-    display: block;
-    transition: all 400ms ease;
+    visibility: visible;
 }
 
 .sidebar {
-    /* opacity: 0; */
     width: 40%;
     height: 100dvh;
     position: absolute;
@@ -114,10 +112,7 @@ textarea::placeholder {
     transform: translateX(-140%);
     background: #161b22;
     z-index: 999;
-    /* box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.2); */
     box-shadow: 0 0 0 1px #30363d, 0 16px 32px rgba(1, 4, 9, 0.85);
-    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25), 0px -12px 30px rgba(0, 0, 0, 0.12), 0px 4px 6px rgba(0, 0, 0, 0.12), 0px 12px 13px rgba(0, 0, 0, 0.17), 0px -3px 5px rgba(0, 0, 0, 0.09); */
-    transition: transform 300ms ease;
     overflow: hidden;
     border-radius: 12px;
     border-bottom-left-radius: 0;
@@ -128,7 +123,6 @@ textarea::placeholder {
 .sidebar-open {
     transform: translateX(0);
     transition: transform 300ms ease;
-    /* opacity: 1; */
     visibility: visible;
 }
 
@@ -340,17 +334,15 @@ h4 {
     height: 100dvh;
     background-color: rgba(110, 118, 129, 40%);
     z-index: 999;
-    display: none;
-    transition: all 400ms ease;
+    display: block;
+    visibility: hidden;
 }
 
 .overlay-open2 {
-    display: block;
-    transition: all 400ms ease;
+    visibility: visible;
 }
 
 .sidebar2 {
-    /* opacity: 0; */
     width: 40%;
     height: 100dvh;
     position: absolute;
@@ -359,10 +351,7 @@ h4 {
     transform: translateX(140%);
     background: #161b22;
     z-index: 999;
-    /* box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.2); */
     box-shadow: 0 0 0 1px #30363d, 0 16px 32px rgba(1, 4, 9, 0.85);
-    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25), 0px -12px 30px rgba(0, 0, 0, 0.12), 0px 4px 6px rgba(0, 0, 0, 0.12), 0px 12px 13px rgba(0, 0, 0, 0.17), 0px -3px 5px rgba(0, 0, 0, 0.09); */
-    transition: transform 300ms ease;
     overflow: hidden;
     border-radius: 12px;
     border-bottom-right-radius: 0;
@@ -373,7 +362,6 @@ h4 {
 .sidebar-open2 {
     transform: translateX(0);
     transition: transform 300ms ease;
-    /* opacity: 1; */
     visibility: visible;
 }
 
@@ -498,34 +486,10 @@ img {
 @media (max-width: 1200px) {
 
     .sidebar {
-        /* opacity: 0; */
         width: 85%;
-        left: 0;
-        transform: translateX(-140%);
-        transition: transform 300ms ease;
-        visibility: hidden;
-    }
-
-    .sidebar-open {
-        transform: translateX(0);
-        transition: transform 300ms ease;
-        /* opacity: 1; */
-        visibility: visible;
     }
 
     .sidebar2 {
-        /* opacity: 0; */
         width: 85%;
-        right: 0;
-        transform: translateX(140%);
-        transition: transform 300ms ease;
-        visibility: hidden;
-    }
-
-    .sidebar-open2 {
-        transform: translateX(0);
-        transition: transform 300ms ease;
-        /* opacity: 1; */
-        visibility: visible;
     }
 }
