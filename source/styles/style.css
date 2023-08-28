@@ -66,25 +66,19 @@ textarea::placeholder {
 .header {
     width: 55.44px;
     height: 100%;
-    opacity: 0.6;
     box-sizing: border-box;
-    opacity: 0.3;
     padding: 15px;
     cursor: pointer;
 }
 
 .burger-menu__item {
     height: 5px;
-    background-color: #ccc;
+    background: rgb(255, 255, 255, 0.3);
     margin-bottom: 5px;
 }
 
-.header:hover {
-    opacity: 0.5;
-}
-
 .header:hover .burger-menu__item {
-    background: #ffffff;
+    background: rgb(255, 255, 255, 0.8);
 }
 
 .overlay {
@@ -111,7 +105,7 @@ textarea::placeholder {
     left: 0;
     transform: translateX(-140%);
     will-change: transform;
-    background: rgb(13, 13, 14);
+    background: rgb(22 27 34);
     z-index: 999;
     box-shadow: 0 0 0 1px #30363d, 0 16px 32px rgba(1, 4, 9, 0.85);
     overflow: hidden;
@@ -139,7 +133,11 @@ textarea::placeholder {
     width: 32px;
     height: 32px;
     cursor: pointer;
-    color: #656D76;
+    color: rgb(255, 255, 255, 0.3);
+}
+
+.close__item:hover {
+    color: rgb(255, 255, 255, 0.8);
 }
 
 .tabs {
@@ -333,25 +331,19 @@ h4 {
 .header2 {
     width: 55.44px;
     height: 100%;
-    opacity: 0.6;
     box-sizing: border-box;
-    opacity: 0.3;
     padding: 15px;
     cursor: pointer;
 }
 
 .burger-menu__item2 {
     height: 5px;
-    background-color: #ccc;
+    background: rgb(255, 255, 255, 0.3);
     margin-bottom: 5px;
 }
 
-.header2:hover {
-    opacity: 0.5;
-}
-
 .header2:hover .burger-menu__item2 {
-    background: #ffffff;
+    background: rgb(255, 255, 255, 0.8);
 }
 
 .overlay2 {
@@ -378,7 +370,7 @@ h4 {
     right: 0;
     transform: translateX(140%);
     will-change: transform;
-    background: rgb(13, 13, 14);
+    background: rgb(29, 29, 32);
     z-index: 999;
     box-shadow: 0 0 0 1px #30363d, 0 16px 32px rgba(1, 4, 9, 0.85);
     overflow: hidden;
@@ -406,8 +398,12 @@ h4 {
     height: 32px;
     text-align: center;
     font-size: 24px;
-    color: #656D76;
+    color: rgb(255, 255, 255, 0.3);
     cursor: pointer;
+}
+
+.close__item2:hover {
+    color: rgb(255, 255, 255, 0.8);
 }
 
 .content-left-panel {
@@ -439,14 +435,16 @@ h4 {
 
 .details-spheres {
     margin: 10px;
-    background: rgba(195, 195, 195, 0.2);
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+    /* background: linear-gradient(100deg, rgba(58, 64, 95, 0.352), rgba(58, 64, 95, 0.242)); */
+    background: rgba(58, 64, 95, 0.352);
+    box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     box-sizing: border-box;
 }
 
 .details-spheres:hover {
-    background: rgba(255, 255, 255, 0.2);
+    /* background: linear-gradient(100deg, rgba(58, 64, 95, 0.470), rgba(58, 64, 95, 0.360)); */
+    background: rgba(58, 64, 95, 0.470);
 }
 
 .header-summary {
@@ -458,7 +456,9 @@ h4 {
 .text-sphere {
     margin: 0;
     padding: 10px;
-    background: rgba(195, 195, 195, 0.2);
+    /* background: linear-gradient(100deg, rgba(58, 64, 95, 0.030), rgba(58, 64, 95, 0.015)); */
+    background: rgba(58, 64, 95, 0.030);
+    box-shadow: inset 0px 1px 5px rgba(2, 2, 2, 0.2);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
