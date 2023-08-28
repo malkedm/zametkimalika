@@ -457,7 +457,8 @@ h4 {
     margin: 0;
     padding: 10px;
     /* background: linear-gradient(100deg, rgba(58, 64, 95, 0.030), rgba(58, 64, 95, 0.015)); */
-    background: rgba(58, 64, 95, 0.030);
+    /* background: rgba(58, 64, 95, 0.030); */
+    background: rgba(58, 64, 95, 0.58);
     box-shadow: inset 0px 1px 5px rgba(2, 2, 2, 0.2);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
