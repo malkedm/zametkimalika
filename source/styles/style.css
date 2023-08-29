@@ -82,19 +82,20 @@ textarea::placeholder {
 }
 
 .overlay {
-    position: absolute;
+    display: none;
     top: 0;
+    left: 0;
     right: 0;
-    width: 100%;
+    bottom: 0;
+    position: fixed;
+    width: 100vw;
     height: 100dvh;
     background-color: rgba(175, 184, 193, 0.2);
     z-index: 999;
-    display: block;
-    visibility: hidden;
 }
 
 .overlay-open {
-    visibility: visible;
+    display: flex;
 }
 
 .sidebar {
@@ -103,7 +104,7 @@ textarea::placeholder {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateX(-140%);
+    transform: translateX(-120%);
     will-change: transform;
     background: rgb(22 27 34);
     z-index: 999;
@@ -117,8 +118,8 @@ textarea::placeholder {
 
 .sidebar-open {
     transform: translateX(0);
-    transition: transform 300ms ease;
     visibility: visible;
+    transition: transform 300ms ease;
 }
 
 .block-close {
@@ -347,19 +348,18 @@ h4 {
 }
 
 .overlay2 {
-    position: absolute;
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100dvh;
     background-color: rgba(110, 118, 129, 40%);
     z-index: 999;
-    display: block;
-    visibility: hidden;
 }
 
 .overlay-open2 {
-    visibility: visible;
+    display: flex;
 }
 
 .sidebar2 {
@@ -382,8 +382,8 @@ h4 {
 
 .sidebar-open2 {
     transform: translateX(0);
-    transition: transform 300ms ease;
     visibility: visible;
+    transition: transform 300ms ease;
 }
 
 .block-close2 {

@@ -14,12 +14,12 @@ const toggleClass = (element, currentClass) => {
 
 const toggleSidebarVisible = () => {
     toggleClass(sidebar, "sidebar-open");
-    // toggleClass(overlay, "overlay-open");
+    toggleClass(overlay, "overlay-open");
 };
 
 const toggleSidebar2Visible = () => {
     toggleClass(sidebar2, "sidebar-open2");
-    // toggleClass(overlay2, "overlay-open2");
+    toggleClass(overlay2, "overlay-open2");
 };
 
 burgerMenu.addEventListener("click", toggleSidebarVisible);
