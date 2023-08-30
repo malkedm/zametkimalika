@@ -565,30 +565,66 @@ img {
     border-top-right-radius: 0;
 }
 
-.header-summary-brp button {
+
+
+
+
+.button-pin {
     background: none;
     border: 0;
-    padding: 1px 6px;
+    padding: 0;
     margin-left: 20px;
     align-self: flex-start;
 }
 
-.header-summary-brp button:hover {
-    background: rgba(129, 129, 129, 0.224);
-    /* box-shadow: 0 0 5px 2px rgba(0, 247, 255, 0.224); */
-    box-sizing: border-box;
+.button-pin.active .block-icon-pin {
+    fill: rgb(255, 177, 87);
+    stroke: none;
+}
+
+/* .button-pin.active:hover {
+    background: none;
+} */
+
+.button-pin.active:hover .block-icon-pin {
+    fill: rgb(255, 177, 87);
+    stroke: none;
+}
+
+.block-icon-pin {
+    width: 30px;
+    height: 16px;
+    stroke: rgb(141, 97, 46);
+    stroke-width: 3px;
+    fill: none;
+}
+
+.button-pin:hover {
+    background: rgba(129, 129, 129, 0.123);
     border-radius: 12px;
 }
 
+.button-pin:hover .block-icon-pin {
+    fill: rgb(141, 97, 46);
+    stroke: none;
+}
+
+/* .header-summary-brp button:hover {
+    background: rgba(129, 129, 129, 0.224); */
+/* box-shadow: 0 0 5px 2px rgba(0, 247, 255, 0.224); */
+/* box-sizing: border-box;
+    border-radius: 12px;
+} */
+
 /* Добавляем стили для активной кнопки */
-.header-summary-brp button.active {
+/* .header-summary-brp button.active {
     background-color: rgba(0, 247, 255, 0.45);
     box-shadow: 0 0 5px 2px rgba(0, 247, 255, 0.25);
     padding: 1px 6px;
     box-sizing: border-box;
-    border-radius: 12px;
-    /* Здесь вы можете установить другой цвет для активной кнопки */
-}
+    border-radius: 12px; */
+/* Здесь вы можете установить другой цвет для активной кнопки */
+/* } */
 
 .spisok {
     padding: 0;
