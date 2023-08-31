@@ -455,6 +455,17 @@ h4 {
     overflow-y: auto;
 }
 
+.spheres::-webkit-scrollbar {
+    width: 10px;
+}
+
+.spheres::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    /* background-color: #97b1ff83; */
+    background: rgb(141, 97, 46);
+    border: 3px solid rgb(22 27 34);
+}
+
 .details-spheres {
     margin: 10px;
     /* background: linear-gradient(100deg, rgba(58, 64, 95, 0.352), rgba(58, 64, 95, 0.242)); */
@@ -582,6 +593,11 @@ img {
     stroke: none;
 }
 
+.details-question:has(.button-pin.active) {
+    /* ИЗУЧИТЬ ТЕМУ :has !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    border: 1px solid rgb(255, 177, 87);
+}
+
 /* .button-pin.active:hover {
     background: none;
 } */
@@ -647,14 +663,31 @@ img {
     justify-content: flex-end;
 }
 
-.words-button-open-close-right-panel {
-    border: solid 1px rgba(144, 160, 179, 0.86);
-    border-radius: 50%;
-    box-sizing: border-box;
-    font-size: 15px;
-    padding: 10px;
-    margin: 10px;
-    cursor: default;
+.element-open-close-right-panel {
+    width: 30px;
+    height: 30px;
+    fill: none;
+    stroke: rgb(141, 97, 46);
+}
+
+/* .element-open-close-right-panel:hover {
+    fill: rgb(141, 97, 46);
+    stroke: none;
+} */
+
+.opened-details-right-panel {
+    fill: rgb(255, 177, 87);
+    stroke: none;
+}
+
+.closed-details-right-panel {
+    fill: none;
+    stroke: rgb(141, 97, 46);
+}
+
+.closed-details-right-panel:hover {
+    fill: rgb(141, 97, 46);
+    stroke: none;
 }
 
 
@@ -687,13 +720,26 @@ summary {
     justify-content: center;
 }
 
-.words-button-open-close-left-panel {
-    border: solid 1px rgba(144, 160, 179, 0.86);
-    border-radius: 50%;
-    box-sizing: border-box;
-    font-size: 15px;
-    padding: 10px;
-    cursor: default;
+.element-open-close-left-panel {
+    width: 30px;
+    height: 30px;
+    fill: none;
+    stroke: rgb(141, 97, 46);
+}
+
+.opened-details-left-panel {
+    fill: rgb(255, 177, 87);
+    stroke: none;
+}
+
+.closed-details-left-panel {
+    fill: none;
+    stroke: rgb(141, 97, 46);
+}
+
+.closed-details-left-panel:hover {
+    fill: rgb(141, 97, 46);
+    stroke: none;
 }
 
 

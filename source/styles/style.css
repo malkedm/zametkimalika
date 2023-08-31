@@ -430,7 +430,23 @@ h4 {
 .content-top-left-panel {
     width: 100%;
     height: 100%;
+}
+
+.spheres {
+    width: 100%;
+    height: 100%;
     overflow-y: auto;
+}
+
+.spheres::-webkit-scrollbar {
+    width: 10px;
+}
+
+.spheres::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    /* background-color: #97b1ff83; */
+    background: rgb(141, 97, 46);
+    border: 3px solid rgb(22 27 34);
 }
 
 .details-spheres {
@@ -505,13 +521,26 @@ img {
     justify-content: center;
 }
 
-.words-button-open-close-left-panel {
-    border: solid 1px rgba(144, 160, 179, 0.86);
-    border-radius: 50%;
-    box-sizing: border-box;
-    font-size: 15px;
-    padding: 10px;
-    cursor: default;
+.element-open-close-left-panel {
+    width: 30px;
+    height: 30px;
+    fill: none;
+    stroke: rgb(141, 97, 46);
+}
+
+.opened-details-left-panel {
+    fill: rgb(255, 177, 87);
+    stroke: none;
+}
+
+.closed-details-left-panel {
+    fill: none;
+    stroke: rgb(141, 97, 46);
+}
+
+.closed-details-left-panel:hover {
+    fill: rgb(141, 97, 46);
+    stroke: none;
 }
 
 @media (max-width: 1200px) {

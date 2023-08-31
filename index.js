@@ -69,6 +69,9 @@ const openCloseDetailsButtonLeft = document.querySelectorAll("[data-button-open-
 const openCloseDetailsButtonRight = document.querySelectorAll("[data-button-open-close-right-panel]"); // Поиск всех кнопок правой панели
 const openCloseDetailsSpheres = document.querySelectorAll(".details-spheres"); // Поиск всех details левой панели(поиск всех элементов учебных сфер)
 const openCloseDetailsQuestion = document.querySelectorAll(".details-question"); // Поиск всех details правой панели(поиск всех элементов вопрос - ответ)
+const zakladkaOpenCloseRightPanel = document.querySelector(".element-open-close-right-panel");
+const zakladkaOpenCloseLeftPanel = document.querySelector(".element-open-close-left-panel");
+
 
 
 // Делаем полноценные функции для левой панели
@@ -95,14 +98,19 @@ openCloseDetailsButtonLeft.forEach(function (left) {
 
         isOpen = !isOpen;
 
-
-        // Вот здесь меняем текст кнопки в зависимости от isOpenDetailsLeftPanel
         if (isOpen) {
-            left.innerHTML = "&#9660"; // "открыто"
-            left.style.color = "green"
+            zakladkaOpenCloseLeftPanel.classList.add("opened-details-left-panel");
+            zakladkaOpenCloseLeftPanel.classList.remove("closed-details-left-panel");
         } else {
-            left.innerHTML = "&#9658"; // "закрыто"
-            left.style.color = "red"
+            zakladkaOpenCloseLeftPanel.classList.add("closed-details-left-panel");
+            zakladkaOpenCloseLeftPanel.classList.remove("opened-details-left-panel");
+        }
+    });
+
+    left.addEventListener("mouseenter", function () {
+        if (!isOpen) {
+            zakladkaOpenCloseLeftPanel.classList.add("closed-details-left-panel");
+            zakladkaOpenCloseLeftPanel.classList.remove("opened-details-left-panel");
         }
     });
 
@@ -158,20 +166,25 @@ openCloseDetailsButtonRight.forEach(function (right) {
             if (isOpen) {
                 openCloseDetailsQuestion.removeAttribute("open");
             } else {
-                openCloseDetailsQuestion.setAttribute("open", true)
+                openCloseDetailsQuestion.setAttribute("open", true);
             }
         });
 
-
         isOpen = !isOpen;
 
-        // Вот здесь меняем текст кнопки в зависимости от isOpenDetailsLeftPanel
         if (isOpen) {
-            right.innerHTML = "&#9660"; // "открыто"
-            right.style.color = "green"
+            zakladkaOpenCloseRightPanel.classList.add("opened-details-right-panel");
+            zakladkaOpenCloseRightPanel.classList.remove("closed-details-right-panel");
         } else {
-            right.innerHTML = "&#9658"; // "закрыто"
-            right.style.color = "red"
+            zakladkaOpenCloseRightPanel.classList.add("closed-details-right-panel");
+            zakladkaOpenCloseRightPanel.classList.remove("opened-details-right-panel");
+        }
+    });
+
+    right.addEventListener("mouseenter", function () {
+        if (!isOpen) {
+            zakladkaOpenCloseRightPanel.classList.add("closed-details-right-panel");
+            zakladkaOpenCloseRightPanel.classList.remove("opened-details-right-panel");
         }
     });
 
