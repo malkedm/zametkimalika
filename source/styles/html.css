@@ -656,26 +656,28 @@ img {
 
 .button-open-close-details-right-panel {
     width: 100%;
-    color: red;
+    /* color: red; */
     background: none;
     border: none;
     display: flex;
     justify-content: flex-end;
+    height: 34px;
 }
 
 .element-open-close-right-panel {
     width: 30px;
-    height: 30px;
+    height: 34px;
+    display: block;
     fill: none;
     stroke: rgb(141, 97, 46);
 }
 
-/* .element-open-close-right-panel:hover {
-    fill: rgb(141, 97, 46);
-    stroke: none;
-} */
+.element-open-close-right-panel:hover {
+    fill: none;
+    stroke: rgb(255, 177, 87);
+}
 
-.opened-details-right-panel {
+/* .opened-details-right-panel {
     fill: rgb(255, 177, 87);
     stroke: none;
 }
@@ -686,10 +688,23 @@ img {
 }
 
 .closed-details-right-panel:hover {
-    fill: rgb(141, 97, 46);
-    stroke: none;
+    stroke: rgb(255, 177, 87);
+} */
+
+
+
+.element2-open-close-right-panel {
+    width: 30px;
+    height: 34px;
+    fill: none;
+    stroke: rgb(141, 97, 46);
+    display: none;
 }
 
+.element2-open-close-right-panel:hover {
+    fill: none;
+    stroke: rgb(255, 177, 87);
+}
 
 summary {
     cursor: default;

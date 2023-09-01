@@ -69,7 +69,9 @@ const openCloseDetailsButtonLeft = document.querySelectorAll("[data-button-open-
 const openCloseDetailsButtonRight = document.querySelectorAll("[data-button-open-close-right-panel]"); // Поиск всех кнопок правой панели
 const openCloseDetailsSpheres = document.querySelectorAll(".details-spheres"); // Поиск всех details левой панели(поиск всех элементов учебных сфер)
 const openCloseDetailsQuestion = document.querySelectorAll(".details-question"); // Поиск всех details правой панели(поиск всех элементов вопрос - ответ)
-const zakladkaOpenCloseRightPanel = document.querySelector(".element-open-close-right-panel");
+const strelkaVnizOpenCloseRightPanel = document.querySelector(".element-open-close-right-panel");
+const strelkaVverhOpenCloseRightPanel = document.querySelector(".element2-open-close-right-panel");
+
 const zakladkaOpenCloseLeftPanel = document.querySelector(".element-open-close-left-panel");
 
 
@@ -99,21 +101,44 @@ openCloseDetailsButtonLeft.forEach(function (left) {
         isOpen = !isOpen;
 
         if (isOpen) {
-            zakladkaOpenCloseLeftPanel.classList.add("opened-details-left-panel");
-            zakladkaOpenCloseLeftPanel.classList.remove("closed-details-left-panel");
+            strelkaVnizOpenCloseRightPanel.classList.remove("element-open-close-right-panel");
+            strelkaVverhOpenCloseRightPanel.classList.add("element2-open-close-right-panel");
+            strelkaVverhOpenCloseRightPanel.style.display = block;
         } else {
-            zakladkaOpenCloseLeftPanel.classList.add("closed-details-left-panel");
-            zakladkaOpenCloseLeftPanel.classList.remove("opened-details-left-panel");
+            strelkaVverhOpenCloseRightPanel.classList.remove("element2-open-close-right-panel");
+            strelkaVnizOpenCloseRightPanel.classList.add("element-open-close-right-panel");
         }
     });
 
-    left.addEventListener("mouseenter", function () {
-        if (!isOpen) {
-            zakladkaOpenCloseLeftPanel.classList.add("closed-details-left-panel");
-            zakladkaOpenCloseLeftPanel.classList.remove("opened-details-left-panel");
-        }
-    });
+    // openCloseDetailsButtonLeft.forEach(function (left) {
+    //     let isOpen = false;
+    //     left.addEventListener("click", function () {
+    //         openCloseDetailsSpheres.forEach(openCloseDetailsSpheres => {
+    //             if (isOpen) {
+    //                 openCloseDetailsSpheres.removeAttribute("open");
+    //             } else {
+    //                 openCloseDetailsSpheres.setAttribute("open", true)
+    //             }
+    //         });
 
+
+    //         isOpen = !isOpen;
+
+    //         if (isOpen) {
+    //             zakladkaOpenCloseLeftPanel.classList.add("opened-details-left-panel");
+    //             zakladkaOpenCloseLeftPanel.classList.remove("closed-details-left-panel");
+    //         } else {
+    //             zakladkaOpenCloseLeftPanel.classList.add("closed-details-left-panel");
+    //             zakladkaOpenCloseLeftPanel.classList.remove("opened-details-left-panel");
+    //         }
+    //     });
+
+    //     left.addEventListener("mouseenter", function () {
+    //         if (!isOpen) {
+    //             zakladkaOpenCloseLeftPanel.classList.add("closed-details-left-panel");
+    //             zakladkaOpenCloseLeftPanel.classList.remove("opened-details-left-panel");
+    //         }
+    //     });
 
     // Добавляем функции для закрытия открытых элементов при нажатии на любую область блока и запрещаем, если кнопка открытия/закрытия активна.
     const blockBottomLeftPanel = document.querySelector(".content-top-left-panel");
@@ -173,18 +198,11 @@ openCloseDetailsButtonRight.forEach(function (right) {
         isOpen = !isOpen;
 
         if (isOpen) {
-            zakladkaOpenCloseRightPanel.classList.add("opened-details-right-panel");
-            zakladkaOpenCloseRightPanel.classList.remove("closed-details-right-panel");
+            strelkaVnizOpenCloseRightPanel.style.display = "none";
+            strelkaVverhOpenCloseRightPanel.style.display = "block";
         } else {
-            zakladkaOpenCloseRightPanel.classList.add("closed-details-right-panel");
-            zakladkaOpenCloseRightPanel.classList.remove("opened-details-right-panel");
-        }
-    });
-
-    right.addEventListener("mouseenter", function () {
-        if (!isOpen) {
-            zakladkaOpenCloseRightPanel.classList.add("closed-details-right-panel");
-            zakladkaOpenCloseRightPanel.classList.remove("opened-details-right-panel");
+            strelkaVverhOpenCloseRightPanel.style.display = "none";
+            strelkaVnizOpenCloseRightPanel.style.display = "block";
         }
     });
 
