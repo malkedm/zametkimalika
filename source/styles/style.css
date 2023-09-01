@@ -223,7 +223,7 @@ textarea::placeholder {
 
 .text-tab2::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: #929292;
+    background: rgb(141, 97, 46);
     border: 3px solid rgb(29, 29, 32);
 }
 
@@ -410,24 +410,51 @@ h4 {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 10% 50% 30% 10%;
+    grid-template-rows: 10% 80% 10%;
 }
 
 .top-left-panel {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 15% 85%;
+    grid-template-rows: 34px calc(100% - 34px);
 }
 
 .header-top-left-panel {
     width: 100%;
     height: 100%;
-    display: flex;
+    grid-column: 1/2;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.text-header-top-left-panel {
+    width: 100%;
+    height: 100%;
+    display: grid;
     align-items: center;
 }
 
+.element-open-close-left-panel:hover {
+    fill: none;
+    stroke: rgb(255, 177, 87);
+}
+
+.element2-open-close-left-panel {
+    width: 30px;
+    height: 34px;
+    fill: none;
+    stroke: rgb(141, 97, 46);
+    display: none;
+}
+
+.element2-open-close-left-panel:hover {
+    fill: none;
+    stroke: rgb(255, 177, 87);
+}
+
 .content-top-left-panel {
+    grid-row: 2/3;
     width: 100%;
     height: 100%;
 }
@@ -488,6 +515,7 @@ img {
 
 
 .bottom-left-panel {
+    grid-row: 3/4;
     width: 100%;
     height: 100%;
     overflow-y: auto;
@@ -502,28 +530,32 @@ img {
 }
 
 .block-header-open-close {
-    display: flex;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: calc(100% - 50px) 50px;
 }
 
 
-.open-close-details-left-panel {
+.block-open-close-details-left-panel {
+    grid-column: 2/3;
     display: grid;
 }
 
 .button-open-close-details-left-panel {
-    color: red;
+    width: 100%;
     background: none;
     border: none;
-    padding: 6px;
     display: flex;
-    text-align: center;
-    align-items: center;
     justify-content: center;
+    height: 34px;
+    box-sizing: border-box;
 }
 
 .element-open-close-left-panel {
     width: 30px;
-    height: 30px;
+    height: 100%;
     fill: none;
     stroke: rgb(141, 97, 46);
 }

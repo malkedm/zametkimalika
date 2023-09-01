@@ -72,7 +72,8 @@ const openCloseDetailsQuestion = document.querySelectorAll(".details-question");
 const strelkaVnizOpenCloseRightPanel = document.querySelector(".element-open-close-right-panel");
 const strelkaVverhOpenCloseRightPanel = document.querySelector(".element2-open-close-right-panel");
 
-const zakladkaOpenCloseLeftPanel = document.querySelector(".element-open-close-left-panel");
+const strelkaVnizOpenCloseLeftPanel = document.querySelector(".element-open-close-left-panel");
+const strelkaVverhOpenCloseLeftPanel = document.querySelector(".element2-open-close-left-panel");
 
 
 
@@ -101,12 +102,11 @@ openCloseDetailsButtonLeft.forEach(function (left) {
         isOpen = !isOpen;
 
         if (isOpen) {
-            strelkaVnizOpenCloseRightPanel.classList.remove("element-open-close-right-panel");
-            strelkaVverhOpenCloseRightPanel.classList.add("element2-open-close-right-panel");
-            strelkaVverhOpenCloseRightPanel.style.display = block;
+            strelkaVnizOpenCloseLeftPanel.style.display = "none";
+            strelkaVverhOpenCloseLeftPanel.style.display = "block";
         } else {
-            strelkaVverhOpenCloseRightPanel.classList.remove("element2-open-close-right-panel");
-            strelkaVnizOpenCloseRightPanel.classList.add("element-open-close-right-panel");
+            strelkaVverhOpenCloseLeftPanel.style.display = "none";
+            strelkaVnizOpenCloseLeftPanel.style.display = "block";
         }
     });
 

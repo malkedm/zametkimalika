@@ -26,6 +26,19 @@
                     d="M42.723 13.607C42.904 13.794 43 14.038 43 14.299l0 24.605c0 .529-.435.905-.901.905-.169 0-.341-.049-.499-.158-1.606-1.107-4.477-2.65-7.991-2.65-3.172 0-5.508.996-6.94 1.861-.516.312-1.169-.057-1.169-.66l0-24.247c0-.273.11-.529.304-.72C27.038 12.021 29.682 10 33.609 10 38.795 10 41.833 12.685 42.723 13.607zM24.5 13.955l0 24.25c0 .603-.652.972-1.168.66-1.434-.866-3.774-1.864-6.94-1.864-3.515 0-6.385 1.544-7.991 2.65-.158.109-.33.158-.499.158C7.435 39.809 7 39.433 7 38.904l0-24.605c0-.26.096-.505.277-.692C8.167 12.685 11.205 10 16.391 10c3.925 0 6.57 2.022 7.804 3.236C24.39 13.427 24.5 13.683 24.5 13.955z" />
             </g>
         </symbol>
+
+        <symbol id="icon-strelka-vniz" viewBox="0 0 24 24" x="6.25" y="10">
+            <g>
+                <polyline points="14 0 7 7 0 0"></polyline>
+            </g>
+        </symbol>
+
+        <symbol id="icon-strelka-vverh" viewBox="0 0 24 24">
+            <g
+                transform="translate(12.000000, 12.000000) rotate(-180.000000) translate(-12.000000, -12.000000) translate(5.000000, 8.500000)">
+                <polyline points="14 0 7 7 0 0"></polyline>
+            </g>
+        </symbol>
     </svg>
 
     <div class="container-top-content">
@@ -351,14 +364,20 @@
                     <div class="block-header-open-close">
 
                         <div class="header-top-left-panel">
-                            Выберите сферу:
+                            <div class="text-header-top-left-panel">
+                                Выберите сферу:
+                            </div>
                         </div>
 
-                        <div class="open-close-details-left-panel">
+                        <div class="block-open-close-details-left-panel">
                             <div class="button-open-close-details-left-panel">
-                                <span data-button-open-close-left-panel>
+                                <span class="left-span-open-close" data-button-open-close-left-panel>
                                     <svg class="element-open-close-left-panel">
-                                        <use href="#zakladka-open-details"></use>
+                                        <use href="#icon-strelka-vniz"></use>
+                                    </svg>
+
+                                    <svg class="element2-open-close-left-panel">
+                                        <use href="#icon-strelka-vverh"></use>
                                     </svg>
                                 </span>
                             </div>
@@ -403,9 +422,7 @@
                 </div>
 
                 <div class="bottom-left-panel">
-                    <h4>
                         Тут что-то будет
-                    </h4>
                 </div>
 
 
