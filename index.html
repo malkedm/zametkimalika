@@ -11,37 +11,102 @@
 
 <body>
 
-    <svg display="none">
-        <symbol id="icon-favorites" viewBox="0,0,65,65">
-            <g>
-                <path
-                    d="M46.454,11c3.063,0 5.546,2.483 5.546,5.546v40.646c0,3.009 -3.617,4.54 -5.777,2.444l-10.223,-9.919l-10.223,9.919c-2.16,2.095 -5.777,0.565 -5.777,-2.445v-40.645c0,-3.063 2.483,-5.546 5.546,-5.546z">
-                </path>
-            </g>
-        </symbol>
 
-        <symbol id="zakladka-open-details" viewBox="0 0 50 50">
-            <g>
-                <path
-                    d="M42.723 13.607C42.904 13.794 43 14.038 43 14.299l0 24.605c0 .529-.435.905-.901.905-.169 0-.341-.049-.499-.158-1.606-1.107-4.477-2.65-7.991-2.65-3.172 0-5.508.996-6.94 1.861-.516.312-1.169-.057-1.169-.66l0-24.247c0-.273.11-.529.304-.72C27.038 12.021 29.682 10 33.609 10 38.795 10 41.833 12.685 42.723 13.607zM24.5 13.955l0 24.25c0 .603-.652.972-1.168.66-1.434-.866-3.774-1.864-6.94-1.864-3.515 0-6.385 1.544-7.991 2.65-.158.109-.33.158-.499.158C7.435 39.809 7 39.433 7 38.904l0-24.605c0-.26.096-.505.277-.692C8.167 12.685 11.205 10 16.391 10c3.925 0 6.57 2.022 7.804 3.236C24.39 13.427 24.5 13.683 24.5 13.955z" />
-            </g>
-        </symbol>
 
-        <symbol id="icon-strelka-vniz" viewBox="0 0 24 24" x="6.25" y="10">
-            <g>
-                <polyline points="14 0 7 7 0 0"></polyline>
-            </g>
-        </symbol>
 
-        <symbol id="icon-strelka-vverh" viewBox="0 0 24 24">
-            <g
-                transform="translate(12.000000, 12.000000) rotate(-180.000000) translate(-12.000000, -12.000000) translate(5.000000, 8.500000)">
-                <polyline points="14 0 7 7 0 0"></polyline>
-            </g>
-        </symbol>
-    </svg>
+    <div class="overlay"></div>
+    <div class="sidebar">
 
-    <div class="container-top-content">
+        <div class="content-left-panel">
+
+            <div class="block-close">
+                <span class="close__item">&#x2715</span>
+            </div>
+
+            <div class="top-left-panel">
+
+                <div class="block-header-open-close">
+
+                    <div class="header-top-left-panel">
+                        <div class="text-header-top-left-panel">
+                            Выберите сферу:
+                        </div>
+                    </div>
+
+                    <div class="block-open-close-details-left-panel">
+                        <div class="button-open-close-details-left-panel">
+                            <span class="left-span-open-close" data-button-open-close-left-panel>
+                                <svg class="element-open-close-left-panel">
+                                    <use href="sprite.svg#icon-strelka-vniz"></use>
+                                </svg>
+
+                                <svg class="element2-open-close-left-panel">
+                                    <use href="sprite.svg#icon-strelka-vverh"></use>
+                                </svg>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="content-top-left-panel">
+
+                    <div class="spheres">
+
+                        <div class="sphere block-frontend-top-left-panel">
+                            <details class="details-spheres">
+                                <summary class="header-summary">Фронтенд-разработка - создание
+                                    сайтов</summary>
+                                <p class="text-sphere"><a href="html.html"><img class="img"
+                                            src="source/images/HTML5_logo_and_wordmark.svg.png" alt="html5"></a> >
+                                    CSS > JavaScript > PHP > MySQL</p>
+                            </details>
+                        </div>
+
+                        <div class="sphere block-programms-top-left-panel">
+                            <details class="details-spheres">
+                                <summary class="header-summary">Программирование</summary>
+                                <p class="text-sphere">JavaScript > Python > C++</p>
+                            </details>
+                        </div>
+
+                        <div class="sphere block-graphics-top-left-panel">
+                            <details class="details-spheres">
+                                <summary class="header-summary">Графический дизайн</summary>
+                                <p class="text-sphere">Photoshop</p>
+                            </details>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="bottom-left-panel">
+                Тут что-то будет
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="overlay2"></div>
+    <div class="sidebar2">
+        <div class="content-right-panel">
+            <div class="block-close2">
+                <span class="close__item2">&#x2715</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container-content">
+
+
         <div class="ad">
             <div class="content-ad">
                 Здесь что-то будет...
@@ -68,12 +133,7 @@
 
 
         <div class="tabs-vkladki">
-
-
-
-
             <div class="tabs">
-
                 <div class="tab1">
                     <input type="radio" name="tabs" id="tab1" checked="checked">
                     <label for="tab1">Актуальное</label>
@@ -153,175 +213,7 @@
                         laboriosam ex enim dolore fugiat eveniet nemo atque. Dolorem voluptates sint accusantium,
                         reiciendis quibusdam est voluptas provident molestiae voluptatibus facere, unde deserunt
                         deleniti repudiandae ipsum dolorum ad sapiente ipsa quam recusandae accusamus nostrum odit neque
-                        ab nulla? Vitae laborum ipsam, modi facilis debitis quam iusto! Totam, quos asperiores. Sint,
-                        dolorum alias asperiores, at illo commodi adipisci quo similique repudiandae est aliquam autem?
-                        Molestiae ea iusto delectus voluptates, reiciendis quam impedit tempore eligendi sequi est?
-                        Laudantium vero earum animi tempore, deleniti magnam iure corporis doloribus dolor impedit sunt
-                        qui sed ab neque veniam nostrum minima necessitatibus obcaecati eveniet sit. Sed est quibusdam
-                        accusamus voluptates nostrum ducimus culpa magnam voluptas cupiditate praesentium aspernatur
-                        quae, saepe deserunt repellendus consequuntur vel ipsum ex qui alias molestias maxime suscipit?
-                        Voluptas id, vero harum tempore expedita officiis aut magnam cumque minima aperiam magni vel
-                        necessitatibus quo incidunt, quasi sequi est sit. Quaerat nesciunt laboriosam vitae possimus
-                        molestiae? Obcaecati iusto sint animi expedita, voluptatum quisquam quae harum odio, ab ipsum
-                        velit alias deleniti, inventore itaque dicta repellendus impedit officia aliquid eum molestiae
-                        beatae. Enim, voluptates quos! Eveniet dicta assumenda, qui omnis quasi tempore dolorum autem
-                        harum animi placeat deserunt incidunt expedita facilis esse obcaecati sed maiores ad iusto
-                        quidem officia perferendis quisquam libero! Nesciunt ratione quidem ad vitae voluptate. Nulla,
-                        facilis ad exercitationem quasi enim cumque incidunt esse, quam optio facere omnis mollitia
-                        asperiores eveniet explicabo! Soluta, quia inventore omnis vero earum veritatis, quae sapiente
-                        ea et ex explicabo praesentium sint veniam quod porro illum sed vitae libero repudiandae ipsum
-                        est! Voluptate, blanditiis aspernatur? Qui cumque, totam ipsum voluptates, excepturi blanditiis
-                        quas adipisci vel, inventore vitae earum ab delectus odio ullam. Labore quasi accusamus neque
-                        officia tempora nostrum, praesentium quia amet voluptatibus delectus quos recusandae adipisci
-                        exercitationem deserunt temporibus fugiat officiis. Rerum fugiat porro magni sit qui similique
-                        enim ipsum iusto aspernatur eligendi. Officia voluptatum, provident ducimus eaque aspernatur in
-                        adipisci laudantium numquam officiis quidem nesciunt voluptatem laboriosam enim commodi
-                        molestias earum incidunt possimus nisi maiores ratione. Doloremque repellendus sed doloribus.
-                        Nam, itaque reprehenderit libero rem blanditiis quos dolorum cupiditate odio dicta. Nostrum
-                        consectetur quam quisquam accusantium magni ut laborum. Fugit dolorum obcaecati maxime neque
-                        nemo incidunt perferendis cupiditate itaque saepe iste repudiandae molestiae sint praesentium ad
-                        nihil, quis perspiciatis magni quam sequi nesciunt, officia eligendi impedit quaerat. Est iure
-                        ratione earum placeat nemo facere in, perspiciatis eaque debitis voluptatum, id nisi, natus
-                        voluptates! Accusantium ullam laboriosam blanditiis ipsum reiciendis similique quam repellat
-                        illum totam assumenda! Atque corrupti deleniti ex architecto quam placeat nam pariatur, hic,
-                        ipsa tempore impedit harum consequuntur error! Culpa consequuntur, assumenda molestiae neque
-                        amet illum tenetur esse suscipit odio repudiandae nemo molestias et dolore nulla? Autem omnis
-                        repudiandae corporis, officia similique perferendis consequuntur assumenda eos laborum numquam a
-                        quo nam accusantium quisquam velit recusandae est quos! Nobis, sint! Quis non vero voluptates
-                        earum officiis atque repudiandae et similique dolore tenetur, odio eos omnis provident obcaecati
-                        autem? Pariatur hic architecto sequi, assumenda dicta non, accusamus, officiis sint sapiente
-                        corrupti minus! Dolor neque, labore necessitatibus ea natus impedit libero, ipsa, possimus hic
-                        iusto fugit laudantium officia rem eligendi accusantium esse quo. Quam beatae facilis deserunt,
-                        fugiat dolorum fuga. Quae adipisci labore cupiditate voluptate, enim nisi laudantium ex qui
-                        mollitia fuga. Voluptates, accusamus. Labore adipisci harum molestiae impedit quis debitis sunt
-                        quam quasi, praesentium laboriosam rem deserunt explicabo! Inventore reiciendis quod eum? Nulla
-                        omnis dolor ab voluptatibus atque nobis voluptatum minus fugit impedit quia, dolorem distinctio!
-                        Amet error eos dolores beatae earum molestiae, delectus, repellat aliquam animi atque, incidunt
-                        tempore a natus vel fugiat aperiam alias magnam. Voluptate, harum, enim unde facilis inventore
-                        corporis ad rem aspernatur pariatur molestiae, laboriosam placeat neque? Dignissimos dolorem
-                        mollitia reprehenderit eum adipisci velit magni, laborum sed sapiente. Repellat, deserunt dicta?
-                        Nihil tenetur culpa hic tempora consequatur non? Incidunt nostrum odio, cumque, magnam harum
-                        voluptatem illo, laudantium in soluta iusto nemo. Modi nostrum nemo, quasi exercitationem magnam
-                        inventore ullam praesentium alias illum, nisi mollitia autem sed maxime consectetur odio, nulla
-                        voluptate! Excepturi dolorum nostrum tenetur fuga ipsum nemo eveniet harum hic magni ducimus
-                        ratione reiciendis neque, provident sapiente sint. Ad cumque quaerat neque suscipit rem? Iste
-                        eligendi repudiandae, sed perferendis fuga nisi accusamus dolorum voluptatibus, porro veniam
-                        recusandae omnis placeat! Dignissimos doloribus, voluptatem deserunt labore, autem distinctio
-                        eligendi ipsum ducimus, illum cumque porro. Corrupti nisi dolores voluptatem qui officia nulla.
-                        Officia sit nisi repellat. Esse, ipsum dignissimos possimus omnis perferendis qui iure quasi
-                        culpa odit quis animi molestiae dicta reprehenderit a amet corrupti, sapiente error consectetur
-                        libero vero veniam facilis blanditiis! Provident cupiditate illo sit totam! Cupiditate tempore
-                        corrupti fuga repudiandae soluta nihil atque est, perferendis minima dolorum molestiae
-                        doloribus, voluptate sapiente explicabo cumque animi saepe consequuntur minus ratione! Laborum
-                        reprehenderit, dolorem possimus, minima dolores ipsa corporis, beatae modi soluta nihil
-                        voluptatibus ex dolorum omnis ipsum quam harum voluptatem exercitationem eligendi illum id vitae
-                        maiores earum recusandae hic? Eligendi non corrupti ratione aut doloribus voluptas rem numquam
-                        laudantium eius delectus quia error praesentium sequi quasi hic rerum porro similique tempore,
-                        assumenda amet? Ratione rerum quia sunt repellendus, sit delectus sint praesentium soluta,
-                        temporibus inventore, voluptatibus dignissimos illum laboriosam totam omnis! Incidunt odio
-                        necessitatibus delectus ratione. Voluptatum soluta odit modi? Mollitia, vel quas quasi nisi
-                        aliquid facere nobis temporibus nulla labore rerum explicabo recusandae hic quos veritatis esse
-                        eos nemo natus pariatur quibusdam corporis quisquam obcaecati consequatur. Sit a officia
-                        architecto doloribus in iste voluptatem. Impedit laudantium labore non quas? Quis consectetur
-                        ipsa sit, amet expedita labore cumque, eligendi tempore nam iusto quo quam? Tempore soluta
-                        quisquam iusto ea quibusdam facilis eum odit eos ut sequi ipsa fugit, pariatur quia libero
-                        excepturi minus sunt accusantium natus nemo tenetur harum nesciunt rem! Mollitia commodi
-                        obcaecati praesentium earum! Perferendis ipsam, harum quas cupiditate nesciunt aliquam atque, ad
-                        est explicabo aut fugiat? Quo reiciendis nihil at ut, tempore, qui enim a ad, animi sed
-                        veritatis illum eligendi iusto quos reprehenderit voluptatem repudiandae quisquam aliquid
-                        inventore magnam quia autem nostrum velit? Maiores ad repellat quisquam sapiente magnam eius,
-                        iusto molestiae iste voluptatem laudantium aliquam numquam fuga provident exercitationem,
-                        possimus totam obcaecati eum dolor id. Accusamus consectetur autem placeat ipsa cumque iure
-                        maxime culpa laboriosam eius omnis, natus quae eaque optio facere doloremque minima dolor
-                        incidunt explicabo voluptas odio officiis pariatur cupiditate neque! Minus deserunt nulla a,
-                        saepe beatae, accusamus non dicta esse eius enim illum provident reprehenderit inventore iusto
-                        nisi hic consectetur ipsa animi debitis assumenda sint earum doloremque? Deleniti, fugiat
-                        molestiae temporibus commodi amet quibusdam animi eveniet! Ipsam voluptate laborum dicta ullam?
-                        Placeat commodi rerum praesentium laborum natus. Delectus enim nulla nobis magni, odit iste,
-                        molestias corrupti incidunt veniam, recusandae deserunt harum voluptatum rem quae dolores porro!
-                        Dolor delectus voluptatibus eius cupiditate doloremque numquam ipsa vero commodi quidem in,
-                        praesentium maiores ad repellat aut consequatur. Facere accusamus repellat rem nam voluptatem
-                        dolor, sit dolore ex voluptatibus, fugit eveniet? Repellat a, recusandae ipsa nesciunt
-                        consectetur labore excepturi accusantium doloremque enim doloribus eos aliquam ad blanditiis.
-                        Consectetur error quo amet at voluptatem corporis dolor, obcaecati vero. Omnis nam, eius ipsam,
-                        fugit autem obcaecati minus cum enim sapiente consequatur corrupti facere aliquid iste optio sed
-                        quaerat. Similique, ipsam? Reiciendis nam voluptate nobis corrupti officiis adipisci est ea,
-                        fugiat ratione illo porro cumque maxime minima nihil molestias voluptas? Dolore aut sunt tempora
-                        provident quo! Provident dolorum deleniti, culpa numquam perspiciatis mollitia cumque voluptatem
-                        exercitationem ut, voluptate sed ex qui placeat animi labore amet omnis ad nesciunt sequi cum
-                        nobis rerum facere illum. Blanditiis placeat nesciunt perspiciatis totam incidunt laboriosam
-                        impedit aliquam itaque, nobis quos neque quae autem exercitationem error quo non corporis ea
-                        unde aut dolores, vitae tempore, similique voluptatum. Nesciunt dolores unde dignissimos ullam
-                        deserunt velit delectus aliquam iusto et, error sed eos libero harum est perferendis provident
-                        rerum dolorem. Et autem accusantium animi, ipsum repellat iure sunt cupiditate ut pariatur
-                        maxime a ratione recusandae cumque voluptatibus enim quam iste ipsam quidem impedit dicta? Et,
-                        quam. Eveniet ratione illum ipsa cum ipsum vitae excepturi! Possimus rerum, doloribus sit non
-                        nihil quae, mollitia ipsa quam animi ratione, voluptatem facere. Facilis illum dicta nam iure
-                        quibusdam, porro eveniet ea repudiandae nihil numquam sequi maxime repellendus deserunt dolor
-                        aliquam voluptates fugit modi necessitatibus odio consequatur ipsa et? Autem, explicabo quae et
-                        aut praesentium aliquid ipsum voluptatem magnam reprehenderit natus, obcaecati similique cumque,
-                        laudantium aspernatur. Excepturi magnam odio temporibus delectus expedita ut earum sequi,
-                        ratione aliquid atque iste maiores dolore error veritatis qui possimus maxime ea repellendus
-                        eaque beatae quisquam optio ipsum fugit. Sapiente odio asperiores id obcaecati perspiciatis
-                        consectetur! Sint, nisi repudiandae fugit explicabo mollitia voluptate corporis labore
-                        praesentium tenetur eum eligendi, distinctio recusandae quia deserunt, voluptatum officia?
-                        Incidunt accusamus veritatis ab aliquid asperiores minima, beatae quod maxime ratione. Aut
-                        placeat quod libero excepturi, ipsum, sed ab illo corrupti animi est atque eum iste, doloremque
-                        et at nostrum saepe quas vero nisi tempore architecto! Quo provident asperiores ex at porro, id
-                        placeat omnis aliquam voluptatum labore vel doloremque quibusdam saepe quam odit, accusamus ut
-                        consequatur! Quidem alias soluta adipisci nam temporibus minima eveniet quo quisquam ea? Aut
-                        tenetur, aperiam possimus, quo sit quos molestias sunt in animi hic obcaecati debitis impedit
-                        quidem recusandae, corrupti ipsam? Aut, repellat facilis temporibus eaque, dolorem debitis harum
-                        illum nulla ad ex quam vitae quia est deleniti laborum aliquam dolores labore a iste quibusdam
-                        quisquam. Et tenetur cupiditate numquam veritatis alias quae exercitationem, sapiente harum
-                        beatae omnis voluptas nemo adipisci voluptates, minus ad magnam laborum quisquam porro similique
-                        id eos modi perspiciatis sit. Assumenda, ipsam earum alias ex quidem tempore modi minima ad at,
-                        fugiat quos voluptatum quam nihil deserunt dolor eos ducimus quibusdam repudiandae neque
-                        architecto corporis. Amet, officia! Rem ad sit ducimus dicta asperiores magni adipisci ea iure
-                        sunt, eum, velit quod non perspiciatis distinctio quam ratione voluptates doloribus. Ipsum
-                        natus, quo expedita hic quidem provident? Maiores nobis voluptatum tenetur porro corporis
-                        placeat ullam! Necessitatibus voluptas sit recusandae ex, aut quo, eligendi quidem
-                        exercitationem veniam asperiores atque nesciunt ea voluptatibus quasi labore ducimus natus non
-                        vero ut consequatur maxime. Maxime repellendus similique doloremque sit temporibus error optio
-                        eos quis dignissimos exercitationem natus et veniam beatae cupiditate fugiat nulla ipsa
-                        asperiores, fugit, rerum odio. Laudantium incidunt quidem eveniet impedit, alias, suscipit
-                        quisquam consectetur totam doloribus nobis reprehenderit repellendus obcaecati sed amet veniam
-                        assumenda optio. Praesentium modi veniam placeat autem totam cum dicta repellendus sapiente
-                        consequuntur fugit voluptatum soluta optio nesciunt distinctio animi iusto natus, fuga
-                        dignissimos esse, doloribus iure molestias illo vero? Quo rerum asperiores ad numquam laudantium
-                        quia reiciendis, magnam fugiat cupiditate, maxime ut animi dolorum. Optio harum porro
-                        necessitatibus tenetur molestiae fuga esse quisquam ullam assumenda explicabo non sit, velit,
-                        dicta eveniet sed. Enim corporis architecto magnam nisi, voluptas, expedita aut culpa possimus
-                        ratione eligendi vitae placeat accusamus quis molestiae tempora sint consectetur? Odio, dicta
-                        unde! Nobis, dolorem. Quae dolor beatae perspiciatis voluptas iure mollitia, tempora eligendi
-                        veritatis vel! Vitae inventore fugit ipsam debitis esse incidunt culpa quibusdam? Labore
-                        voluptatum, doloremque obcaecati accusamus dolore aliquam distinctio voluptate nesciunt ullam
-                        veniam iusto facere atque blanditiis doloribus, dolores cum excepturi fugiat inventore quis.
-                        Minus eos dignissimos quas culpa, voluptas officiis eius? Cupiditate aperiam quis obcaecati illo
-                        reprehenderit repellendus atque quibusdam nihil neque explicabo, nemo architecto eos sapiente
-                        minima dolore suscipit dolor, perferendis iusto incidunt aliquid saepe a eligendi vero.
-                        Dignissimos, sunt impedit eaque veniam enim amet doloribus porro quam, repudiandae praesentium
-                        quaerat eum aliquam, hic nemo voluptatibus. Illo animi recusandae nemo non porro rerum,
-                        perspiciatis sed debitis sapiente mollitia nobis architecto odio eum fugiat doloribus
-                        voluptatibus molestias omnis nam deleniti! Beatae eveniet voluptatibus vel aliquid enim, nulla
-                        dolorum iste corporis unde aperiam quas sapiente maiores quo veniam ratione eius aliquam nihil
-                        molestiae repellendus harum deleniti tenetur commodi facilis recusandae. Numquam eveniet
-                        similique consequuntur neque mollitia repellendus delectus deleniti corporis? Ut harum explicabo
-                        sit deleniti cum vitae eveniet tenetur debitis facere minus qui reprehenderit quia, fugit
-                        dolorem dignissimos quidem eaque sunt pariatur itaque dolores. Voluptate sequi dolore aspernatur
-                        blanditiis repudiandae, cupiditate impedit ab explicabo inventore itaque, consequuntur eligendi
-                        ipsa possimus voluptatem perferendis laudantium laborum dolor a consequatur earum reprehenderit
-                        neque ex rerum? Itaque ex hic porro quis suscipit veritatis. Recusandae aspernatur distinctio
-                        rem totam fugit a pariatur adipisci laudantium, unde ut voluptatum ullam dicta officia vero eum
-                        consequuntur placeat ipsa velit alias! Facere nemo incidunt quia debitis. Beatae ratione sit, ad
-                        similique, dolore earum culpa dolor quos, saepe libero ipsum itaque quo ea dignissimos illum.
-                        Sint reprehenderit itaque delectus voluptatibus velit. Eaque, deserunt facilis aliquam quod
-                        error laborum nisi, ut explicabo iusto exercitationem molestias mollitia delectus dolor, qui
-                        labore officiis nihil natus ducimus provident iure? Officia voluptas vero obcaecati? Ad alias
-                        nihil sunt veritatis neque excepturi praesentium doloribus ipsam, impedit nobis! Ipsum nobis
-                        illo quis ad quos? Incidunt dolorem neque voluptas reiciendis aliquid placeat suscipit minima
-                        tenetur aliquam a magni nobis soluta id nesciunt necessitatibus, debitis facilis dolores nulla
-                        odit. Quod voluptatum repellendus enim reprehenderit tempore.
+                        ab nulla?
                     </div>
                     <div class="text-tab"></div>
                 </div>
@@ -346,111 +238,11 @@
                     <div class="text-tab"></div>
                 </div>
             </div>
-
-
-        </div>
-
-        <div class="overlay"></div>
-        <div class="sidebar">
-
-            <div class="content-left-panel">
-
-                <div class="block-close">
-                    <span class="close__item">&#x2715</span>
-                </div>
-
-                <div class="top-left-panel">
-
-                    <div class="block-header-open-close">
-
-                        <div class="header-top-left-panel">
-                            <div class="text-header-top-left-panel">
-                                Выберите сферу:
-                            </div>
-                        </div>
-
-                        <div class="block-open-close-details-left-panel">
-                            <div class="button-open-close-details-left-panel">
-                                <span class="left-span-open-close" data-button-open-close-left-panel>
-                                    <svg class="element-open-close-left-panel">
-                                        <use href="#icon-strelka-vniz"></use>
-                                    </svg>
-
-                                    <svg class="element2-open-close-left-panel">
-                                        <use href="#icon-strelka-vverh"></use>
-                                    </svg>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="content-top-left-panel">
-
-                        <div class="spheres">
-
-                            <div class="sphere block-frontend-top-left-panel">
-                                <details class="details-spheres">
-                                    <summary class="header-summary">Фронтенд-разработка - создание
-                                        сайтов</summary>
-                                    <p class="text-sphere"><a href="html.html"><img class="img"
-                                                src="source/images/HTML5_logo_and_wordmark.svg.png" alt="html5"></a> >
-                                        CSS > JavaScript > PHP > MySQL</p>
-                                </details>
-                            </div>
-
-                            <div class="sphere block-programms-top-left-panel">
-                                <details class="details-spheres">
-                                    <summary class="header-summary">Программирование</summary>
-                                    <p class="text-sphere">JavaScript > Python > C++</p>
-                                </details>
-                            </div>
-
-                            <div class="sphere block-graphics-top-left-panel">
-                                <details class="details-spheres">
-                                    <summary class="header-summary">Графический дизайн</summary>
-                                    <p class="text-sphere">Photoshop</p>
-                                </details>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-                <div class="bottom-left-panel">
-                        Тут что-то будет
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-        <div class="overlay2"></div>
-        <div class="sidebar2">
-
-            <div class="content-right-panel">
-
-                <div class="block-close2">
-                    <span class="close__item2">&#x2715</span>
-                </div>
-
-
-
-
-            </div>
-
-
         </div>
     </div>
 
 
-    <script src="./index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
