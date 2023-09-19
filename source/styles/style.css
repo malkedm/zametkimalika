@@ -12,8 +12,6 @@ body {
 }
 
 .container {
-    max-width: 100%;
-    min-width: 100%;
     display: grid;
     grid-template-rows: 60px 20dvh 30dvh 15dvh 60px;
     /* padding: 17px; */
