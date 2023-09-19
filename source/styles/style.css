@@ -3,6 +3,7 @@
 }
 
 body {
+    width: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -14,24 +15,74 @@ body {
 .container {
     display: grid;
     grid-template-rows: 60px 20dvh 30dvh 15dvh 60px;
-    /* padding: 17px; */
-    /* overflow-x: hidden; */
 }
 
 .fixed-top-panel {
     grid-row: 1/2;
-    width: 100%;
-    height: 100%;
-    /* position: relative; */
-    /* z-index: 99; */
 }
 
 .block-fixed-top-panel {
+    position: fixed;
     width: 100%;
     height: 60px;
-    display: flex;
-    position: fixed;
     background: rgb(29, 29, 32);
+}
+
+.container-actuals {
+    grid-row: 2/3;
+}
+
+.container-profile {
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.block-profile {
+    grid-column: 1/2;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    background: darkblue;
+    border-radius: 50%;
+}
+
+.block-status {
+    grid-column: 2/3;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-status {
+    width: 100px;
+    height: 100px;
+    background: green;
+}
+
+.container-certificates {
+    grid-row: 4/5;
+}
+
+.block-certificates {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-button-new-post {
+    grid-row: 5/6;
+}
+
+.button-new-post {
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
 .burgers {
@@ -39,17 +90,6 @@ body {
     width: 60px;
     display: grid;
 }
-
-
-/* .burgers { */
-/* grid-row: 2/3; */
-/* display: flex; */
-/* justify-content: space-between; */
-/* box-shadow: 0px -5px 4px 0.3px rgba(2, 2, 2, 0.2); */
-/* background: #212121; */
-/* border-top-left-radius: 20px;
-    border-top-right-radius: 20px; */
-/* } */
 
 .header {
     width: 100%;
@@ -71,210 +111,6 @@ body {
 
 .header:hover .burger-menu__item {
     background: rgb(255, 255, 255, 0.8);
-}
-
-
-
-
-
-.container-actuals {
-    grid-row: 2/3;
-    width: 100%;
-    height: 100%;
-}
-
-.container-profile {
-    grid-row: 3/4;
-    width: 100%;
-    height: 100%;
-    display: grid;
-}
-
-.main-container-profile {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-
-.block-container-profile {
-    width: 100%;
-    height: 100%;
-    display: grid;
-}
-
-.block-main-container-profile {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: 50% 50%;
-}
-
-.block-container-avatar {
-    grid-row: 1/2;
-    width: 100%;
-    height: 100%;
-    display: grid;
-}
-
-.block-main-container-avatar {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-}
-
-.avatar {
-    width: 100px;
-    height: 100px;
-    background-color: rebeccapurple;
-    border-radius: 50%;
-}
-
-
-.block-container-text-avatar {
-    grid-row: 2/3;
-    width: 100%;
-    height: 100%;
-    display: grid;
-}
-
-.block-main-container-text-avatar {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: 50% 50%;
-}
-
-.block-container-edit-profile {
-    grid-row: 1/2;
-    width: 100%;
-    height: 100%;
-    display: grid;
-}
-
-.block-main-container-edit-profile {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-}
-
-.button-edit-profile {
-    border: none;
-    padding: 0;
-}
-
-.block-container-logout-profile {
-    grid-row: 2/3;
-    width: 100%;
-    height: 100%;
-    display: grid;
-}
-
-.block-main-container-logout-profile {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-}
-
-.button-logout-profile {
-    border: none;
-    padding: 0;
-}
-
-
-
-.block-container-status {
-    grid-column: 2/3;
-    width: 100%;
-    height: 100%;
-    display: grid;
-}
-
-.block-main-container-status {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-}
-
-.block-status {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-}
-
-.block-status textarea {
-    max-width: 40vw;
-    min-width: 10vw;
-    max-height: 30dvh;
-    min-height: 5dvh;
-    border: none;
-    padding: 0;
-    text-align: center;
-}
-
-
-.container-certificates {
-    grid-row: 4/5;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-}
-
-.container-button-new-post {
-    grid-row: 5/6;
-    width: 100%;
-    height: 100%;
-}
-
-.block-button-new-post {
-    width: 100%;
-    height: 60px;
-}
-
-.button-new-post {
-    width: 100%;
-    height: 100%;
-    border: none;
-    padding: 0;
-}
-
-.container-content-profile {
-    grid-row: 6/7;
-    width: 100%;
-    height: 100%;
-    display: grid;
-}
-
-.block-content-profile {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    /* justify-content: center;
-    align-items: center; */
-}
-
-.text-content-post {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    background: rebeccapurple;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 10px;
 }
 
 
