@@ -14,19 +14,18 @@ body {
 
 .container {
     display: grid;
-    grid-template-rows: 60px 20dvh 30dvh 15dvh 60px;
 }
 
 .fixed-top-panel {
     grid-row: 1/2;
 }
 
-.block-fixed-top-panel {
+/* .block-fixed-top-panel {
     position: fixed;
     width: 100%;
     height: 60px;
     background: rgb(29, 29, 32);
-}
+} */
 
 .container-actuals {
     grid-row: 2/3;
