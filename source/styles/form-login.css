@@ -15,22 +15,20 @@ body {
     min-width: 100vw;
     max-height: 100dvh;
     min-height: 100dvh;
-    /* display: flex;
+    display: flex;
     justify-content: center;
-    align-items: center; */
+    align-items: center;
     font-family: "Roboto", sans-serif;
     overflow: hidden;
 }
 
-.container-form {
+.container-content {
     max-width: 100vw;
     min-width: 100vw;
-    max-height: 100dvh;
-    min-height: 100dvh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
+    max-height: 90dvh;
+    min-height: 90dvh;
+    display: grid;
+    /* position: fixed; */
 }
 
 .container-login {
