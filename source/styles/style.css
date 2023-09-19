@@ -12,6 +12,10 @@ body {
     color: rgb(222, 222, 222);
 }
 
+body:has(.overlay-open) {
+    overflow: hidden;
+}
+
 .container {
     display: grid;
     grid-template-rows: 60px 130px 196px 98px 60px;
