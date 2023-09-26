@@ -38,6 +38,48 @@ body:has(.overlay-open) {
     background: #0d0c0f;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.block-button-start-training {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-start-training button {
+    /* сброс стилей */
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+
+    /* переопределение стилей для ссылок */
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+
+    /* небольшие вертикальные отступы */
+    margin: 2px 0;
+
+    /* невидимая рамка */
+    border: solid 1px transparent;
+    border-radius: 4px;
+
+    /* для установки размеров используем паддинги */
+    padding: 0.5em 1em;
+
+    /* контрастные цвета */
+    color: #ffffff;
+    background-color: #1E2460;
+}
+
+.button-start-training button:active {
+    background-color: #252b75;
 }
 
 .container-profile {
