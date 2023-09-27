@@ -68,18 +68,29 @@ body:has(.overlay-open) {
 
     /* невидимая рамка */
     border: solid 1px transparent;
-    border-radius: 4px;
+    border-radius: 20px;
 
     /* для установки размеров используем паддинги */
     padding: 0.5em 1em;
 
     /* контрастные цвета */
     color: #ffffff;
-    background-color: #1E2460;
+    /* background: #1d1c22; */
+    background: #222128;
+    color: #a2e5ff;
+    /* border: 1px solid #4169e1ab; */
+}
+
+.button-start-training button:hover {
+    /* background: #4169e11e; */
+    /* border: 1px solid #4169e1; */
+    /* background: #222128; */
+    /* color: #a2e5ff; */
 }
 
 .button-start-training button:active {
-    background-color: #252b75;
+    background-color: #2d2c35;
+    /* color: #00b7ff; */
 }
 
 .container-profile {
@@ -182,7 +193,8 @@ body:has(.overlay-open) {
 
 .certificates:hover {
     /* border: 1px solid #4169E1; */
-    background: #18171c;
+    /* background: #18171c; */
+    background: #4169e11e;
 }
 
 .container-button-new-post {
@@ -218,6 +230,10 @@ body:has(.overlay-open) {
 .button-new-post button:hover {
     /* background: #22286c; главный синий*/
     background: #222128;
+}
+
+.button-new-post button:active {
+    background-color: #2d2c35;
 }
 
 .content {
