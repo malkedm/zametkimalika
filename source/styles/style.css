@@ -50,47 +50,24 @@ body:has(.overlay-open) {
 }
 
 .button-start-training button {
-    /* сброс стилей */
-    padding: 0;
     border: none;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
+    background: #1d1c22;
+    color: #fff;
+    padding: 0;
     cursor: pointer;
-
-    /* переопределение стилей для ссылок */
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-
-    /* небольшие вертикальные отступы */
-    margin: 2px 0;
-
-    /* невидимая рамка */
-    border: solid 1px transparent;
     border-radius: 20px;
-
-    /* для установки размеров используем паддинги */
     padding: 0.5em 1em;
-
-    /* контрастные цвета */
-    color: #ffffff;
-    /* background: #1d1c22; */
-    background: #222128;
-    color: #a2e5ff;
-    /* border: 1px solid #4169e1ab; */
+    margin: 1px;
+    width: 148px;
+    height: 36px;
 }
 
 .button-start-training button:hover {
-    /* background: #4169e11e; */
-    /* border: 1px solid #4169e1; */
-    /* background: #222128; */
-    /* color: #a2e5ff; */
+    background: #222128;
 }
 
 .button-start-training button:active {
     background-color: #2d2c35;
-    /* color: #00b7ff; */
 }
 
 .container-profile {
