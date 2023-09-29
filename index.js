@@ -1,10 +1,4 @@
-document.querySelector(".btn-start-training").addEventListener("click", function() {
-    document.querySelector(".modal").classList.add("open")
-})
 
-document.querySelector(".btn-close-modal").addEventListener("click", function() {
-    document.querySelector(".modal").classList.remove("open")
-})
 
 const sidebar = document.querySelector(".sidebar");
 const burgerMenu = document.querySelector(".header");
@@ -33,6 +27,14 @@ const toggleSidebar2Visible = () => {
 burgerMenu.addEventListener("click", toggleSidebarVisible);
 closeIcon.addEventListener("click", toggleSidebarVisible);
 overlay.addEventListener("click", toggleSidebarVisible);
+
+document.querySelector(".btn-start-training").addEventListener("click", function () {
+    document.querySelector(".modal").classList.add("open")
+})
+
+document.querySelector(".btn-close-modal").addEventListener("click", function () {
+    document.querySelector(".modal").classList.remove("open")
+})
 
 burgerMenu2.addEventListener("click", toggleSidebar2Visible);
 closeIcon2.addEventListener("click", toggleSidebar2Visible);
