@@ -1,3 +1,11 @@
+document.querySelector(".btn-start-training").addEventListener("click", function() {
+    document.querySelector(".modal").classList.add("open")
+})
+
+document.querySelector(".btn-close-modal").addEventListener("click", function() {
+    document.querySelector(".modal").classList.remove("open")
+})
+
 const sidebar = document.querySelector(".sidebar");
 const burgerMenu = document.querySelector(".header");
 const closeIcon = document.querySelector(".close__item");
@@ -29,6 +37,14 @@ overlay.addEventListener("click", toggleSidebarVisible);
 burgerMenu2.addEventListener("click", toggleSidebar2Visible);
 closeIcon2.addEventListener("click", toggleSidebar2Visible);
 overlay2.addEventListener("click", toggleSidebar2Visible);
+
+
+
+
+
+
+
+
 
 // Создаем массив для хранения закрепленных элементов
 const pinnedElements = [];

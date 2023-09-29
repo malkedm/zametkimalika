@@ -16,6 +16,10 @@ body:has(.overlay-open) {
     overflow: hidden;
 }
 
+body:has(.modal.open) {
+    overflow: hidden;
+}
+
 .container {
     display: grid;
     grid-template-rows: 60px 196px 170px 70px;
@@ -75,6 +79,54 @@ body:has(.overlay-open) {
     /* background-color: #2d2c35; */
     background: #3d3c42;
 }
+
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.3);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal-box {
+    max-width: 90vw;
+    min-width: 250px;
+    width: 90vw;
+    max-height: 90dvh;
+    min-height: 90dvh;
+    padding: 10px;
+    z-index: 1;
+    background: rgb(17, 20, 26);
+    margin: 30px 15px;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 17px -7px rgba(34, 60, 80, 0.2);
+    transform: scale(0);
+    transition: transform .4s;
+}
+
+.modal.open {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .2s, visibility .2s;
+}
+
+.modal.open .modal-box {
+    transform: scale(1);
+}
+
+
+
+
 
 .container-profile {
     grid-row: 2/3;
@@ -370,6 +422,7 @@ body:has(.overlay-open) {
 .element-open-close-left-panel:hover {
     fill: none;
     stroke: rgb(255, 177, 87);
+    stroke: #4a65ff;
 }
 
 .element2-open-close-left-panel {
@@ -404,7 +457,8 @@ body:has(.overlay-open) {
 .spheres::-webkit-scrollbar-thumb {
     border-radius: 10px;
     /* background-color: #97b1ff83; */
-    background: rgb(141, 97, 46);
+    /* background: rgb(141, 97, 46); */
+    background: #4159e1ab;
     border: 3px solid rgb(22 27 34);
 }
 
@@ -413,6 +467,7 @@ body:has(.overlay-open) {
     /* background: linear-gradient(100deg, rgba(58, 64, 95, 0.352), rgba(58, 64, 95, 0.242)); */
     /* background: rgba(58, 64, 95, 0.352); */
     border: 1px solid rgb(141, 97, 46);
+    border: 1px solid #4159e1ab;
     box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 }
@@ -420,6 +475,8 @@ body:has(.overlay-open) {
 .details-spheres:hover {
     /* background: linear-gradient(100deg, rgba(58, 64, 95, 0.470), rgba(58, 64, 95, 0.360)); */
     border: 1px solid rgb(255, 177, 87);
+    border: 1px solid #4a65ff;
+    border: 1px solid #657cff;
 }
 
 .header-summary {
@@ -434,6 +491,7 @@ body:has(.overlay-open) {
     /* background: linear-gradient(100deg, rgba(58, 64, 95, 0.030), rgba(58, 64, 95, 0.015)); */
     /* background: rgba(58, 64, 95, 0.030); */
     background: rgb(141, 97, 46);
+    background: #4159e1ab;
     box-shadow: inset 0px 1px 5px rgba(2, 2, 2, 0.2);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -480,6 +538,7 @@ img {
     height: 100%;
     fill: none;
     stroke: rgb(141, 97, 46);
+    stroke: #4159e1ab;
 }
 
 .opened-details-left-panel {
