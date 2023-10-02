@@ -332,8 +332,10 @@ textarea::placeholder {
 
 .text-tab2::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: rgb(141, 97, 46);
-    border: 3px solid rgb(29, 29, 32);
+    /* background: rgb(141, 97, 46);
+    border: 3px solid rgb(29, 29, 32); */
+    background: #4159e1ab;
+    border: 3px solid rgb(14, 14, 22);
 }
 
 
@@ -529,8 +531,10 @@ textarea::placeholder {
 .block-top-right-text::-webkit-scrollbar-thumb {
     border-radius: 10px;
     /* background-color: #97b1ff83; */
-    background: rgb(141, 97, 46);
-    border: 3px solid rgb(22 27 34);
+    /* background: rgb(141, 97, 46);
+    border: 3px solid rgb(22 27 34); */
+    background: #4159e1ab;
+    border: 3px solid rgb(17, 20, 26);
 }
 
 .block-bottom-right-panel {
@@ -567,8 +571,10 @@ textarea::placeholder {
 .block-bottom-right-text::-webkit-scrollbar-thumb {
     border-radius: 10px;
     /* background-color: #97b1ff83; */
-    background: rgb(141, 97, 46);
-    border: 3px solid rgb(22 27 34);
+    /* background: rgb(141, 97, 46);
+    border: 3px solid rgb(22 27 34); */
+    background: #4159e1ab;
+    border: 3px solid rgb(17, 20, 26);
 }
 
 
@@ -595,7 +601,8 @@ h4 {
     /* background: rgba(53, 68, 85, 0.711); */
     /* background: rgba(255, 255, 255, 0.1); */
     /* rgba(70, 64, 79, 0.711) */
-    border: 1px solid rgb(141, 97, 46);
+    /* border: 1px solid rgb(141, 97, 46); */
+    border: 1px solid #4159e1ab;
     /* border: 1px solid #97b1ff83; */
     box-shadow: 0 0 2px 1px rgba(2, 2, 2, 0.25);
     box-sizing: border-box;
@@ -603,7 +610,8 @@ h4 {
 }
 
 .details-question:hover {
-    border: 1px solid rgb(255, 177, 87);
+    /* border: 1px solid rgb(255, 177, 87); */
+    border: 1px solid #657cff;
 }
 
 .header-summary-brp {
@@ -632,7 +640,8 @@ h4 {
     /* background: rgba(53, 68, 85, 1); */
     margin: 0;
     padding: 10px;
-    background: rgb(141, 97, 46);
+    /* background: rgb(141, 97, 46); */
+    background: rgba(65, 89, 225, 0.671);
     /* background: rgba(107, 106, 164, 0.1); */
     box-shadow: inset 0px 1px 3px rgba(2, 2, 2, 0.25);
     box-sizing: border-box;
@@ -649,36 +658,42 @@ h4 {
     align-self: flex-start;
 }
 
-.button-pin.active .block-icon-pin {
-    fill: rgb(255, 177, 87);
-    stroke: none;
-}
-
-.details-question:has(.button-pin.active) {
-    /* ИЗУЧИТЬ ТЕМУ :has !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-    border: 1px solid rgb(255, 177, 87);
-}
-
-.button-pin.active:hover .block-icon-pin {
-    fill: rgb(255, 177, 87);
-    stroke: none;
-}
-
 .block-icon-pin {
     width: 30px;
     height: 16px;
-    stroke: rgb(141, 97, 46);
+    /* stroke: rgb(141, 97, 46); */
+    stroke: #4159e1ab;
     stroke-width: 3px;
     fill: none;
 }
 
 .button-pin:hover {
-    background: rgba(141, 97, 46, 0.234);
+    /* background: rgba(141, 97, 46, 0.234); */
+    background: rgb(101, 124, 255, 0.234);
     border-radius: 12px;
 }
 
 .button-pin:hover .block-icon-pin {
-    fill: rgb(141, 97, 46);
+    /* fill: rgb(141, 97, 46); */
+    fill: #657cff;
+    stroke: none;
+}
+
+.button-pin.active .block-icon-pin {
+    /* fill: rgb(255, 177, 87); */
+    fill: #657cff;
+    stroke: none;
+}
+
+.details-question:has(.button-pin.active) {
+    /* ИЗУЧИТЬ ТЕМУ :has !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    /* border: 1px solid rgb(255, 177, 87); */
+    border: 1px solid #657cff;
+}
+
+.button-pin.active:hover .block-icon-pin {
+    /* fill: rgb(255, 177, 87); */
+    fill: #657cff;
     stroke: none;
 }
 
@@ -706,12 +721,14 @@ h4 {
     width: 30px;
     height: 100%;
     fill: none;
-    stroke: rgb(141, 97, 46);
+    /* stroke: rgb(141, 97, 46); */
+    stroke: #4159e1ab;
 }
 
 .element-open-close-right-panel:hover {
     fill: none;
-    stroke: rgb(255, 177, 87);
+    /* stroke: rgb(255, 177, 87); */
+    stroke: #657cff;
 }
 
 
@@ -719,13 +736,15 @@ h4 {
     width: 30px;
     height: 100%;
     fill: none;
-    stroke: rgb(141, 97, 46);
+    /* stroke: rgb(141, 97, 46); */
+    stroke: #4159e1ab;
     display: none;
 }
 
 .element2-open-close-right-panel:hover {
     fill: none;
-    stroke: rgb(255, 177, 87);
+    /* stroke: rgb(255, 177, 87); */
+    stroke: #657cff;
 }
 
 summary {
@@ -826,7 +845,8 @@ summary {
     /* background-color: #97b1ff83; */
     /* background: rgb(141, 97, 46); */
     background: #4159e1ab;
-    border: 3px solid rgb(22 27 34);
+    /* border: 3px solid rgb(22 27 34); */
+    border: 3px solid rgb(17, 20, 26);
 }
 
 .details-spheres {

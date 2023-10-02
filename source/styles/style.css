@@ -20,11 +20,11 @@ body:has(.modal.open) {
     overflow: hidden;
 }
 
-.background-block {}
+/* .background-block {}
 
 .border-color {}
 
-.border-color:hover {}
+.border-color:hover {} */
 
 .container {
     display: grid;
@@ -497,7 +497,8 @@ body:has(.modal.open) {
     /* background-color: #97b1ff83; */
     /* background: rgb(141, 97, 46); */
     background: #4159e1ab;
-    border: 3px solid rgb(22 27 34);
+    border: 3px solid rgb(17, 20, 26);
+    /* border: 3px solid rgb(22 27 34); */
 }
 
 .details-spheres {
