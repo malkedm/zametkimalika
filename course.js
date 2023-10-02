@@ -1,43 +1,56 @@
-const sidebar = document.querySelector(".sidebar");
-const burgerMenu = document.querySelector(".header");
-const closeIcon = document.querySelector(".close__item");
-const overlay = document.querySelector(".overlay");
+// Функция для добавления класса "open" к элементам с указанными классами
+function addOpen(classNames) {
+    classNames.forEach(function (className) {
+        const elements = document.querySelectorAll("." + className);
+        elements.forEach(function (element) {
+            element.classList.add("open");
+        });
+    });
+}
 
-const sidebar2 = document.querySelector(".sidebar2");
-const burgerMenu2 = document.querySelector(".header2");
-const closeIcon2 = document.querySelector(".close__item2");
-const overlay2 = document.querySelector(".overlay2");
+function removeOpen(classNames) {
+    classNames.forEach(function (className) {
+        const elements = document.querySelectorAll("." + className);
+        elements.forEach(function (element) {
+            element.classList.remove("open");
+        });
+    });
+}
 
-const toggleClass = (element, currentClass) => {
-    element.classList.toggle(currentClass);
-};
+// Найдите кнопку с нужным классом
+const burger = document.querySelector(".burger");
+burger.addEventListener("click", function () {
+    // Вызовите функцию addOpen с массивом классов, которым нужно добавить класс "open"
+    addOpen(["sidebar", "overlay"]);
+});
 
-const toggleSidebarVisible = () => {
-    toggleClass(sidebar, "sidebar-open");
-    toggleClass(overlay, "overlay-open");
-};
+const burger2 = document.querySelector(".burger2");
+burger2.addEventListener("click", function () {
+    // Вызовите функцию addOpen с массивом классов, которым нужно добавить класс "open"
+    addOpen(["sidebar2", "overlay2"]);
+});
 
-const toggleSidebar2Visible = () => {
-    toggleClass(sidebar2, "sidebar-open2");
-    toggleClass(overlay2, "overlay-open2");
-};
+const buttonOpenModal = document.querySelector(".btn-start-training");
+buttonOpenModal.addEventListener("click", function () {
+    addOpen(["modal-background", "modal"]);
+});
 
-burgerMenu.addEventListener("click", toggleSidebarVisible);
-closeIcon.addEventListener("click", toggleSidebarVisible);
-overlay.addEventListener("click", toggleSidebarVisible);
+const buttonClose = document.querySelectorAll(".close__item");
+buttonClose.forEach(function (remOpen) {
+    remOpen.addEventListener("click", function () {
+        removeOpen(["sidebar", "overlay", "modal", "sidebar2", "overlay2"]);
+    });
+});
 
-burgerMenu2.addEventListener("click", toggleSidebar2Visible);
-closeIcon2.addEventListener("click", toggleSidebar2Visible);
-overlay2.addEventListener("click", toggleSidebar2Visible);
-
-
-document.querySelector(".btn-start-training").addEventListener("click", function () {
-    document.querySelector(".modal").classList.add("open")
-})
-
-document.querySelector(".btn-close-modal").addEventListener("click", function () {
-    document.querySelector(".modal").classList.remove("open")
-})
+const backgroundClose = document.querySelectorAll(".background-close");
+backgroundClose.forEach(function (remOpen) {
+    remOpen.addEventListener("click", function (event) {
+        if (event.target.closest(".modal-box")) {
+            return;
+        }
+        removeOpen(["sidebar", "overlay", "modal", "sidebar2", "overlay2"]);
+    });
+});
 
 
 
