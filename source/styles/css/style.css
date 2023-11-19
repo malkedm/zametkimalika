@@ -42,6 +42,7 @@ header {
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
+  border-bottom: 2px solid rgba(46, 46, 46, 0.1);
 }
 header .left-container-header {
   display: -webkit-box;
@@ -99,8 +100,10 @@ main {
   width: 100%;
   height: 100%;
   display: grid;
-  padding-top: clamp(15px, 4%, 60px);
-  padding-bottom: clamp(15px, 4%, 60px);
+  padding-top: 114px;
+  /* clamp(15px, 4%, 60px) */
+  padding-bottom: 114px;
+  /* clamp(15px, 4%, 60px) */
   padding-left: clamp(3%, 5%, 75px);
   padding-right: clamp(3%, 5%, 75px);
   grid-template-rows: repeat(8, auto);
@@ -159,7 +162,7 @@ main .container-block-1 .left-block-1 .block-h-text-1 {
   margin-bottom: clamp(3%, 4%, 23px);
 }
 main .container-block-1 .left-block-1 .block-h-text-1 .head-text {
-  font-size: 42px;
+  font-size: clamp(28px, 6vw, 42px);
   line-height: 120%;
 }
 main .container-block-1 .left-block-1 .main-text-1 {
@@ -255,8 +258,8 @@ main .container-block-2 .right-block-2 {
 }
 main .container-block-2 .right-block-2 .block-h-text-2 {
   margin-bottom: clamp(1%, 4%, 22px);
-  font-size: 36px;
-  line-height: 43.2px;
+  font-size: clamp(26px, 5vw, 36px);
+  line-height: 120%;
 }
 main .container-block-2 .right-block-2 .block-main-text-2 {
   display: -webkit-box;
@@ -310,7 +313,7 @@ main .container-block-3 .left-block-3 {
           order: 1;
 }
 main .container-block-3 .left-block-3 .block-h-text-3 {
-  font-size: 36px;
+  font-size: clamp(26px, 5vw, 36px);
   line-height: 120%;
   margin-bottom: clamp(1%, 4%, 22px);
 }
@@ -370,9 +373,9 @@ main .container-block-4 .top-block-4 {
 main .container-block-4 .top-block-4 .content-top-block-4 {
   max-width: 600px;
 }
-main .container-block-4 .top-block-4 .content-top-block-4 .text-1-top-block-4 {
+main .container-block-4 .top-block-4 .content-top-block-4 .block-h-text-4 {
   text-align: center;
-  font-size: 36px;
+  font-size: clamp(26px, 5vw, 36px);
   line-height: 120%;
 }
 main .container-block-4 .top-block-4 .content-top-block-4 .text-2-top-block-4 {
@@ -506,7 +509,7 @@ main .container-block-5 .left-block-5 {
           flex-direction: column;
 }
 main .container-block-5 .left-block-5 .block-h-text-5 {
-  font-size: 36px;
+  font-size: clamp(26px, 5vw, 36px);
   line-height: 120%;
   margin-bottom: clamp(1%, 4%, 22px);
 }
@@ -596,7 +599,7 @@ main .container-block-6 .right-block-6 {
           order: 2;
 }
 main .container-block-6 .right-block-6 .block-h-text-6 {
-  font-size: 36px;
+  font-size: clamp(26px, 5vw, 36px);
   line-height: 120%;
   margin-bottom: clamp(1%, 4%, 22px);
 }
@@ -647,7 +650,7 @@ main .container-block-7 .left-block-7 {
           flex-direction: column;
 }
 main .container-block-7 .left-block-7 .block-h-text-7 {
-  font-size: 36px;
+  font-size: clamp(26px, 5vw, 36px);
   line-height: 120%;
   margin-bottom: clamp(1%, 4%, 19px);
 }
@@ -726,7 +729,7 @@ main .container-block-8 .right-block-8 {
           order: 2;
 }
 main .container-block-8 .right-block-8 .block-h-text-8 {
-  font-size: 36px;
+  font-size: clamp(26px, 5vw, 36px);
   line-height: 120%;
   margin-bottom: clamp(1%, 4%, 22px);
 }
@@ -779,20 +782,19 @@ main .container-block-8 .right-block-8 .icons-download-official .icon-official {
 footer {
   width: 100%;
   padding: 3%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
-  word-wrap: break-word;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-column-gap: 5px;
      -moz-column-gap: 5px;
           column-gap: 5px;
-  row-gap: 5px;
-}
-footer a {
-  font-size: 14px;
-  width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  row-gap: 20px;
+  border-bottom: 2px solid rgba(46, 46, 46, 0.1);
 }
 footer .foot-blocks {
   display: -webkit-box;
@@ -803,4 +805,7 @@ footer .foot-blocks {
       -ms-flex-direction: column;
           flex-direction: column;
   font-size: 16px;
+}
+footer .foot-blocks span a {
+  font-size: 14px;
 }
