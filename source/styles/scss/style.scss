@@ -199,7 +199,7 @@ main {
     }
 
     & .container-block-2 {
-        background: #ffd1a1; // #F5B7B1
+        background: #CCDDFF; // #F5B7B1 // #ffd1a1 // #a1b3ff - Использовать
         padding: 10%;
         border-radius: clamp(15px, 2vw, 2vw);
         grid-row: 2/3;
@@ -266,7 +266,7 @@ main {
     }
 
     & .container-block-3 {
-        background: #B0C4DE; // f5bcba // E6E6FA
+        background: #E6E6FA; // f5bcba // E6E6FA // #B0C4DE
         padding: 10%;
         border-radius: clamp(15px, 2vw, 2vw);
         grid-row: 3/4;
@@ -372,7 +372,7 @@ main {
                 & .text-bottom-block-4 {
                     width: fit-content;
                     display: grid;
-                    background: #F0F4FF;
+                    background: #ccccff;
                     border: solid 1px #2d2d2d;
                     border-radius: 48px;
                     padding-left: 32px;
@@ -594,7 +594,7 @@ main {
     }
 
     & .container-block-7 {
-        background: #20b2aa; // #90CFEE // #add8e6 // #FAE3A0
+        background: #a1b3ff; // #90CFEE // #add8e6 // #FAE3A0
         padding: 10%;
         border-radius: clamp(15px, 2vw, 2vw);
         grid-row: 7/8;
@@ -643,7 +643,7 @@ main {
     }
 
     & .container-block-8 {
-        background: #00fa9a; // #90CFEE // #add8e6 // #FAE3A0
+        background: #20b2aa; // #90CFEE // #add8e6 // #FAE3A0 // #00fa9a
         padding: 10%;
         border-radius: clamp(15px, 2vw, 2vw);
         grid-row: 8/9;

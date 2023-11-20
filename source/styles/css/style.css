@@ -205,7 +205,7 @@ main .container-block-1 .right-block-1 .img-1 {
   min-height: 100%;
 }
 main .container-block-2 {
-  background: #ffd1a1;
+  background: #CCDDFF;
   padding: 10%;
   border-radius: clamp(15px, 2vw, 2vw);
   grid-row: 2/3;
@@ -285,7 +285,7 @@ main .container-block-2 .right-block-2 .block-main-text-2 .main-text-2 {
   }
 }
 main .container-block-3 {
-  background: #B0C4DE;
+  background: #E6E6FA;
   padding: 10%;
   border-radius: clamp(15px, 2vw, 2vw);
   grid-row: 3/4;
@@ -405,7 +405,7 @@ main .container-block-4 .bottom-block-4 .block-text-bottom-block-4 .text-bottom-
   width: -moz-fit-content;
   width: fit-content;
   display: grid;
-  background: #F0F4FF;
+  background: #ccccff;
   border: solid 1px #2d2d2d;
   border-radius: 48px;
   padding-left: 32px;
@@ -637,7 +637,7 @@ main .container-block-6 .right-block-6 .block-main-text-6 {
   }
 }
 main .container-block-7 {
-  background: #20b2aa;
+  background: #a1b3ff;
   padding: 10%;
   border-radius: clamp(15px, 2vw, 2vw);
   grid-row: 7/8;
@@ -696,7 +696,7 @@ main .container-block-7 .right-block-7 .img-7 {
   min-height: 100%;
 }
 main .container-block-8 {
-  background: #00fa9a;
+  background: #20b2aa;
   padding: 10%;
   border-radius: clamp(15px, 2vw, 2vw);
   grid-row: 8/9;
