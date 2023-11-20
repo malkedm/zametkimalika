@@ -106,7 +106,7 @@ main .container-block-1 {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
@@ -207,7 +207,7 @@ main .container-block-2 {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
@@ -266,7 +266,7 @@ main .container-block-2 .right-block-2 .block-main-text-2 {
 main .container-block-2 .right-block-2 .block-main-text-2 .main-text-2 {
   line-height: 144%;
 }
-@media screen and (max-width: 344px) {
+@media screen and (max-width: 1026px) {
   main .container-block-2 .left-block-2:nth-child(1) {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -283,7 +283,7 @@ main .container-block-3 {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
@@ -482,7 +482,7 @@ main .container-block-5 {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
@@ -549,7 +549,7 @@ main .container-block-6 {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
@@ -606,7 +606,7 @@ main .container-block-6 .right-block-6 .block-main-text-6 {
   row-gap: 10px;
   line-height: 144%;
 }
-@media screen and (max-width: 344px) {
+@media screen and (max-width: 1026px) {
   main .container-block-6 .left-block-6:nth-child(1) {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -623,7 +623,7 @@ main .container-block-7 {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
@@ -679,7 +679,7 @@ main .container-block-8 {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
@@ -758,7 +758,7 @@ main .container-block-8 .right-block-8 .icons-download-official .icon-official {
   width: 170px;
   height: 50px;
 }
-@media screen and (max-width: 344px) {
+@media screen and (max-width: 1026px) {
   main .container-block-8 .left-block-8:nth-child(1) {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
