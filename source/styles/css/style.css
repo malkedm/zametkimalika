@@ -379,7 +379,7 @@ main .container-block-4 .bottom-block-4 {
   width: 100%;
   height: 100%;
   display: grid;
-  row-gap: 10px;
+  row-gap: 60px;
 }
 main .container-block-4 .bottom-block-4 .block-text-bottom-block-4 {
   width: 100%;
@@ -411,7 +411,7 @@ main .container-block-4 .bottom-block-4 .icons-bottom-block-4 {
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
-  row-gap: 10px;
+  row-gap: 60px;
 }
 main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-music {
   max-width: 100%;
