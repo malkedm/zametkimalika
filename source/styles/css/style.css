@@ -281,7 +281,7 @@ main .container-block-2 .right-block-2 .block-main-text-2 .main-text-2 {
   }
 }
 main .container-block-3 {
-  background: #9ab9ff;
+  background: #d2e0ff;
   padding: 10%;
   grid-row: 3/4;
   width: 100%;
@@ -629,7 +629,7 @@ main .container-block-6 .right-block-6 .block-main-text-6 {
   }
 }
 main .container-block-7 {
-  background: #a1b3ff;
+  background: #add8e6;
   padding: 10%;
   grid-row: 7/8;
   width: 100%;
@@ -687,7 +687,7 @@ main .container-block-7 .right-block-7 .img-7 {
   min-height: 100%;
 }
 main .container-block-8 {
-  background: #20b2aa;
+  background: #ffdcc7;
   padding: 10%;
   grid-row: 8/9;
   width: 100%;
