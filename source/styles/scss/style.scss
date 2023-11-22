@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     // font-family: "Nunito";
-    font-size: 18px;
+    font-size: clamp(12px, 6vw, 18px);
     text-decoration: none;
 }
 
@@ -107,11 +107,11 @@ main {
 
     & .container-block-1 {
         background: #d5deef;
-        padding: 10%;
+        padding: clamp(20px, 9%, 10%);
         // border-radius: clamp(15px, 2vw, 2vw);
         grid-row: 1/2;
         width: 100%;
-        height: 100%;
+        height: 100dvh;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
         column-gap: 10px;
@@ -123,6 +123,7 @@ main {
             width: 100%;
             height: 100%;
             display: flex;
+            justify-content: center;
             flex-direction: column;
             order: 1;
 
@@ -158,12 +159,12 @@ main {
             }
 
             & .main-text-1 {
-                line-height: 144%;
+                line-height: clamp(1.2em, 5vw, 1.44em);
             }
 
             & .icons-download-official {
                 width: 100%;
-                height: 100%;
+                // height: 100%;
                 display: flex;
                 flex-direction: column;
                 padding-top: clamp(5px, 5%, 14px);
@@ -200,12 +201,12 @@ main {
 
     & .container-block-2 {
         background: #CCDDFF; // #F5B7B1 // #ffd1a1 // #a1b3ff - Использовать
-        padding: 10%;
+        padding: clamp(20px, 9%, 10%);
         // border-radius: clamp(15px, 2vw, 2vw);
         grid-row: 2/3;
         margin-top: 2px;
         width: 100%;
-        height: 100%;
+        height: 100dvh;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
         column-gap: 10px;
@@ -233,6 +234,7 @@ main {
             height: 100%;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             order: 2;
 
             & .block-h-text-2 {
@@ -248,13 +250,13 @@ main {
                 row-gap: 12px;
 
                 & .main-text-2 {
-                    line-height: 144%;
+                    line-height: clamp(1.2em, 5vw, 1.44em);
                 }
             }
         }
 
         // 344px
-        @media screen and (max-width: 1026px) {
+        @media all and (max-device-width: 1126px) {
             .left-block-2:nth-child(1) {
                 order: 2;
             }
@@ -267,11 +269,11 @@ main {
 
     & .container-block-3 {
         background: #d2e0ff; // f5bcba // E6E6FA // #B0C4DE #9ab9ff
-        padding: 10%;
+        padding: clamp(20px, 9%, 10%);
         // border-radius: clamp(15px, 2vw, 2vw);
         grid-row: 3/4;
         width: 100%;
-        height: 100%;
+        height: 100dvh;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
         column-gap: 10px;
@@ -282,6 +284,7 @@ main {
             width: 100%;
             height: 100%;
             display: flex;
+            justify-content: center;
             flex-direction: column;
             order: 1;
 
@@ -293,14 +296,14 @@ main {
 
             & .main-text-3 {
                 margin-bottom: 12px;
-                line-height: 144%;
+                line-height: clamp(0.8em, 5vw, 1.44em);
             }
 
             & .block-main-text-3 {
                 display: flex;
                 flex-direction: column;
                 row-gap: 15px;
-                line-height: 144%;
+                line-height: clamp(0.8em, 5vw, 1.44em);
             }
         }
 
@@ -323,11 +326,11 @@ main {
 
     & .container-block-4 {
         background: #ccccff;
-        padding: 10%;
+        padding: clamp(20px, 9%, 10%);
         // border-radius: clamp(15px, 2vw, 2vw);
         grid-row: 4/5;
         width: 100%;
-        height: 100%;
+        height: 100dvh;
         display: grid;
         grid-template-rows: auto auto;
         row-gap: 30px;
@@ -341,7 +344,11 @@ main {
             justify-content: center;
 
             & .content-top-block-4 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 max-width: 600px;
+                height: 100%;
 
                 & .block-h-text-4 {
                     text-align: center;
@@ -351,7 +358,7 @@ main {
 
                 & .text-2-top-block-4 {
                     text-align: center;
-                    line-height: 144%;
+                    line-height: clamp(0.8em, 6vw, 1.44em);
                 }
             }
 
@@ -362,23 +369,27 @@ main {
             width: 100%;
             height: 100%;
             display: grid;
-            row-gap: 60px;
+            row-gap: clamp(20px, 10vw, 60px);
 
             & .block-text-bottom-block-4 {
                 width: 100%;
                 display: grid;
                 justify-content: center;
+                align-items: center;
 
                 & .text-bottom-block-4 {
                     width: fit-content;
+                    height: fit-content;
                     display: grid;
+                    justify-content: center;
+                    align-items: center;
                     background: #ccccff;
                     border: solid 1px #2d2d2d;
                     border-radius: 48px;
-                    padding-left: 32px;
-                    padding-right: 32px;
-                    padding-top: 12px;
-                    padding-bottom: 12px;
+                    padding-left: clamp(16px, 3vw, 32px);
+                    padding-right: clamp(16px, 3vw, 32px);
+                    padding-top: clamp(6px, 1vw, 12px);
+                    padding-bottom: clamp(6px, 1vw, 12px);
                     text-align: center;
                 }
             }
@@ -390,7 +401,7 @@ main {
                 grid-template-columns: repeat(4, 1fr);
                 grid-template-rows: repeat(2, 64px);
                 column-gap: 10px;
-                row-gap: 60px;
+                row-gap: clamp(10px, 5vw, 60px);
 
                 & .icon-music {
                     max-width: 100%;
@@ -469,11 +480,11 @@ main {
 
     & .container-block-5 {
         background: #C3E7F4; // #90CFEE // #add8e6 // #FFF8DC // E6E6FA - ИСПОЛЬЗОВАТЬ
-        padding: 10%;
+        padding: clamp(20px, 9%, 10%);
         // border-radius: clamp(15px, 2vw, 2vw);
         grid-row: 5/6;
         width: 100%;
-        height: 100%;
+        height: 100dvh;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
         column-gap: 10px;
@@ -484,6 +495,7 @@ main {
             width: 100%;
             height: 100%;
             display: flex;
+            justify-content: center;
             flex-direction: column;
 
             & .block-h-text-5 {
@@ -493,7 +505,8 @@ main {
             }
 
             & .main-text-5 {
-                line-height: 144%;
+                line-height: clamp(0.8em, 5vw, 1.44em);
+                margin-bottom: clamp(1%, 4%,15px);
             }
 
             & .block-icons-mini {
@@ -533,11 +546,11 @@ main {
 
     & .container-block-6 {
         background: #ffd1dc; // #90CFEE // #add8e6 // #FAE3A0 // #FFD1A1
-        padding: 10%;
+        padding: clamp(20px, 9%, 10%);
         // border-radius: clamp(15px, 2vw, 2vw);
         grid-row: 6/7;
         width: 100%;
-        height: 100%;
+        height: 100dvh;
         display: grid;
         // grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
@@ -565,6 +578,7 @@ main {
             width: 100%;
             height: 100%;
             display: flex;
+            justify-content: center;
             flex-direction: column;
             order: 2;
 
@@ -578,11 +592,11 @@ main {
                 display: flex;
                 flex-direction: column;
                 row-gap: 10px;
-                line-height: 144%;
+                line-height: clamp(1em, 5vw, 1.44em);
             }
         }
 
-        @media screen and (max-width: 1026px) {
+        @media all and (max-device-width: 1126px) {
             .left-block-6:nth-child(1) {
                 order: 2;
             }
@@ -595,11 +609,11 @@ main {
 
     & .container-block-7 {
         background: #add8e6; // #90CFEE // #add8e6 // #FAE3A0
-        padding: 10%;
+        padding: clamp(20px, 9%, 10%);
         // border-radius: clamp(15px, 2vw, 2vw);
         grid-row: 7/8;
         width: 100%;
-        height: 100%;
+        height: 100dvh;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
         column-gap: 10px;
@@ -610,11 +624,12 @@ main {
             width: 100%;
             height: 100%;
             display: flex;
+            justify-content: center;
             flex-direction: column;
 
             & .block-h-text-7 {
                 font-size: clamp(26px, 5vw, 36px);
-                line-height: 120%;
+                line-height: clamp(1em, 5vw, 1.2em);
                 margin-bottom: clamp(1%, 4%, 19px);
             }
 
@@ -622,7 +637,7 @@ main {
                 display: flex;
                 flex-direction: column;
                 row-gap: 10px;
-                line-height: 144%;
+                line-height: clamp(1.2em, 5vw, 1.44em);
             }
         }
 
@@ -644,11 +659,11 @@ main {
 
     & .container-block-8 {
         background: #ffdcc7; // #90CFEE // #add8e6 // #FAE3A0 // #00fa9a
-        padding: 10%;
+        padding: clamp(20px, 9%, 10%);
         // border-radius: clamp(15px, 2vw, 2vw);
         grid-row: 8/9;
         width: 100%;
-        height: 100%;
+        height: 100dvh;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
         column-gap: 10px;
@@ -675,12 +690,13 @@ main {
             width: 100%;
             height: 100%;
             display: flex;
+            justify-content: center;
             flex-direction: column;
             order: 2;
 
             & .block-h-text-8 {
                 font-size: clamp(26px, 5vw, 36px);
-                line-height: 120%;
+                line-height: clamp(1em, 5vw, 1.2em);
                 margin-bottom: clamp(1%, 4%, 22px);
             }
 
@@ -688,13 +704,13 @@ main {
                 display: flex;
                 flex-direction: column;
                 row-gap: 12px;
-                line-height: 144%;
+                line-height: clamp(0.8em, 4vw, 1.44em);
                 margin-bottom: clamp(15px, 5%, 32px);
             }
 
             & .icons-download-official {
                 width: 100%;
-                height: 100%;
+                // height: 100%;
                 display: flex;
                 column-gap: 20px;
                 row-gap: 10px;
@@ -712,7 +728,7 @@ main {
             }
         }
 
-        @media screen and (max-width: 1026px) {
+        @media all and (max-device-width: 1126px) {
             .left-block-8:nth-child(1) {
                 order: 2;
             }
