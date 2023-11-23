@@ -19,9 +19,9 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     background: #F0F4FF;
     color: #2d2d2d;
+    z-index: 10;
     // padding: 10px;
 
     & a {
@@ -34,6 +34,7 @@ body {
     }
 
     & .main-container {
+        z-index: 20;
         border: 1px solid red;
         display: grid;
         min-width: 180px;
