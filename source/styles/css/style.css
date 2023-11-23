@@ -20,6 +20,7 @@ body a:hover {
   text-decoration: underline;
 }
 body .main-container {
+  border: 1px solid red;
   z-index: 20;
   display: grid;
   min-width: 180px;
