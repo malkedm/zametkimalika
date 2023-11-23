@@ -21,7 +21,6 @@ body a:hover {
 }
 body .main-container {
   z-index: 20;
-  border: 1px solid red;
   display: grid;
   min-width: 180px;
   max-width: 100vw;
