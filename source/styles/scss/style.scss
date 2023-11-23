@@ -17,7 +17,9 @@
 // }
 
 html {
-    overflow: hidden;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    height: 100dvh;
 }
 
 body {
@@ -32,6 +34,7 @@ body {
     overflow: hidden;
     background: #F0F4FF;
     color: #2d2d2d;
+    // padding: 10px;
 
     a {
         font-size: 16px;
