@@ -5,26 +5,7 @@
   text-decoration: none;
 }
 
-html {
-  position: relative;
-  z-index: 10;
-  min-width: 210px;
-  max-width: 100vw;
-  width: 100vw;
-  min-height: 100dvh;
-  max-height: 100dvh;
-  height: 100dvh;
-}
-
 body {
-  position: relative;
-  z-index: 10;
-  min-width: 210px;
-  max-width: 100vw;
-  width: 100vw;
-  min-height: 100dvh;
-  max-height: 100dvh;
-  height: 100dvh;
   margin: 0;
   padding: 0;
   background: #F0F4FF;
@@ -38,8 +19,7 @@ body a:hover {
   text-decoration: underline;
 }
 body .main-container {
-  position: relative;
-  z-index: 20;
+  border: 1px solid red;
   display: grid;
   min-width: 210px;
   max-width: 100vw;
@@ -113,8 +93,6 @@ body .main-container header .right-container-header .button-header {
   font-size: clamp(9px, 5vw, 18px);
 }
 body .main-container main {
-  width: 100%;
-  height: 100%;
   display: grid;
   padding-top: 114px;
   /* clamp(15px, 4%, 60px) */
@@ -127,7 +105,11 @@ body .main-container main .container-block-1 {
   background: #d5deef;
   padding: clamp(20px, 9%, 10%);
   grid-row: 1/2;
+  min-width: 100%;
+  max-width: 100%;
   width: 100%;
+  min-height: 100dvh;
+  max-height: 100dvh;
   height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
@@ -232,7 +214,11 @@ body .main-container main .container-block-2 {
   padding: clamp(20px, 9%, 10%);
   grid-row: 2/3;
   margin-top: 2px;
+  min-width: 100%;
+  max-width: 100%;
   width: 100%;
+  min-height: 100dvh;
+  max-height: 100dvh;
   height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
@@ -313,7 +299,11 @@ body .main-container main .container-block-3 {
   background: #d2e0ff;
   padding: clamp(20px, 9%, 10%);
   grid-row: 3/4;
+  min-width: 100%;
+  max-width: 100%;
   width: 100%;
+  min-height: 100dvh;
+  max-height: 100dvh;
   height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
@@ -384,7 +374,11 @@ body .main-container main .container-block-4 {
   background: #ccccff;
   padding: clamp(20px, 9%, 10%);
   grid-row: 4/5;
+  min-width: 100%;
+  max-width: 100%;
   width: 100%;
+  min-height: 100dvh;
+  max-height: 100dvh;
   height: 100dvh;
   display: grid;
   grid-template-rows: auto auto;
@@ -542,7 +536,11 @@ body .main-container main .container-block-5 {
   background: #C3E7F4;
   padding: clamp(20px, 9%, 10%);
   grid-row: 5/6;
+  min-width: 100%;
+  max-width: 100%;
   width: 100%;
+  min-height: 100dvh;
+  max-height: 100dvh;
   height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
@@ -615,7 +613,11 @@ body .main-container main .container-block-6 {
   background: #ffd1dc;
   padding: clamp(20px, 9%, 10%);
   grid-row: 6/7;
+  min-width: 100%;
+  max-width: 100%;
   width: 100%;
+  min-height: 100dvh;
+  max-height: 100dvh;
   height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
@@ -694,7 +696,11 @@ body .main-container main .container-block-7 {
   background: #add8e6;
   padding: clamp(20px, 9%, 10%);
   grid-row: 7/8;
+  min-width: 100%;
+  max-width: 100%;
   width: 100%;
+  min-height: 100dvh;
+  max-height: 100dvh;
   height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
@@ -755,7 +761,11 @@ body .main-container main .container-block-8 {
   background: #ffdcc7;
   padding: clamp(20px, 9%, 10%);
   grid-row: 8/9;
+  min-width: 100%;
+  max-width: 100%;
   width: 100%;
+  min-height: 100dvh;
+  max-height: 100dvh;
   height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
