@@ -19,11 +19,10 @@ body a:hover {
   text-decoration: underline;
 }
 body .main-container {
-  border: 1px solid red;
   display: grid;
-  min-width: 180px;
+  min-width: 210px;
   max-width: 100vw;
-  width: 100%;
+  width: 100vw;
   min-height: 100dvh;
   max-height: 100dvh;
   height: 100dvh;
