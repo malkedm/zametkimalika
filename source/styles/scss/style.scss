@@ -23,6 +23,9 @@ body {
     color: #2d2d2d;
     z-index: 10;
     position: relative;
+    min-height: 0px;
+    max-height: 0px;
+    height: 0px;
     // padding: 10px;
 
     & a {
