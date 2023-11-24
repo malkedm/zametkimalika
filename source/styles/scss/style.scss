@@ -17,9 +17,8 @@
 // }
 
 html {
-    min-height: 0px;
-    max-height: 0px;
-    height: 0px;
+    position: relative;
+    z-index: 10;
 }
 
 body {
@@ -27,11 +26,8 @@ body {
     padding: 0;
     background: #F0F4FF;
     color: #2d2d2d;
-    z-index: 10;
     position: relative;
-    min-height: 0px;
-    max-height: 0px;
-    height: 0px;
+    z-index: 10;
     // padding: 10px;
 
     & a {
