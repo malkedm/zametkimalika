@@ -16,20 +16,11 @@
 //     overflow: hidden;
 // }
 
-html {
-    position: relative;
-    z-index: 10;
-    display: flex;
-}
-
 body {
     margin: 0;
     padding: 0;
     background: #F0F4FF;
     color: #2d2d2d;
-    display: flex;
-    position: relative;
-    z-index: 10;
     // padding: 10px;
 
     & a {
@@ -42,12 +33,11 @@ body {
     }
 
     & .main-container {
-        position: relative;
-        z-index: 20;
+        border: 1px solid red;
         display: grid;
         min-width: 180px;
         max-width: 100vw;
-        width: 100vw;
+        width: 100%;
         min-height: 100dvh;
         max-height: 100dvh;
         height: 100dvh;
