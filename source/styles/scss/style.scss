@@ -1,30 +1,20 @@
 * {
     box-sizing: border-box;
-    // font-family: "Nunito";
-    font-size: clamp(12px, 6vw, 18px);
-    text-decoration: none;
 }
 
-// @font-face {
-//     font-family: "Nunito";
-//     src: url("/source/fonts/Nunito-ExtraLight.woff2") format("woff2");
-//     font-weight: 400;
-//     font-style: normal;
-//     font-display: swap;
-// }
-// html {
-//     overflow: hidden;
-// }
-
 body {
+    min-width: 100vw;
+    max-width: 100vw;
+    width: 100vw;
     margin: 0;
     padding: 0;
     background: #F0F4FF;
-    color: #2d2d2d;
     // padding: 10px;
 
     & .main-container {
-        border: 1px solid red;
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        // border: 1px solid red;
         min-width: 100vw;
         max-width: 100vw;
         width: 100vw;
@@ -32,5 +22,71 @@ body {
         max-height: 100dvh;
         height: 100dvh;
         overflow-y: auto;
+
+        & .block-1 {
+            grid-row: 1/2;
+            background: rebeccapurple;
+            min-width: 100%;
+            max-width: 100%;
+            width: 100%;
+            min-height: 100dvh;
+            max-height: 100dvh;
+            height: 100dvh;
+        }
+
+        & .block-2 {
+            grid-row: 2/3;
+            background: #2d2d2d;
+            min-width: 100%;
+            max-width: 100%;
+            width: 100%;
+            min-height: 100dvh;
+            max-height: 100dvh;
+            height: 100dvh;
+        }
     }
 }
+
+
+
+
+
+
+// body {
+//     margin: 0;
+//     padding: 0;
+//     background: #F0F4FF;
+//     // padding: 10px;
+
+//     & .main-container {
+//         display: grid;
+//         // border: 1px solid red;
+//         min-width: 100vw;
+//         max-width: 100vw;
+//         width: 100vw;
+//         min-height: 100dvh;
+//         max-height: 100dvh;
+//         height: 100dvh;
+//         overflow-y: auto;
+
+//         & .block-1 {
+//             background: #245eff;
+//             min-width: 100vw;
+//             max-width: 100vw;
+//             width: 100vw;
+//             min-height: 100dvh;
+//             max-height: 100dvh;
+//             height: 100dvh;
+//         }
+
+//         & .block-2 {
+//             background: #2d2d2d;
+//             min-width: 100vw;
+//             max-width: 100vw;
+//             width: 100vw;
+//             min-height: 100dvh;
+//             max-height: 100dvh;
+//             height: 100dvh;
+//         }
+//     }
+// }
