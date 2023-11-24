@@ -5,7 +5,16 @@
   text-decoration: none;
 }
 
+html {
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+  position: relative;
+}
+
 body {
+  z-index: -1;
+  position: relative;
   margin: 0;
   padding: 0;
   background: #F0F4FF;
