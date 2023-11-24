@@ -22,6 +22,7 @@ body {
     background: #F0F4FF;
     color: #2d2d2d;
     z-index: 10;
+    position: relative;
     // padding: 10px;
 
     & a {
@@ -34,6 +35,7 @@ body {
     }
 
     & .main-container {
+        position: relative;
         z-index: 20;
         display: grid;
         min-width: 180px;
