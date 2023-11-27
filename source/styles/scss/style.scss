@@ -46,10 +46,11 @@ body {
         height: 101dvh;
         top: -1dvh;
         left: -1vw;
+        overflow: hidden;
     }
 
     & .main-container {
-        position: relative;
+        position: absolute;
         display: grid;
         grid-template-rows: repeat(3, auto);
         min-width: 210px;
