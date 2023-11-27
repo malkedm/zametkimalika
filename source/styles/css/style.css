@@ -23,20 +23,20 @@ body a:hover {
   text-decoration: underline;
 }
 body .main-block {
-  position: relative;
+  position: absolute;
   min-width: 210px;
-  max-width: 100vw;
-  width: 100vw;
-  min-height: 100dvh;
-  max-height: 100dvh;
-  height: 100dvh;
+  max-width: 101vw;
+  width: 101vw;
+  min-height: 101dvh;
+  max-height: 101dvh;
+  height: 101dvh;
   top: -1dvh;
   left: -1vw;
 }
 body .main-container {
   position: absolute;
   display: grid;
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
   min-width: 210px;
   max-width: 100vw;
   width: 100vw;
@@ -49,33 +49,14 @@ body .main-container {
   left: 1vw;
   z-index: 20;
 }
-body .main-container main {
-  position: relative;
-  grid-row: 1/2;
-  min-width: 210px;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  /* clamp(15px, 4%, 60px) */
-  padding-bottom: 114px;
-  /* clamp(15px, 4%, 60px) */
-  grid-template-rows: repeat(8, auto);
-}
-body .main-container main header {
+body .main-container header {
   position: fixed;
   z-index: 20;
-  top: 0;
-  left: 0;
+  grid-row: 1/2;
   max-width: 100%;
   min-width: 210px;
   width: 100%;
   max-height: 150px;
-  min-height: -webkit-fit-content;
-  min-height: -moz-fit-content;
-  min-height: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   padding-top: clamp(10px, 3%, 15px);
@@ -87,7 +68,7 @@ body .main-container main header {
           column-gap: 10px;
   row-gap: 20px;
 }
-body .main-container main header .left-container-header {
+body .main-container header .left-container-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,15 +82,15 @@ body .main-container main header .left-container-header {
       flex-wrap: wrap;
   row-gap: 5px;
 }
-body .main-container main header .left-container-header .logo-site {
+body .main-container header .left-container-header .logo-site {
   width: 32px;
   height: 32px;
 }
-body .main-container main header .left-container-header .logo-mir {
+body .main-container header .left-container-header .logo-mir {
   width: 50px;
   height: 30px;
 }
-body .main-container main header .right-container-header {
+body .main-container header .right-container-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,7 +104,7 @@ body .main-container main header .right-container-header {
       flex-wrap: wrap;
   row-gap: 5px;
 }
-body .main-container main header .right-container-header .button-header {
+body .main-container header .right-container-header .button-header {
   background: #F0F4FF;
   border: solid 1px #2d2d2d;
   border-radius: 48px;
@@ -132,6 +113,18 @@ body .main-container main header .right-container-header .button-header {
   padding-top: clamp(6px, 3%, 12px);
   padding-bottom: clamp(6px, 3%, 12px);
   font-size: clamp(9px, 5vw, 18px);
+}
+body .main-container main {
+  position: relative;
+  grid-row: 2/3;
+  min-width: 210px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  /* clamp(15px, 4%, 60px) */
+  padding-bottom: 114px;
+  /* clamp(15px, 4%, 60px) */
+  grid-template-rows: repeat(8, auto);
 }
 body .main-container main .container-block-1 {
   background: #d5deef;
@@ -869,7 +862,7 @@ body .main-container main .container-block-8 .right-block-8 .icons-download-offi
   }
 }
 body .main-container footer {
-  grid-row: 2/3;
+  grid-row: 3/4;
   width: 100%;
   height: 100%;
   padding-top: 110px;
