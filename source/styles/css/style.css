@@ -34,7 +34,7 @@ body .main-block {
   left: -1vw;
 }
 body .main-container {
-  position: absolute;
+  position: relative;
   display: grid;
   grid-template-rows: repeat(3, auto);
   min-width: 210px;
