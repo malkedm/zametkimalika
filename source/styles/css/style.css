@@ -34,30 +34,42 @@ body .main-block {
   left: -1vw;
   overflow: hidden;
 }
-body .main-container {
+body .main-block .main-container {
   position: absolute;
   display: grid;
-  grid-template-rows: repeat(3, auto);
   min-width: 210px;
   max-width: 100vw;
   width: 100vw;
   min-height: 100dvh;
   max-height: 100dvh;
   height: 100dvh;
-  overflow-x: hidden;
-  overflow-y: auto;
   top: 1dvh;
   left: 1vw;
   z-index: 20;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
 }
-body .main-container header {
+body .main-block .main-container main {
+  display: grid;
+  /* clamp(15px, 4%, 60px) */
+  /* clamp(15px, 4%, 60px) */
+  grid-template-rows: repeat(9, auto);
+}
+body .main-block .main-container main .block {
+  scroll-snap-align: start;
+  -webkit-box-shadow: 0px -3px 8px 0px rgba(34, 60, 80, 0.5);
+          box-shadow: 0px -3px 8px 0px rgba(34, 60, 80, 0.5);
+}
+body .main-block .main-container main header {
   position: fixed;
   z-index: 20;
-  grid-row: 1/2;
   max-width: 100%;
   min-width: 210px;
   width: 100%;
   max-height: 150px;
+  min-height: 150px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   padding-top: clamp(10px, 3%, 15px);
@@ -68,8 +80,9 @@ body .main-container header {
      -moz-column-gap: 10px;
           column-gap: 10px;
   row-gap: 20px;
+  pointer-events: none;
 }
-body .main-container header .left-container-header {
+body .main-block .main-container main header .left-container-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,15 +96,15 @@ body .main-container header .left-container-header {
       flex-wrap: wrap;
   row-gap: 5px;
 }
-body .main-container header .left-container-header .logo-site {
+body .main-block .main-container main header .left-container-header .logo-site {
   width: 32px;
   height: 32px;
 }
-body .main-container header .left-container-header .logo-mir {
+body .main-block .main-container main header .left-container-header .logo-mir {
   width: 50px;
   height: 30px;
 }
-body .main-container header .right-container-header {
+body .main-block .main-container main header .right-container-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,7 +118,7 @@ body .main-container header .right-container-header {
       flex-wrap: wrap;
   row-gap: 5px;
 }
-body .main-container header .right-container-header .button-header {
+body .main-block .main-container main header .right-container-header .button-header {
   background: #F0F4FF;
   border: solid 1px #2d2d2d;
   border-radius: 48px;
@@ -115,25 +128,47 @@ body .main-container header .right-container-header .button-header {
   padding-bottom: clamp(6px, 3%, 12px);
   font-size: clamp(9px, 5vw, 18px);
 }
-body .main-container main {
-  position: relative;
-  grid-row: 2/3;
-  min-width: 210px;
+body .main-block .main-container main header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  display: grid;
-  /* clamp(15px, 4%, 60px) */
-  padding-bottom: 114px;
-  /* clamp(15px, 4%, 60px) */
-  grid-template-rows: repeat(8, auto);
+  height: 150px;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  z-index: -1;
 }
-body .main-container main .container-block-1 {
+body .main-block .main-container main .color-1 {
   background: #d5deef;
+}
+body .main-block .main-container main .color-2 {
+  background: #a1b3ff;
+}
+body .main-block .main-container main .color-3 {
+  background: #d2e0ff;
+}
+body .main-block .main-container main .color-4 {
+  background: #ccccff;
+}
+body .main-block .main-container main .color-5 {
+  background: #C3E7F4;
+}
+body .main-block .main-container main .color-6 {
+  background: #ffd1dc;
+}
+body .main-block .main-container main .color-7 {
+  background: #add8e6;
+}
+body .main-block .main-container main .color-8 {
+  background: #ffdcc7;
+}
+body .main-block .main-container main .container-block-1 {
   padding: clamp(10px, 4%, 10%);
   padding-top: 150px;
   grid-row: 1/2;
   width: 100%;
-  height: 100dvh;
+  min-height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
   -webkit-column-gap: 10px;
@@ -142,7 +177,7 @@ body .main-container main .container-block-1 {
   row-gap: 30px;
   position: relative;
 }
-body .main-container main .container-block-1 .left-block-1 {
+body .main-block .main-container main .container-block-1 .left-block-1 {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -159,18 +194,18 @@ body .main-container main .container-block-1 .left-block-1 {
       -ms-flex-order: 1;
           order: 1;
 }
-body .main-container main .container-block-1 .left-block-1 .icon-text {
+body .main-block .main-container main .container-block-1 .left-block-1 .icon-text {
   display: grid;
   grid-template-columns: 32px auto;
   -webkit-column-gap: 5px;
      -moz-column-gap: 5px;
           column-gap: 5px;
 }
-body .main-container main .container-block-1 .left-block-1 .icon-text .icon-play {
+body .main-block .main-container main .container-block-1 .left-block-1 .icon-text .icon-play {
   width: 32px;
   height: 32px;
 }
-body .main-container main .container-block-1 .left-block-1 .icon-text .text-icon {
+body .main-block .main-container main .container-block-1 .left-block-1 .icon-text .text-icon {
   width: 100%;
   height: 100%;
   display: grid;
@@ -180,19 +215,19 @@ body .main-container main .container-block-1 .left-block-1 .icon-text .text-icon
   font-size: 16px;
   line-height: 156.25%;
 }
-body .main-container main .container-block-1 .left-block-1 .block-h-text-1 {
+body .main-block .main-container main .container-block-1 .left-block-1 .block-h-text-1 {
   display: grid;
   margin-top: clamp(2%, 4%, 50px);
   margin-bottom: clamp(2%, 2%, 23px);
 }
-body .main-container main .container-block-1 .left-block-1 .block-h-text-1 .head-text {
+body .main-block .main-container main .container-block-1 .left-block-1 .block-h-text-1 .head-text {
   font-size: clamp(28px, 6vw, 42px);
   line-height: 120%;
 }
-body .main-container main .container-block-1 .left-block-1 .main-text-1 {
+body .main-block .main-container main .container-block-1 .left-block-1 .main-text-1 {
   line-height: clamp(1.2em, 5vw, 1.44em);
 }
-body .main-container main .container-block-1 .left-block-1 .icons-download-official {
+body .main-block .main-container main .container-block-1 .left-block-1 .icons-download-official {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -204,15 +239,15 @@ body .main-container main .container-block-1 .left-block-1 .icons-download-offic
   padding-top: clamp(5px, 5%, 14px);
   row-gap: 21px;
 }
-body .main-container main .container-block-1 .left-block-1 .icons-download-official .icon-download {
+body .main-block .main-container main .container-block-1 .left-block-1 .icons-download-official .icon-download {
   width: 170px;
   height: 50px;
 }
-body .main-container main .container-block-1 .left-block-1 .icons-download-official .icon-official {
+body .main-block .main-container main .container-block-1 .left-block-1 .icons-download-official .icon-official {
   width: 170px;
   height: 50px;
 }
-body .main-container main .container-block-1 .right-block-1 {
+body .main-block .main-container main .container-block-1 .right-block-1 {
   width: 100%;
   height: 100%;
   display: grid;
@@ -226,19 +261,18 @@ body .main-container main .container-block-1 .right-block-1 {
       -ms-flex-order: 2;
           order: 2;
 }
-body .main-container main .container-block-1 .right-block-1 .img-1 {
+body .main-block .main-container main .container-block-1 .right-block-1 .img-1 {
   max-width: 100%;
   min-width: 100%;
   max-height: 100%;
   min-height: 100%;
 }
-body .main-container main .container-block-2 {
-  background: #CCDDFF;
+body .main-block .main-container main .container-block-2 {
   padding: clamp(10px, 4%, 10%);
   padding-top: 150px;
   grid-row: 2/3;
   width: 100%;
-  height: 100dvh;
+  min-height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
   -webkit-column-gap: 10px;
@@ -247,7 +281,7 @@ body .main-container main .container-block-2 {
   row-gap: 30px;
   position: relative;
 }
-body .main-container main .container-block-2 .left-block-2 {
+body .main-block .main-container main .container-block-2 .left-block-2 {
   width: 100%;
   height: 100%;
   display: grid;
@@ -261,13 +295,13 @@ body .main-container main .container-block-2 .left-block-2 {
       -ms-flex-order: 1;
           order: 1;
 }
-body .main-container main .container-block-2 .left-block-2 .img-2 {
+body .main-block .main-container main .container-block-2 .left-block-2 .img-2 {
   max-width: 100%;
   min-width: 100%;
   max-height: 100%;
   min-height: 100%;
 }
-body .main-container main .container-block-2 .right-block-2 {
+body .main-block .main-container main .container-block-2 .right-block-2 {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -284,12 +318,12 @@ body .main-container main .container-block-2 .right-block-2 {
       -ms-flex-order: 2;
           order: 2;
 }
-body .main-container main .container-block-2 .right-block-2 .block-h-text-2 {
+body .main-block .main-container main .container-block-2 .right-block-2 .block-h-text-2 {
   margin-bottom: clamp(1%, 4%, 22px);
   font-size: clamp(20px, 5vw, 36px);
   line-height: 120%;
 }
-body .main-container main .container-block-2 .right-block-2 .block-main-text-2 {
+body .main-block .main-container main .container-block-2 .right-block-2 .block-main-text-2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -299,28 +333,27 @@ body .main-container main .container-block-2 .right-block-2 .block-main-text-2 {
           flex-direction: column;
   row-gap: 12px;
 }
-body .main-container main .container-block-2 .right-block-2 .block-main-text-2 .main-text-2 {
+body .main-block .main-container main .container-block-2 .right-block-2 .block-main-text-2 .main-text-2 {
   line-height: clamp(1.2em, 5vw, 1.44em);
 }
 @media all and (max-device-width: 1126px) {
-  body .main-container main .container-block-2 .left-block-2:nth-child(1) {
+  body .main-block .main-container main .container-block-2 .left-block-2:nth-child(1) {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
   }
-  body .main-container main .container-block-2 .right-block-2:nth-child(2) {
+  body .main-block .main-container main .container-block-2 .right-block-2:nth-child(2) {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
   }
 }
-body .main-container main .container-block-3 {
-  background: #d2e0ff;
+body .main-block .main-container main .container-block-3 {
   padding: clamp(10px, 4%, 10%);
   padding-top: 150px;
   grid-row: 3/4;
   width: 100%;
-  height: 100dvh;
+  min-height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
   -webkit-column-gap: 10px;
@@ -329,7 +362,7 @@ body .main-container main .container-block-3 {
   row-gap: 30px;
   position: relative;
 }
-body .main-container main .container-block-3 .left-block-3 {
+body .main-block .main-container main .container-block-3 .left-block-3 {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -346,16 +379,16 @@ body .main-container main .container-block-3 .left-block-3 {
       -ms-flex-order: 1;
           order: 1;
 }
-body .main-container main .container-block-3 .left-block-3 .block-h-text-3 {
+body .main-block .main-container main .container-block-3 .left-block-3 .block-h-text-3 {
   font-size: clamp(20px, 5vw, 36px);
   line-height: 120%;
   margin-bottom: clamp(1%, 4%, 22px);
 }
-body .main-container main .container-block-3 .left-block-3 .main-text-3 {
+body .main-block .main-container main .container-block-3 .left-block-3 .main-text-3 {
   margin-bottom: 12px;
   line-height: clamp(0.8em, 5vw, 1.44em);
 }
-body .main-container main .container-block-3 .left-block-3 .block-main-text-3 {
+body .main-block .main-container main .container-block-3 .left-block-3 .block-main-text-3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -366,7 +399,7 @@ body .main-container main .container-block-3 .left-block-3 .block-main-text-3 {
   row-gap: 15px;
   line-height: clamp(0.8em, 5vw, 1.44em);
 }
-body .main-container main .container-block-3 .right-block-3 {
+body .main-block .main-container main .container-block-3 .right-block-3 {
   width: 100%;
   height: 100%;
   display: grid;
@@ -380,25 +413,24 @@ body .main-container main .container-block-3 .right-block-3 {
       -ms-flex-order: 2;
           order: 2;
 }
-body .main-container main .container-block-3 .right-block-3 .img-3 {
+body .main-block .main-container main .container-block-3 .right-block-3 .img-3 {
   max-width: 100%;
   min-width: 100%;
   max-height: 100%;
   min-height: 100%;
 }
-body .main-container main .container-block-4 {
-  background: #ccccff;
+body .main-block .main-container main .container-block-4 {
   padding: clamp(10px, 4%, 10%);
   padding-top: 150px;
   grid-row: 4/5;
   width: 100%;
-  height: 100dvh;
+  min-height: 100dvh;
   display: grid;
   grid-template-rows: auto auto;
   row-gap: 30px;
   position: relative;
 }
-body .main-container main .container-block-4 .top-block-4 {
+body .main-block .main-container main .container-block-4 .top-block-4 {
   grid-row: 1/2;
   width: 100%;
   height: 100%;
@@ -407,7 +439,7 @@ body .main-container main .container-block-4 .top-block-4 {
       -ms-flex-pack: center;
           justify-content: center;
 }
-body .main-container main .container-block-4 .top-block-4 .content-top-block-4 {
+body .main-block .main-container main .container-block-4 .top-block-4 .content-top-block-4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -421,23 +453,23 @@ body .main-container main .container-block-4 .top-block-4 .content-top-block-4 {
   max-width: 600px;
   height: 100%;
 }
-body .main-container main .container-block-4 .top-block-4 .content-top-block-4 .block-h-text-4 {
+body .main-block .main-container main .container-block-4 .top-block-4 .content-top-block-4 .block-h-text-4 {
   text-align: center;
   font-size: clamp(26px, 5vw, 36px);
   line-height: 120%;
 }
-body .main-container main .container-block-4 .top-block-4 .content-top-block-4 .text-2-top-block-4 {
+body .main-block .main-container main .container-block-4 .top-block-4 .content-top-block-4 .text-2-top-block-4 {
   text-align: center;
   line-height: clamp(0.8em, 6vw, 1.44em);
 }
-body .main-container main .container-block-4 .bottom-block-4 {
+body .main-block .main-container main .container-block-4 .bottom-block-4 {
   grid-row: 2/3;
   width: 100%;
   height: 100%;
   display: grid;
   row-gap: clamp(20px, 10vw, 60px);
 }
-body .main-container main .container-block-4 .bottom-block-4 .block-text-bottom-block-4 {
+body .main-block .main-container main .container-block-4 .bottom-block-4 .block-text-bottom-block-4 {
   width: 100%;
   display: grid;
   -webkit-box-pack: center;
@@ -447,7 +479,7 @@ body .main-container main .container-block-4 .bottom-block-4 .block-text-bottom-
       -ms-flex-align: center;
           align-items: center;
 }
-body .main-container main .container-block-4 .bottom-block-4 .block-text-bottom-block-4 .text-bottom-block-4 {
+body .main-block .main-container main .container-block-4 .bottom-block-4 .block-text-bottom-block-4 .text-bottom-block-4 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -470,7 +502,7 @@ body .main-container main .container-block-4 .bottom-block-4 .block-text-bottom-
   padding-bottom: clamp(6px, 1vw, 12px);
   text-align: center;
 }
-body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 {
+body .main-block .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 {
   width: 100%;
   height: 100%;
   display: grid;
@@ -481,7 +513,7 @@ body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block
           column-gap: 10px;
   row-gap: clamp(10px, 5vw, 60px);
 }
-body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-music {
+body .main-block .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-music {
   max-width: 100%;
   min-width: 32px;
   width: 100%;
@@ -489,7 +521,7 @@ body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block
   min-height: 32px;
   height: 100%;
 }
-body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-movies {
+body .main-block .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-movies {
   max-width: 100%;
   min-width: 32px;
   width: 100%;
@@ -497,7 +529,7 @@ body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block
   min-height: 32px;
   height: 100%;
 }
-body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-games {
+body .main-block .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-games {
   max-width: 100%;
   min-width: 32px;
   width: 100%;
@@ -505,7 +537,7 @@ body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block
   min-height: 32px;
   height: 100%;
 }
-body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-design {
+body .main-block .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-design {
   max-width: 100%;
   min-width: 32px;
   width: 100%;
@@ -513,7 +545,7 @@ body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block
   min-height: 32px;
   height: 100%;
 }
-body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-books {
+body .main-block .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-books {
   max-width: 100%;
   min-width: 32px;
   width: 100%;
@@ -521,7 +553,7 @@ body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block
   min-height: 32px;
   height: 100%;
 }
-body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-airplane {
+body .main-block .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-airplane {
   max-width: 100%;
   min-width: 32px;
   width: 100%;
@@ -529,7 +561,7 @@ body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block
   min-height: 32px;
   height: 100%;
 }
-body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-food {
+body .main-block .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-food {
   max-width: 100%;
   min-width: 32px;
   width: 100%;
@@ -537,7 +569,7 @@ body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block
   min-height: 32px;
   height: 100%;
 }
-body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-style {
+body .main-block .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block-4 .icon-style {
   max-width: 100%;
   min-width: 32px;
   width: 100%;
@@ -545,13 +577,12 @@ body .main-container main .container-block-4 .bottom-block-4 .icons-bottom-block
   min-height: 32px;
   height: 100%;
 }
-body .main-container main .container-block-5 {
-  background: #C3E7F4;
+body .main-block .main-container main .container-block-5 {
   padding: clamp(10px, 4%, 10%);
   padding-top: 150px;
   grid-row: 5/6;
   width: 100%;
-  height: 100dvh;
+  min-height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
   -webkit-column-gap: 10px;
@@ -560,7 +591,7 @@ body .main-container main .container-block-5 {
   row-gap: 30px;
   position: relative;
 }
-body .main-container main .container-block-5 .left-block-5 {
+body .main-block .main-container main .container-block-5 .left-block-5 {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -574,16 +605,16 @@ body .main-container main .container-block-5 .left-block-5 {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-body .main-container main .container-block-5 .left-block-5 .block-h-text-5 {
+body .main-block .main-container main .container-block-5 .left-block-5 .block-h-text-5 {
   font-size: clamp(26px, 5vw, 36px);
   line-height: 120%;
   margin-bottom: clamp(1%, 4%, 22px);
 }
-body .main-container main .container-block-5 .left-block-5 .main-text-5 {
+body .main-block .main-container main .container-block-5 .left-block-5 .main-text-5 {
   line-height: clamp(0.8em, 5vw, 1.44em);
   margin-bottom: clamp(1%, 4%, 15px);
 }
-body .main-container main .container-block-5 .left-block-5 .block-icons-mini {
+body .main-block .main-container main .container-block-5 .left-block-5 .block-icons-mini {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -594,15 +625,15 @@ body .main-container main .container-block-5 .left-block-5 .block-icons-mini {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-body .main-container main .container-block-5 .left-block-5 .block-icons-mini .download-mini {
+body .main-block .main-container main .container-block-5 .left-block-5 .block-icons-mini .download-mini {
   width: 120px;
   height: 50px;
 }
-body .main-container main .container-block-5 .left-block-5 .block-icons-mini .main-official-site {
+body .main-block .main-container main .container-block-5 .left-block-5 .block-icons-mini .main-official-site {
   width: 120px;
   height: 50px;
 }
-body .main-container main .container-block-5 .right-block-5 {
+body .main-block .main-container main .container-block-5 .right-block-5 {
   width: 100%;
   height: 100%;
   display: grid;
@@ -613,19 +644,18 @@ body .main-container main .container-block-5 .right-block-5 {
       -ms-flex-align: center;
           align-items: center;
 }
-body .main-container main .container-block-5 .right-block-5 .img-5 {
+body .main-block .main-container main .container-block-5 .right-block-5 .img-5 {
   max-width: 100%;
   min-width: 100%;
   max-height: 100%;
   min-height: 100%;
 }
-body .main-container main .container-block-6 {
-  background: #ffd1dc;
+body .main-block .main-container main .container-block-6 {
   padding: clamp(10px, 4%, 10%);
   padding-top: 150px;
   grid-row: 6/7;
   width: 100%;
-  height: 100dvh;
+  min-height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
   -webkit-column-gap: 10px;
@@ -634,7 +664,7 @@ body .main-container main .container-block-6 {
   row-gap: 30px;
   position: relative;
 }
-body .main-container main .container-block-6 .left-block-6 {
+body .main-block .main-container main .container-block-6 .left-block-6 {
   width: 100%;
   height: 100%;
   display: grid;
@@ -648,13 +678,13 @@ body .main-container main .container-block-6 .left-block-6 {
       -ms-flex-order: 1;
           order: 1;
 }
-body .main-container main .container-block-6 .left-block-6 .img-6 {
+body .main-block .main-container main .container-block-6 .left-block-6 .img-6 {
   max-width: 100%;
   min-width: 100%;
   max-height: 100%;
   min-height: 100%;
 }
-body .main-container main .container-block-6 .right-block-6 {
+body .main-block .main-container main .container-block-6 .right-block-6 {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -671,12 +701,12 @@ body .main-container main .container-block-6 .right-block-6 {
       -ms-flex-order: 2;
           order: 2;
 }
-body .main-container main .container-block-6 .right-block-6 .block-h-text-6 {
+body .main-block .main-container main .container-block-6 .right-block-6 .block-h-text-6 {
   font-size: clamp(26px, 5vw, 36px);
   line-height: 120%;
   margin-bottom: clamp(1%, 4%, 22px);
 }
-body .main-container main .container-block-6 .right-block-6 .block-main-text-6 {
+body .main-block .main-container main .container-block-6 .right-block-6 .block-main-text-6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -688,24 +718,23 @@ body .main-container main .container-block-6 .right-block-6 .block-main-text-6 {
   line-height: clamp(1em, 5vw, 1.44em);
 }
 @media all and (max-device-width: 1126px) {
-  body .main-container main .container-block-6 .left-block-6:nth-child(1) {
+  body .main-block .main-container main .container-block-6 .left-block-6:nth-child(1) {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
   }
-  body .main-container main .container-block-6 .right-block-6:nth-child(2) {
+  body .main-block .main-container main .container-block-6 .right-block-6:nth-child(2) {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
   }
 }
-body .main-container main .container-block-7 {
-  background: #add8e6;
+body .main-block .main-container main .container-block-7 {
   padding: clamp(10px, 4%, 10%);
   padding-top: 150px;
   grid-row: 7/8;
   width: 100%;
-  height: 100dvh;
+  min-height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
   -webkit-column-gap: 10px;
@@ -714,7 +743,7 @@ body .main-container main .container-block-7 {
   row-gap: 30px;
   position: relative;
 }
-body .main-container main .container-block-7 .left-block-7 {
+body .main-block .main-container main .container-block-7 .left-block-7 {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -728,12 +757,12 @@ body .main-container main .container-block-7 .left-block-7 {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-body .main-container main .container-block-7 .left-block-7 .block-h-text-7 {
+body .main-block .main-container main .container-block-7 .left-block-7 .block-h-text-7 {
   font-size: clamp(26px, 5vw, 36px);
   line-height: clamp(1em, 5vw, 1.2em);
   margin-bottom: clamp(1%, 4%, 19px);
 }
-body .main-container main .container-block-7 .left-block-7 .block-main-text-7 {
+body .main-block .main-container main .container-block-7 .left-block-7 .block-main-text-7 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -744,7 +773,7 @@ body .main-container main .container-block-7 .left-block-7 .block-main-text-7 {
   row-gap: 10px;
   line-height: clamp(1.2em, 5vw, 1.44em);
 }
-body .main-container main .container-block-7 .right-block-7 {
+body .main-block .main-container main .container-block-7 .right-block-7 {
   width: 100%;
   height: 100%;
   display: grid;
@@ -755,19 +784,18 @@ body .main-container main .container-block-7 .right-block-7 {
       -ms-flex-align: center;
           align-items: center;
 }
-body .main-container main .container-block-7 .right-block-7 .img-7 {
+body .main-block .main-container main .container-block-7 .right-block-7 .img-7 {
   max-width: 100%;
   min-width: 100%;
   max-height: 100%;
   min-height: 100%;
 }
-body .main-container main .container-block-8 {
-  background: #ffdcc7;
+body .main-block .main-container main .container-block-8 {
   padding: clamp(10px, 4%, 10%);
   padding-top: 150px;
   grid-row: 8/9;
   width: 100%;
-  height: 100dvh;
+  min-height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
   -webkit-column-gap: 10px;
@@ -776,7 +804,7 @@ body .main-container main .container-block-8 {
   row-gap: 30px;
   position: relative;
 }
-body .main-container main .container-block-8 .left-block-8 {
+body .main-block .main-container main .container-block-8 .left-block-8 {
   width: 100%;
   height: 100%;
   display: grid;
@@ -790,13 +818,13 @@ body .main-container main .container-block-8 .left-block-8 {
       -ms-flex-order: 1;
           order: 1;
 }
-body .main-container main .container-block-8 .left-block-8 .img-8 {
+body .main-block .main-container main .container-block-8 .left-block-8 .img-8 {
   max-width: 100%;
   min-width: 100%;
   max-height: 100%;
   min-height: 100%;
 }
-body .main-container main .container-block-8 .right-block-8 {
+body .main-block .main-container main .container-block-8 .right-block-8 {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -813,12 +841,12 @@ body .main-container main .container-block-8 .right-block-8 {
       -ms-flex-order: 2;
           order: 2;
 }
-body .main-container main .container-block-8 .right-block-8 .block-h-text-8 {
+body .main-block .main-container main .container-block-8 .right-block-8 .block-h-text-8 {
   font-size: clamp(26px, 5vw, 36px);
   line-height: clamp(1em, 5vw, 1.2em);
   margin-bottom: clamp(1%, 4%, 22px);
 }
-body .main-container main .container-block-8 .right-block-8 .block-main-text-8 {
+body .main-block .main-container main .container-block-8 .right-block-8 .block-main-text-8 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -830,7 +858,7 @@ body .main-container main .container-block-8 .right-block-8 .block-main-text-8 {
   line-height: clamp(0.8em, 4vw, 1.44em);
   margin-bottom: clamp(15px, 5%, 32px);
 }
-body .main-container main .container-block-8 .right-block-8 .icons-download-official {
+body .main-block .main-container main .container-block-8 .right-block-8 .icons-download-official {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -842,31 +870,31 @@ body .main-container main .container-block-8 .right-block-8 .icons-download-offi
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-body .main-container main .container-block-8 .right-block-8 .icons-download-official .icon-download {
+body .main-block .main-container main .container-block-8 .right-block-8 .icons-download-official .icon-download {
   width: 170px;
   height: 50px;
 }
-body .main-container main .container-block-8 .right-block-8 .icons-download-official .icon-official {
+body .main-block .main-container main .container-block-8 .right-block-8 .icons-download-official .icon-official {
   width: 170px;
   height: 50px;
 }
 @media all and (max-device-width: 1126px) {
-  body .main-container main .container-block-8 .left-block-8:nth-child(1) {
+  body .main-block .main-container main .container-block-8 .left-block-8:nth-child(1) {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
   }
-  body .main-container main .container-block-8 .right-block-8:nth-child(2) {
+  body .main-block .main-container main .container-block-8 .right-block-8:nth-child(2) {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
   }
 }
-body .main-container footer {
-  grid-row: 3/4;
+body .main-block .main-container main footer {
+  grid-row: 9/10;
   width: 100%;
-  height: 100%;
-  padding-top: 110px;
+  min-height: 100dvh;
+  padding-top: 150px;
   padding-bottom: 65px;
   padding-left: clamp(3%, 5%, 75px);
   padding-right: clamp(3%, 5%, 75px);
@@ -884,7 +912,7 @@ body .main-container footer {
           column-gap: 5px;
   row-gap: 20px;
 }
-body .main-container footer .foot-blocks {
+body .main-block .main-container main footer .foot-blocks {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -894,6 +922,6 @@ body .main-container footer .foot-blocks {
           flex-direction: column;
   font-size: 16px;
 }
-body .main-container footer .foot-blocks span a {
+body .main-block .main-container main footer .foot-blocks span a {
   font-size: 14px;
 }
