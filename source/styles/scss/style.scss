@@ -37,7 +37,7 @@ body {
     background: $main-back;
     color: $main-color-text;
 
-    header {
+    & header {
         width: 100%;
         max-height: 100px;
         height: 100px;
@@ -45,7 +45,7 @@ body {
         scroll-snap-align: start;
     }
 
-    main {
+    & main {
         min-width: 100%;
         max-width: 100%;
         width: 100%;
@@ -55,7 +55,7 @@ body {
         display: grid;
         position: relative;
 
-        .main-container {
+        & .main-container {
             position: absolute;
             width: 100%;
             max-height: 100%;
@@ -65,19 +65,58 @@ body {
             scroll-snap-type: y mandatory;
             grid-template-rows: repeat(9, auto);
 
+            & .h-text {
+                font-size: clamp(26px, 5vw, 36px);
+                line-height: 120%;
+            }
 
-            section {
+            & .block-h-text {
+                margin-bottom: clamp(18px, 4%, 23px);
+                display: flex;
+                flex-direction: column;
+            }
+
+            & .block-h-1 {
+                margin-top: clamp(18px, 5%, 33px);
+            }
+
+            & .icons-download-official {
+                margin-top: clamp(18px, 5%, 28px);
+                column-gap: clamp(5px, 2vw, 20px);
+                row-gap: clamp(5px, 2vw, 20px);
+            }
+
+            & .block-icons-mini {
+                margin-top: clamp(18px, 5%, 28px);
+                display: flex;
+                flex-wrap: wrap;
+
+                & .download-mini {
+                    width: 120px;
+                    height: 50px;
+                }
+
+                & .main-official-site {
+                    width: 120px;
+                    height: 50px;
+                }
+            }
+
+
+
+            & section {
                 width: 100%;
                 min-height: calc(100dvh - 100px);
                 scroll-snap-align: start;
                 padding: $section-padding;
             }
 
-            .section-1 {
+            & .section-1 {
                 grid-row: 1/2;
                 background: $back-section-1;
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
+                column-gap: 10px;
 
                 & .left-block-1 {
                     width: 100%;
@@ -106,14 +145,6 @@ body {
                             line-height: 156.25%;
                         }
                     }
-
-                    & .block-h-text-1 {
-                        display: grid;
-
-                        & .head-text {}
-                    }
-
-                    & .main-text-1 {}
 
                     & .icons-download-official {
                         width: 100%;
@@ -154,6 +185,7 @@ body {
                 background: $back-section-2;
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
+                column-gap: 10px;
 
                 & .left-block-2 {
                     width: 100%;
@@ -179,13 +211,19 @@ body {
                     justify-content: center;
                     order: 2;
 
-                    & .block-h-text-2 {}
-
                     .block-main-text-2 {
                         display: flex;
                         flex-direction: column;
+                    }
+                }
 
-                        & .main-text-2 {}
+                @media all and (max-device-width: 1004px) {
+                    .left-block-2:nth-child(1) {
+                        order: 2;
+                    }
+
+                    .right-block-2:nth-child(2) {
+                        order: 1;
                     }
                 }
             }
@@ -195,6 +233,7 @@ body {
                 background: $back-section-3;
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
+                column-gap: 10px;
 
                 & .left-block-3 {
                     width: 100%;
@@ -203,10 +242,6 @@ body {
                     justify-content: center;
                     flex-direction: column;
                     order: 1;
-
-                    & .block-h-text-3 {}
-
-                    & .main-text-3 {}
 
                     & .block-main-text-3 {
                         display: flex;
@@ -253,6 +288,7 @@ body {
 
                         & .block-h-text-4 {
                             text-align: center;
+                            margin: 0;
                         }
 
                         & .text-2-top-block-4 {
@@ -373,6 +409,7 @@ body {
                 background: $back-section-5;
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
+                column-gap: 10px;
 
                 & .left-block-5 {
                     width: 100%;
@@ -380,26 +417,6 @@ body {
                     display: flex;
                     justify-content: center;
                     flex-direction: column;
-
-                    & .block-h-text-5 {}
-
-                    & .main-text-5 {}
-
-                    & .block-icons-mini {
-                        display: flex;
-                        flex-wrap: wrap;
-
-                        & .download-mini {
-                            width: 120px;
-                            height: 50px;
-                        }
-
-                        & .main-official-site {
-                            width: 120px;
-                            height: 50px;
-                        }
-                    }
-
                 }
 
                 & .right-block-5 {
@@ -423,6 +440,7 @@ body {
                 background: $back-section-6;
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
+                column-gap: 10px;
 
                 & .left-block-6 {
                     width: 100%;
@@ -448,11 +466,19 @@ body {
                     flex-direction: column;
                     order: 2;
 
-                    & .block-h-text-6 {}
-
                     & .block-main-text-6 {
                         display: flex;
                         flex-direction: column;
+                    }
+                }
+
+                @media all and (max-device-width: 1004px) {
+                    .left-block-6:nth-child(1) {
+                        order: 2;
+                    }
+
+                    .right-block-6:nth-child(2) {
+                        order: 1;
                     }
                 }
             }
@@ -462,6 +488,7 @@ body {
                 background: $back-section-7;
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
+                column-gap: 10px;
 
                 & .left-block-7 {
                     width: 100%;
@@ -469,8 +496,6 @@ body {
                     display: flex;
                     justify-content: center;
                     flex-direction: column;
-
-                    & .block-h-text-7 {}
 
                     & .block-main-text-7 {
                         display: flex;
@@ -499,6 +524,7 @@ body {
                 background: $back-section-8;
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 457px, 50%), 1fr));
+                column-gap: 10px;
 
                 & .left-block-8 {
                     width: 100%;
@@ -524,8 +550,6 @@ body {
                     flex-direction: column;
                     order: 2;
 
-                    & .block-h-text-8 {}
-
                     & .block-main-text-8 {
                         display: flex;
                         flex-direction: column;
@@ -545,6 +569,16 @@ body {
                             width: 170px;
                             height: 50px;
                         }
+                    }
+                }
+
+                @media all and (max-device-width: 1004px) {
+                    .left-block-8:nth-child(1) {
+                        order: 2;
+                    }
+
+                    .right-block-8:nth-child(2) {
+                        order: 1;
                     }
                 }
             }
