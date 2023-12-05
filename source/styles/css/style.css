@@ -1,3 +1,17 @@
+body main .main-container .section-4 .bottom-block-4 .block-text-bottom-block-4 .text-bottom-block-4 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-top: clamp(5px, 3vw, 12px);
+  padding-bottom: clamp(5px, 3vw, 12px);
+  padding-left: clamp(14px, 3vw, 32px);
+  padding-right: clamp(14px, 3vw, 32px);
+  border-radius: 48px;
+  background: #ccccff;
+  border: solid 1px #2d2d2d;
+  text-align: center;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -12,18 +26,125 @@ body {
 }
 body header {
   width: 100%;
-  max-height: 100px;
-  height: 100px;
-  background: red;
+  max-height: 70px;
+  min-height: 70px;
+  height: 70px;
+  background: #F0F4FF;
   scroll-snap-align: start;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  padding-top: clamp(1px, 1%, 12px);
+  padding-bottom: clamp(1px, 1%, 12px);
+  padding-left: clamp(1px, 2%, 75px);
+  padding-right: clamp(1px, 2%, 75px);
+  -webkit-column-gap: 5px;
+     -moz-column-gap: 5px;
+          column-gap: 5px;
+}
+body header .left-container-header {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+}
+body header .left-container-header .logo-site {
+  min-width: 32px;
+  width: 32px;
+  min-height: 32px;
+  height: 32px;
+}
+body header .left-container-header .block-img-site {
+  width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 3px;
+     -moz-column-gap: 3px;
+          column-gap: 3px;
+  row-gap: 3px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body header .left-container-header .block-img-site .mini-img {
+  width: 20px;
+  height: 20px;
+  background: rebeccapurple;
+}
+body header .right-container-header {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 3px;
+     -moz-column-gap: 3px;
+          column-gap: 3px;
+  row-gap: 3px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+body header .right-container-header .mini-img {
+  width: 20px;
+  height: 20px;
+}
+body header .right-container-header .img-site-1 {
+  background: #d5deef;
+}
+body header .right-container-header .img-site-2 {
+  background: #b8c5ff;
+}
+body header .right-container-header .img-site-3 {
+  background: #d2e0ff;
+}
+body header .right-container-header .img-site-4 {
+  background: #ccccff;
+}
+body header .right-container-header .img-site-5 {
+  background: #C3E7F4;
+}
+body header .right-container-header .img-site-6 {
+  background: #ffd1dc;
+}
+body header .right-container-header .img-site-7 {
+  background: #add8e6;
+}
+body header .right-container-header .img-site-8 {
+  background: #ffdcc7;
+}
+body header .right-container-header .img-site-9 {
+  background: #DDD8D5;
 }
 body main {
   min-width: 100%;
   max-width: 100%;
   width: 100%;
-  min-height: calc(100dvh - 100px);
-  max-height: calc(100dvh - 100px);
-  height: calc(100dvh - 100px);
+  min-height: calc(100dvh - 70px);
+  max-height: calc(100dvh - 70px);
+  height: calc(100dvh - 70px);
   display: grid;
   position: relative;
 }
@@ -80,9 +201,10 @@ body main .main-container .block-icons-mini .main-official-site {
 }
 body main .main-container section {
   width: 100%;
-  min-height: calc(100dvh - 100px);
+  min-height: calc(100dvh - 70px);
   scroll-snap-align: start;
   padding: clamp(10px, 4%, 10%);
+  row-gap: 5px;
 }
 body main .main-container .section-1 {
   grid-row: 1/2;
@@ -223,6 +345,7 @@ body main .main-container .section-2 .right-block-2 .block-main-text-2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  row-gap: 12px;
 }
 @media all and (max-device-width: 1004px) {
   body main .main-container .section-2 .left-block-2:nth-child(1) {
@@ -270,6 +393,7 @@ body main .main-container .section-3 .left-block-3 .block-main-text-3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  row-gap: 12px;
 }
 body main .main-container .section-3 .right-block-3 {
   width: 100%;
@@ -331,22 +455,17 @@ body main .main-container .section-4 .bottom-block-4 {
   grid-row: 2/3;
   width: 100%;
   height: 100%;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: clamp(20px, 7vw, 60px);
 }
 body main .main-container .section-4 .bottom-block-4 .block-text-bottom-block-4 {
   width: 100%;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-body main .main-container .section-4 .bottom-block-4 .block-text-bottom-block-4 .text-bottom-block-4 {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -354,19 +473,15 @@ body main .main-container .section-4 .bottom-block-4 .block-text-bottom-block-4 
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #ccccff;
-  border: solid 1px #2d2d2d;
-  text-align: center;
 }
 body main .main-container .section-4 .bottom-block-4 .icons-bottom-block-4 {
-  width: 100%;
-  height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 64px);
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+  row-gap: clamp(10px, 5vw, 60px);
 }
 body main .main-container .section-4 .bottom-block-4 .icons-bottom-block-4 .icon-music {
   max-width: 100%;
@@ -526,6 +641,7 @@ body main .main-container .section-6 .right-block-6 .block-main-text-6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  row-gap: 12px;
 }
 @media all and (max-device-width: 1004px) {
   body main .main-container .section-6 .left-block-6:nth-child(1) {
@@ -570,6 +686,7 @@ body main .main-container .section-7 .left-block-7 .block-main-text-7 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  row-gap: 12px;
 }
 body main .main-container .section-7 .right-block-7 {
   width: 100%;
@@ -642,6 +759,7 @@ body main .main-container .section-8 .right-block-8 .block-main-text-8 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  row-gap: 12px;
 }
 body main .main-container .section-8 .right-block-8 .icons-download-official {
   width: 100%;
@@ -674,7 +792,7 @@ body main .main-container .section-8 .right-block-8 .icons-download-official .ic
 body main .main-container footer {
   grid-row: 9/10;
   width: 100%;
-  min-height: calc(100dvh - 100px);
+  min-height: calc(100dvh - 70px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -684,6 +802,11 @@ body main .main-container footer {
       -ms-flex-pack: justify;
           justify-content: space-between;
   scroll-snap-align: start;
+  background: #DDD8D5;
+  padding-top: 65px;
+  padding-bottom: 65px;
+  padding-left: clamp(3%, 5%, 75px);
+  padding-right: clamp(3%, 5%, 75px);
 }
 body main .main-container footer .foot-blocks {
   display: -webkit-box;
