@@ -1,32 +1,25 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const headerLinks = document.querySelectorAll('header a');
-    const sections = document.querySelectorAll('main section');
-    const footerLink = document.querySelector('footer a');
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("main .main-container section");
+    const header = document.querySelector("body header");
+    const footer = document.querySelector("body footer");
 
-    function setActiveLink() {
-        const scrollPosition = window.scrollY + window.innerHeight / 2;
+    const updateHeaderColor = () => {
+        sections.forEach((section) => {
+            const sectionRect = section.getBoundingClientRect();
+            const sectionTop = sectionRect.top;
+            const sectionBottom = sectionRect.bottom;
 
-        sections.forEach((section, index) => {
-            const sectionTop = section.offsetTop;
-            const sectionBottom = sectionTop + section.offsetHeight;
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                headerLinks.forEach((link) => link.classList.remove('active'));
-                headerLinks[index].classList.add('active');
+            if (sectionTop < window.innerHeight / 2 && sectionBottom > window.innerHeight / 2) {
+                const sectionColor = window.getComputedStyle(section).backgroundColor;
+                header.style.backgroundColor = sectionColor;
+                footer.style.backgroundColor = sectionColor;
             }
         });
+    };
 
-        // Check if in the footer
-        const footerTop = document.getElementById('footer-9').offsetTop;
-        if (scrollPosition >= footerTop) {
-            headerLinks.forEach((link) => link.classList.remove('active'));
-            footerLink.classList.add('active');
-        }
-    }
+    // Call the function initially
+    updateHeaderColor();
 
-    // Set active link on page load
-    setActiveLink();
-
-    // Set active link on scroll
-    window.addEventListener('scroll', setActiveLink);
+    // Attach event listener for scroll to update header color
+    window.addEventListener("scroll", updateHeaderColor);
 });
