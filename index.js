@@ -1,33 +1,36 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Отслеживаем скролл
+    // Слушаем событие прокрутки страницы
     window.addEventListener('scroll', function () {
-        // Получаем текущее положение скролла
-        var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        // Получаем все секции и футер
+        const sections = document.querySelectorAll('section');
+        const footer = document.querySelector('footer');
 
-        // Получаем все секции
-        var sections = document.querySelectorAll('.main-container section');
+        // Получаем текущую позицию прокрутки
+        const scrollPosition = window.scrollY || window.pageYOffset;
 
-        // Перебираем секции и определяем текущую
-        var currentSection = null;
-        sections.forEach(function (section) {
-            var sectionTop = section.offsetTop - document.querySelector('header').offsetHeight;
-            var sectionBottom = sectionTop + section.clientHeight;
+        // Перебираем секции и определяем, в какой секции находится текущая позиция
+        sections.forEach(function (section, index) {
+            const sectionTop = section.offsetTop - document.querySelector('header').offsetHeight;
+            const sectionBottom = sectionTop + section.offsetHeight;
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                currentSection = section;
+                // Удаляем класс active у всех секций
+                sections.forEach(function (s) {
+                    s.classList.remove('active');
+                });
+
+                // Добавляем класс active текущей секции
+                section.classList.add('active');
             }
         });
 
-        // Если текущая секция найдена
-        if (currentSection) {
-            // Удаляем класс 'active' у всех ссылок
-            document.querySelectorAll('.right-container-header a').forEach(function (link) {
-                link.classList.remove('active');
+        // Проверяем, если позиция находится в футере, то добавляем класс active
+        const footerTop = footer.offsetTop - document.querySelector('header').offsetHeight;
+        if (scrollPosition >= footerTop) {
+            sections.forEach(function (s) {
+                s.classList.remove('active');
             });
-
-            // Добавляем класс 'active' соответствующей ссылке
-            var linkClass = currentSection.classList[0];
-            document.querySelector('.' + linkClass).classList.add('active');
+            footer.classList.add('active');
         }
     });
 });
