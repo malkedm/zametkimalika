@@ -1,40 +1,34 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section");
-    const footer = document.querySelector("footer");
-    const headerLinks = document.querySelectorAll(".right-container-header .mini-img");
+document.addEventListener('DOMContentLoaded', function () {
+    // Получаем ссылки на все секции и футер
+    const sections = document.querySelectorAll('main .main-container section');
+    const footer = document.querySelector('main .main-container footer');
 
-    function changeHeaderBackground() {
-        const scrollPosition = window.scrollY;
+    // Функция для определения текущей секции
+    function determineCurrentSection() {
+        const currentPosition = window.scrollY;
 
+        // Проверяем, в какой секции находится положение скролла
         sections.forEach((section, index) => {
             const sectionTop = section.offsetTop;
             const sectionBottom = sectionTop + section.offsetHeight;
 
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                headerLinks[index].classList.add("active");
-            } else {
-                headerLinks[index].classList.remove("active");
+            if (currentPosition >= sectionTop && currentPosition < sectionBottom) {
+                console.log(`You are in section ${index + 1}`);
+                // Добавьте здесь свой код для дополнительных действий при нахождении в секции
             }
         });
 
+        // Проверяем, находится ли положение скролла в футере
         const footerTop = footer.offsetTop;
-        if (scrollPosition >= footerTop) {
-            headerLinks.forEach(link => link.classList.remove("active"));
-            headerLinks[headerLinks.length - 1].classList.add("active"); // Footer link
+        if (currentPosition >= footerTop) {
+            console.log('You are in the footer');
+            // Добавьте здесь свой код для дополнительных действий при нахождении в футере
         }
     }
 
-    // Обработчик события прокрутки страницы
-    window.addEventListener("scroll", changeHeaderBackground);
+    // Добавляем обработчик события скролла
+    document.addEventListener('scroll', determineCurrentSection);
 
-    // Обработчик события клика по ссылкам в header
-    headerLinks.forEach((link, index) => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
-            headerLinks.forEach(link => link.classList.remove("active"));
-            this.classList.add("active");
-            const targetSection = sections[index];
-            window.scrollTo({ top: targetSection.offsetTop, behavior: "smooth" });
-        });
-    });
+    // Вызываем функцию при загрузке страницы для определения начальной секции
+    determineCurrentSection();
 });
