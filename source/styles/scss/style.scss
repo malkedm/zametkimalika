@@ -32,6 +32,17 @@ body {
         background: #F0F4FF;
         scroll-snap-align: start;
         display: grid;
+
+        & a {
+            // Стили для неактивных ссылок в header
+            color: $main-color-text;
+        }
+
+        & a.active-link {
+            // Стили для активной ссылки в header
+            font-weight: bold;
+            color: blue; // Замените на цвет вашего выбора
+        }
     }
 
     & main {
@@ -62,6 +73,11 @@ body {
                 scroll-snap-align: start;
                 padding: $section-padding;
                 row-gap: 5px;
+
+                &.active-section {
+                    // Стили для активной секции
+                    border: 2px solid red; // Пример границы, замените на свои стили
+                }
             }
 
             & .section-1 {
