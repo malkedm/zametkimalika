@@ -1,34 +1,32 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Получаем ссылки на все секции и футер
-    const sections = document.querySelectorAll('main .main-container section');
-    const footer = document.querySelector('main .main-container footer');
+document.addEventListener("DOMContentLoaded", function () {
+    // Добавьте обработчик событий для всего документа
+    document.addEventListener("scroll", function () {
+        // Получите текущее положение прокрутки страницы
+        var scrollPosition = window.scrollY;
 
-    // Функция для определения текущей секции
-    function determineCurrentSection() {
-        const currentPosition = window.scrollY;
+        // Получите высоту шапки (если она фиксирована)
+        var headerHeight = document.querySelector('header').offsetHeight;
 
-        // Проверяем, в какой секции находится положение скролла
-        sections.forEach((section, index) => {
-            const sectionTop = section.offsetTop;
-            const sectionBottom = sectionTop + section.offsetHeight;
+        // Получите высоту каждой секции
+        var section1Height = document.querySelector('.section-1').offsetHeight;
+        // Добавьте остальные секции аналогичным образом
 
-            if (currentPosition >= sectionTop && currentPosition < sectionBottom) {
-                console.log(`You are in section ${index + 1}`);
-                // Добавьте здесь свой код для дополнительных действий при нахождении в секции
-            }
-        });
+        // Получите высоту футера
+        var footerHeight = document.querySelector('.footer').offsetHeight;
 
-        // Проверяем, находится ли положение скролла в футере
-        const footerTop = footer.offsetTop;
-        if (currentPosition >= footerTop) {
-            console.log('You are in the footer');
-            // Добавьте здесь свой код для дополнительных действий при нахождении в футере
+        // Определите, в какой секции находится положение прокрутки
+        if (scrollPosition >= headerHeight && scrollPosition < headerHeight + section1Height) {
+            console.log("Находитесь в секции 1");
+        } else if (scrollPosition >= headerHeight + section1Height && scrollPosition < headerHeight + section1Height + section2Height) {
+            console.log("Находитесь в секции 2");
+        } else if (scrollPosition >= headerHeight + section1Height + section2Height && scrollPosition < headerHeight + section1Height + section2Height + section3Height) {
+            console.log("Находитесь в секции 3");
         }
-    }
+        // Добавьте аналогичные условия для остальных секций
 
-    // Добавляем обработчик события скролла
-    document.addEventListener('scroll', determineCurrentSection);
-
-    // Вызываем функцию при загрузке страницы для определения начальной секции
-    determineCurrentSection();
+        // Определите, находится ли положение прокрутки в футере
+        if (scrollPosition >= headerHeight + section1Height + section2Height + section3Height + section4Height + section5Height + section6Height + section7Height + section8Height) {
+            console.log("Находитесь в футере");
+        }
+    });
 });
