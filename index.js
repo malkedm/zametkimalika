@@ -1,34 +1,40 @@
-// Получаем все ссылки с классом .img-site-1 до .img-site-9
-const links = document.querySelectorAll('.img-site-1, .img-site-2, .img-site-3, .img-site-4, .img-site-5, .img-site-6, .img-site-7, .img-site-8, .img-site-9');
+document.addEventListener("DOMContentLoaded", function () {
+    // Получаем все ссылки с классом .img-site-1 до .img-site-9
+    const links = document.querySelectorAll('.right-container-header .mini-img');
 
-// Функция для проверки, находится ли элемент в видимой области окна
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
+    // Получаем футер
+    const footer = document.querySelector('footer');
 
-// Функция для обновления цвета фона ссылок
-function updateLinkBackground() {
-    links.forEach(link => {
-        const sectionId = link.getAttribute('href').substring(1); // Получаем id секции из href
-        const section = document.getElementById(sectionId);
+    // Функция для изменения стиля ссылок в зависимости от положения скролла
+    function changeLinkStyle() {
+        const scrollPosition = window.scrollY;
+        const footerPosition = footer.offsetTop;
 
-        // Проверяем, находится ли секция в видимой области
-        if (isInViewport(section)) {
-            link.style.background = 'green';
+        // Перебираем все секции и изменяем стиль ссылок в зависимости от положения скролла
+        document.querySelectorAll('section').forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                // Мы находимся в данной секции, изменяем цвет фона у соответствующей ссылки
+                links[index].style.background = 'green';
+            } else {
+                // Мы не в данной секции, возвращаем цвет фона к исходному
+                links[index].style.background = '';
+            }
+        });
+
+        // Проверяем, находимся ли в футере и изменяем цвет фона у соответствующей ссылки
+        if (scrollPosition >= footerPosition) {
+            links[8].style.background = 'green'; // 8 - индекс футера
         } else {
-            link.style.background = ''; // Сбрасываем цвет, если секция не видна
+            links[8].style.background = '';
         }
-    });
-}
+    }
 
-// Слушаем событие прокрутки окна и обновляем цвет фона ссылок
-window.addEventListener('scroll', updateLinkBackground);
+    // Добавляем обработчик события при прокрутке страницы
+    window.addEventListener('scroll', changeLinkStyle);
 
-// Вызываем функцию при загрузке страницы для установки начального цвета
-updateLinkBackground();
+    // Вызываем функцию при загрузке страницы для установки начальных стилей
+    changeLinkStyle();
+});
