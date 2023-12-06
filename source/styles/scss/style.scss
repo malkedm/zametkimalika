@@ -13,7 +13,6 @@ $back-footer: #DDD8D5;
 
 $height-header: 70px;
 
-
 * {
     box-sizing: border-box;
 }
@@ -32,16 +31,78 @@ body {
         background: #F0F4FF;
         scroll-snap-align: start;
         display: grid;
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        padding-top: clamp(1px, 1%, 12px);
+        padding-bottom: clamp(1px, 1%, 12px);
+        padding-left: clamp(1px, 2%, 75px);
+        padding-right: clamp(1px, 2%, 75px);
+        column-gap: 5px;
 
-        & a {
-            // Стили для неактивных ссылок в header
-            color: $main-color-text;
+        & a.active {
+            background: green;
         }
 
-        & a.active-link {
-            // Стили для активной ссылки в header
-            font-weight: bold;
-            color: blue; // Замените на цвет вашего выбора
+        & .left-container-header {
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+        }
+
+        & .right-container-header {
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            column-gap: 3px;
+            row-gap: 3px;
+            justify-content: center;
+
+            & .mini-img {
+                width: 20px;
+                height: 20px;
+            }
+
+            & .img-site-1 {
+                background: $back-section-1;
+            }
+
+            & .img-site-2 {
+                background: $back-section-2;
+            }
+
+            & .img-site-3 {
+                background: $back-section-3;
+            }
+
+            & .img-site-4 {
+                background: $back-section-4;
+            }
+
+            & .img-site-5 {
+                background: $back-section-5;
+            }
+
+            & .img-site-6 {
+                background: $back-section-6;
+            }
+
+            & .img-site-7 {
+                background: $back-section-7;
+            }
+
+            & .img-site-8 {
+                background: $back-section-8;
+            }
+
+            & .img-site-9 {
+                background: $back-footer;
+            }
+
         }
     }
 
@@ -65,19 +126,10 @@ body {
             scroll-snap-type: y mandatory;
             grid-template-rows: repeat(9, auto);
 
-
-
             & section {
                 width: 100%;
                 min-height: calc(100dvh - $height-header);
                 scroll-snap-align: start;
-                padding: $section-padding;
-                row-gap: 5px;
-
-                &.active-section {
-                    // Стили для активной секции
-                    border: 2px solid red; // Пример границы, замените на свои стили
-                }
             }
 
             & .section-1 {
@@ -130,10 +182,8 @@ body {
 
             footer {
                 grid-row: 9/10;
-                width: 100%;
                 min-height: calc(100dvh - $height-header);
                 display: flex;
-                scroll-snap-align: start;
                 background: $back-footer;
             }
         }
