@@ -1,36 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Слушаем событие прокрутки страницы
-    window.addEventListener('scroll', function () {
-        // Получаем все секции и футер
-        const sections = document.querySelectorAll('section');
-        const footer = document.querySelector('footer');
+    const sections = document.querySelectorAll('main .main-container section');
+    const headerLinks = document.querySelectorAll('header .right-container-header a');
+    const footerLink = document.querySelector('header .right-container-header .img-site-9');
 
-        // Получаем текущую позицию прокрутки
-        const scrollPosition = window.scrollY || window.pageYOffset;
+    function setActiveLink() {
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-        // Перебираем секции и определяем, в какой секции находится текущая позиция
-        sections.forEach(function (section, index) {
-            const sectionTop = section.offsetTop - document.querySelector('header').offsetHeight;
+        sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
             const sectionBottom = sectionTop + section.offsetHeight;
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                // Удаляем класс active у всех секций
-                sections.forEach(function (s) {
-                    s.classList.remove('active');
-                });
-
-                // Добавляем класс active текущей секции
-                section.classList.add('active');
+                headerLinks.forEach((link) => link.classList.remove('active'));
+                headerLinks[index].classList.add('active');
             }
         });
 
-        // Проверяем, если позиция находится в футере, то добавляем класс active
-        const footerTop = footer.offsetTop - document.querySelector('header').offsetHeight;
-        if (scrollPosition >= footerTop) {
-            sections.forEach(function (s) {
-                s.classList.remove('active');
-            });
-            footer.classList.add('active');
+        // Check if the footer is in the viewport
+        const footerTop = document.querySelector('footer').offsetTop;
+        const footerBottom = footerTop + document.querySelector('footer').offsetHeight;
+
+        if (scrollPosition >= footerTop && scrollPosition < footerBottom) {
+            headerLinks.forEach((link) => link.classList.remove('active'));
+            footerLink.classList.add('active');
         }
-    });
+    }
+
+    // Initial call to set active link on page load
+    setActiveLink();
+
+    // Event listener for scroll to dynamically update active link
+    window.addEventListener('scroll', setActiveLink);
 });
