@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const scrollPosition = window.scrollY;
 
         sections.forEach((section) => {
-            const sectionTop = section.offsetTop - document.querySelector("header").offsetHeight;
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY;
             const sectionBottom = sectionTop + section.clientHeight;
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Проверяем, если находимся в футере
-        const footerTop = footer.offsetTop - document.querySelector("header").offsetHeight;
+        const footerTop = footer.getBoundingClientRect().top + window.scrollY;
         const footerBottom = footerTop + footer.clientHeight;
 
         if (scrollPosition >= footerTop && scrollPosition < footerBottom) {
