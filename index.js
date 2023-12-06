@@ -1,59 +1,72 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Получаем все секции и ссылки в хедере
     const sections = document.querySelectorAll('main .main-container section');
     const headerLinks = document.querySelectorAll('header a');
-    const header = document.querySelector('body header');
+
+    // Получаем элементы header и footer
+    const header = document.querySelector('header');
     const footer = document.querySelector('footer');
 
-    let currentSectionIndex = 0;
+    // Устанавливаем обработчик события при прокрутке страницы
+    document.addEventListener('scroll', function () {
+        // Определяем, в какой секции мы находимся
+        let currentSection = null;
 
-    // Функция для обновления активных кнопок в header
-    function updateHeaderLinks() {
-        headerLinks.forEach((link, index) => {
-            link.classList.toggle('active', index === currentSectionIndex);
-        });
-    }
-
-    // Функция для обновления цвета header
-    function updateHeaderColor() {
-        const currentSection = sections[currentSectionIndex];
-        const backgroundColor = window.getComputedStyle(currentSection).backgroundColor;
-        header.style.backgroundColor = backgroundColor;
-    }
-
-    // Функция для обработки события прокрутки
-    function handleScroll() {
-        const scrollPosition = window.scrollY;
-        const sectionTops = Array.from(sections).map(section => section.offsetTop);
-
-        for (let i = 0; i < sectionTops.length; i++) {
-            if (scrollPosition >= sectionTops[i] && scrollPosition < sectionTops[i + 1]) {
-                currentSectionIndex = i;
-                break;
+        sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 0 && rect.bottom > 0) {
+                currentSection = index + 1;
             }
-        }
+        });
 
-        updateHeaderLinks();
-        updateHeaderColor();
+        // Устанавливаем активные ссылки в хедере
+        headerLinks.forEach(link => {
+            const sectionId = link.getAttribute('href').substring(1);
+            link.classList.toggle('active', sectionId === `section-${currentSection}`);
+        });
+
+        // Устанавливаем цвет header в соответствии с цветом активной секции или footer
+        const currentColor = getComputedStyle(sections[currentSection - 1]).backgroundColor;
+        header.style.backgroundColor = currentColor;
+    });
+
+    // Устанавливаем обработчик события при прокрутке колесиком мыши
+    document.addEventListener('wheel', function (event) {
+        event.preventDefault();
+
+        const delta = event.deltaY;
+        const currentSection = getCurrentSection();
+
+        // Определяем направление прокрутки
+        if (delta < 0) {
+            // Прокрутка вверх
+            scrollToSection(currentSection - 1);
+        } else {
+            // Прокрутка вниз
+            scrollToSection(currentSection + 1);
+        }
+    });
+
+    // Функция для определения текущей секции
+    function getCurrentSection() {
+        let currentSection = null;
+
+        sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 0 && rect.bottom > 0) {
+                currentSection = index + 1;
+            }
+        });
+
+        return currentSection;
     }
 
-    // Функция для обработки события свайпа/скролла
-    function handleSwipe(event) {
-        if (event.deltaY > 0 && currentSectionIndex < sections.length - 1) {
-            currentSectionIndex++;
-        } else if (event.deltaY < 0 && currentSectionIndex > 0) {
-            currentSectionIndex--;
-        } else if (event.deltaY < 0 && currentSectionIndex === 0) {
-            currentSectionIndex = sections.length - 1;
-        } else if (event.deltaY > 0 && currentSectionIndex === sections.length - 1) {
-            currentSectionIndex = 0;
-        }
+    // Функция для прокрутки к указанной секции
+    function scrollToSection(sectionIndex) {
+        // Проверяем, чтобы индекс секции был в допустимых пределах
+        sectionIndex = Math.max(1, Math.min(sections.length, sectionIndex));
 
-        updateHeaderLinks();
-        updateHeaderColor();
+        // Прокручиваем к указанной секции
+        sections[sectionIndex - 1].scrollIntoView({ behavior: 'smooth' });
     }
-
-    // Обработчики событий
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('wheel', handleSwipe);
-    window.addEventListener('touchmove', handleSwipe);
 });
