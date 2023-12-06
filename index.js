@@ -1,31 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Получаем все ссылки в header
     const headerLinks = document.querySelectorAll('header a');
 
-    function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
+    // Функция для обновления цвета фона ссылок
+    function updateLinkBackground() {
+        // Получаем текущую позицию прокрутки страницы
+        const scrollPosition = window.scrollY || window.pageYOffset;
 
-    function updateHeaderLinks() {
-        const sections = document.querySelectorAll('main section, footer');
-        sections.forEach((section, index) => {
-            const link = headerLinks[index];
-            if (isInViewport(section)) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
+        // Перебираем все секции
+        document.querySelectorAll('main section').forEach((section, index) => {
+            const sectionId = section.getAttribute('id');
+            const sectionOffsetTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            // Проверяем, находится ли текущая позиция прокрутки внутри секции
+            if (scrollPosition >= sectionOffsetTop && scrollPosition < sectionOffsetTop + sectionHeight) {
+                // Если да, то устанавливаем цвет фона для соответствующей ссылки в header
+                headerLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
+                });
             }
         });
     }
 
-    document.addEventListener('scroll', updateHeaderLinks);
-    document.addEventListener('resize', updateHeaderLinks);
+    // Обновляем цвет фона при загрузке страницы
+    updateLinkBackground();
 
-    // Дополнительно можно добавить обработчик для события загрузки контента
-    window.addEventListener('load', updateHeaderLinks);
+    // Обновляем цвет фона при прокрутке
+    document.addEventListener('scroll', updateLinkBackground);
+
+    // Обновляем цвет фона при изменении размеров окна
+    window.addEventListener('resize', updateLinkBackground);
 });
