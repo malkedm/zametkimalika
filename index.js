@@ -1,35 +1,39 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('main .main-container section');
-    const footer = document.querySelector('main .main-container footer');
-
-    function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-        );
-    }
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("main .main-container section");
+    const footer = document.getElementById("footer-9");
 
     function highlightCurrentSection() {
-        for (const section of sections) {
-            if (isInViewport(section)) {
-                section.classList.add('active');
-            } else {
-                section.classList.remove('active');
-            }
-        }
+        const scrollPosition = window.scrollY;
 
-        // Check if footer is in viewport
-        if (isInViewport(footer)) {
-            footer.classList.add('active');
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop - document.querySelector("header").offsetHeight;
+            const sectionBottom = sectionTop + section.clientHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                // Устанавливаем активный класс для текущей секции
+                section.classList.add("active");
+            } else {
+                // Удаляем активный класс для других секций
+                section.classList.remove("active");
+            }
+        });
+
+        // Проверяем, если находимся в футере
+        const footerTop = footer.offsetTop - document.querySelector("header").offsetHeight;
+        const footerBottom = footerTop + footer.clientHeight;
+
+        if (scrollPosition >= footerTop && scrollPosition < footerBottom) {
+            // Устанавливаем активный класс для футера
+            footer.classList.add("active");
         } else {
-            footer.classList.remove('active');
+            // Удаляем активный класс для футера
+            footer.classList.remove("active");
         }
     }
 
-    // Initial highlighting
-    highlightCurrentSection();
+    // Вызываем функцию при прокрутке страницы
+    window.addEventListener("scroll", highlightCurrentSection);
 
-    // Update on scroll
-    window.addEventListener('scroll', highlightCurrentSection);
+    // Вызываем функцию при загрузке страницы
+    highlightCurrentSection();
 });
