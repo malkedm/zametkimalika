@@ -1,40 +1,51 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Получаем все ссылки в header
-    const links = document.querySelectorAll('header a');
+    const sections = document.querySelectorAll('section');
+    const footer = document.querySelector('footer');
+    const headerLinks = document.querySelectorAll('header .mini-img');
 
-    // Получаем все секции и футер
-    const sections = document.querySelectorAll('main .main-container section');
-    const footer = document.querySelector('main .main-container footer');
+    let activeIndex = 0;
 
-    // Функция для обновления цвета фона ссылок
-    function updateLinkBackground() {
-        // Получаем текущую позицию прокрутки
-        const scrollPosition = window.scrollY || window.pageYOffset;
+    function setActiveIndex() {
+        const scrollPosition = window.scrollY;
 
-        // Перебираем все секции и футер
         sections.forEach((section, index) => {
             const sectionTop = section.offsetTop;
             const sectionBottom = sectionTop + section.offsetHeight;
 
-            // Проверяем, находится ли текущая секция на экране
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                // Если да, то меняем background соответствующей ссылки на зелёный
-                links.forEach(link => link.style.background = '');
-                links[index].style.background = 'green';
+                activeIndex = index;
             }
         });
 
-        // Проверяем, находится ли футер на экране
         const footerTop = footer.offsetTop;
         const footerBottom = footerTop + footer.offsetHeight;
 
         if (scrollPosition >= footerTop && scrollPosition < footerBottom) {
-            // Если да, то меняем background соответствующей ссылки на зелёный
-            links.forEach(link => link.style.background = '');
-            links[links.length - 1].style.background = 'green';
+            activeIndex = headerLinks.length - 1; // Footer is considered as the last section
         }
     }
 
-    // Обновляем background ссылок при прокрутке
-    window.addEventListener('scroll', updateLinkBackground);
+    function changeBackground() {
+        headerLinks.forEach((link, index) => {
+            if (index === activeIndex) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+
+    function handleScroll() {
+        setActiveIndex();
+        changeBackground();
+    }
+
+    // Listen for scroll events
+    window.addEventListener('scroll', handleScroll);
+
+    // Listen for touch events (for mobile)
+    window.addEventListener('touchmove', handleScroll);
+
+    // Listen for wheel events
+    window.addEventListener('wheel', handleScroll);
 });
