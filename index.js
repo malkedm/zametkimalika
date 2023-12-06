@@ -1,42 +1,33 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("main section");
-    const footer = document.getElementById("footer-9");
+document.addEventListener('DOMContentLoaded', function () {
+    // Получаем все секции
+    const sections = document.querySelectorAll('main .main-container section');
 
-    function getCurrentSection() {
-        const scrollPosition = window.scrollY + 1;
-        let currentSection = null;
+    // Функция для определения видимой секции
+    function getVisibleSection() {
+        let visibleSection = null;
 
         sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
-            const sectionBottom = sectionTop + section.offsetHeight;
+            const rect = section.getBoundingClientRect();
+            const isVisible = (
+                rect.top >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            );
 
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                currentSection = section;
+            if (isVisible) {
+                visibleSection = section;
             }
         });
 
-        if (scrollPosition >= footer.offsetTop) {
-            currentSection = footer;
-        }
-
-        return currentSection;
+        return visibleSection;
     }
 
-    function highlightCurrentSection() {
-        const currentSection = getCurrentSection();
+    // Обработчик события прокрутки страницы
+    window.addEventListener('scroll', function () {
+        const currentSection = getVisibleSection();
 
-        // Убираем подсветку со всех секций
-        sections.forEach((section) => {
-            section.classList.remove("highlight");
-        });
-
-        // Подсвечиваем текущую секцию
+        // Добавьте свой код для обработки текущей секции
         if (currentSection) {
-            currentSection.classList.add("highlight");
+            console.log('Текущая секция:', currentSection.id);
         }
-    }
-
-    // Вызываем функцию при загрузке страницы и при прокрутке
-    window.addEventListener("scroll", highlightCurrentSection);
-    window.addEventListener("load", highlightCurrentSection);
+    });
 });
