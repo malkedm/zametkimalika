@@ -10,25 +10,29 @@ document.addEventListener("DOMContentLoaded", function () {
         const scrollPosition = window.scrollY;
         const footerPosition = footer.offsetTop;
 
+        // Функция для сброса стилей у всех ссылок
+        function resetStyles() {
+            links.forEach(link => {
+                link.style.background = '';
+            });
+        }
+
         // Перебираем все секции и изменяем стиль ссылок в зависимости от положения скролла
         document.querySelectorAll('section').forEach((section, index) => {
             const sectionTop = section.offsetTop;
             const sectionBottom = sectionTop + section.offsetHeight;
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                // Мы находимся в данной секции, изменяем цвет фона у соответствующей ссылки
+                // Мы находимся в данной секции, сбрасываем стили и изменяем цвет фона у соответствующей ссылки
+                resetStyles();
                 links[index].style.background = 'green';
-            } else {
-                // Мы не в данной секции, возвращаем цвет фона к исходному
-                links[index].style.background = '';
             }
         });
 
         // Проверяем, находимся ли в футере и изменяем цвет фона у соответствующей ссылки
         if (scrollPosition >= footerPosition) {
+            resetStyles();
             links[8].style.background = 'green'; // 8 - индекс футера
-        } else {
-            links[8].style.background = '';
         }
     }
 
