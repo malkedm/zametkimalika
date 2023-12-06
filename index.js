@@ -1,37 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('section');
-    const footer = document.querySelector('footer');
+    // Отслеживаем скролл
+    window.addEventListener('scroll', function () {
+        // Получаем текущее положение скролла
+        var scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
-    function highlightCurrentSection() {
-        const currentPosition = window.scrollY + window.innerHeight / 2;
+        // Получаем все секции
+        var sections = document.querySelectorAll('.main-container section');
 
-        sections.forEach((section, index) => {
-            const sectionTop = section.offsetTop;
-            const sectionBottom = sectionTop + section.offsetHeight;
+        // Перебираем секции и определяем текущую
+        var currentSection = null;
+        sections.forEach(function (section) {
+            var sectionTop = section.offsetTop - document.querySelector('header').offsetHeight;
+            var sectionBottom = sectionTop + section.clientHeight;
 
-            if (currentPosition >= sectionTop && currentPosition <= sectionBottom) {
-                removeActiveClass();
-                section.classList.add('active');
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                currentSection = section;
             }
         });
 
-        const footerTop = footer.offsetTop;
-        const footerBottom = footerTop + footer.offsetHeight;
+        // Если текущая секция найдена
+        if (currentSection) {
+            // Удаляем класс 'active' у всех ссылок
+            document.querySelectorAll('.right-container-header a').forEach(function (link) {
+                link.classList.remove('active');
+            });
 
-        if (currentPosition >= footerTop && currentPosition <= footerBottom) {
-            removeActiveClass();
-            footer.classList.add('active');
+            // Добавляем класс 'active' соответствующей ссылке
+            var linkClass = currentSection.classList[0];
+            document.querySelector('.' + linkClass).classList.add('active');
         }
-    }
-
-    function removeActiveClass() {
-        sections.forEach((section) => {
-            section.classList.remove('active');
-        });
-
-        footer.classList.remove('active');
-    }
-
-    window.addEventListener('scroll', highlightCurrentSection);
-    window.addEventListener('resize', highlightCurrentSection);
+    });
 });
