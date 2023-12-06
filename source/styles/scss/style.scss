@@ -38,9 +38,6 @@ body {
         padding-right: clamp(1px, 2%, 75px);
         column-gap: 5px;
 
-        & a.active {
-            background: green;
-        }
 
         & .left-container-header {
             width: 100%;
