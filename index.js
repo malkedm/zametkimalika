@@ -1,33 +1,40 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const sections = document.querySelectorAll("main section");
-    const footer = document.querySelector("#footer-9");
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
+    const footer = document.querySelector("footer");
     const headerLinks = document.querySelectorAll(".right-container-header .mini-img");
 
-    // Функция для определения видимости элемента на экране
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
+    function changeHeaderBackground() {
+        const scrollPosition = window.scrollY;
 
-    // Функция для обновления цвета фона в зависимости от видимой секции
-    function updateBackgroundColor() {
         sections.forEach((section, index) => {
-            if (isElementInViewport(section) || isElementInViewport(footer)) {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                 headerLinks[index].classList.add("active");
             } else {
                 headerLinks[index].classList.remove("active");
             }
         });
+
+        const footerTop = footer.offsetTop;
+        if (scrollPosition >= footerTop) {
+            headerLinks.forEach(link => link.classList.remove("active"));
+            headerLinks[headerLinks.length - 1].classList.add("active"); // Footer link
+        }
     }
 
-    // Слушатель события прокрутки
-    document.addEventListener("scroll", updateBackgroundColor);
+    // Обработчик события прокрутки страницы
+    window.addEventListener("scroll", changeHeaderBackground);
 
-    // Слушатель события изменения размеров окна
-    window.addEventListener("resize", updateBackgroundColor);
+    // Обработчик события клика по ссылкам в header
+    headerLinks.forEach((link, index) => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            headerLinks.forEach(link => link.classList.remove("active"));
+            this.classList.add("active");
+            const targetSection = sections[index];
+            window.scrollTo({ top: targetSection.offsetTop, behavior: "smooth" });
+        });
+    });
 });
