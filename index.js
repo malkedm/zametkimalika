@@ -1,72 +1,29 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Получаем все секции и ссылки в хедере
-    const sections = document.querySelectorAll('main .main-container section');
+document.addEventListener("DOMContentLoaded", function () {
     const headerLinks = document.querySelectorAll('header a');
+    const sections = document.querySelectorAll('main .main-container section');
+    const footer = document.querySelector('main .main-container footer');
 
-    // Получаем элементы header и footer
-    const header = document.querySelector('header');
-    const footer = document.querySelector('footer');
-
-    // Устанавливаем обработчик события при прокрутке страницы
-    document.addEventListener('scroll', function () {
-        // Определяем, в какой секции мы находимся
-        let currentSection = null;
+    function setActiveLink() {
+        const currentScroll = window.scrollY + window.innerHeight / 2;
 
         sections.forEach((section, index) => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= 0 && rect.bottom > 0) {
-                currentSection = index + 1;
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (currentScroll >= sectionTop && currentScroll < sectionBottom) {
+                headerLinks.forEach(link => link.classList.remove('active'));
+                headerLinks[index].classList.add('active');
             }
         });
 
-        // Устанавливаем активные ссылки в хедере
-        headerLinks.forEach(link => {
-            const sectionId = link.getAttribute('href').substring(1);
-            link.classList.toggle('active', sectionId === `section-${currentSection}`);
-        });
+        const footerTop = footer.offsetTop;
+        const footerBottom = footerTop + footer.offsetHeight;
 
-        // Устанавливаем цвет header в соответствии с цветом активной секции или footer
-        const currentColor = getComputedStyle(sections[currentSection - 1]).backgroundColor;
-        header.style.backgroundColor = currentColor;
-    });
-
-    // Устанавливаем обработчик события при прокрутке колесиком мыши
-    document.addEventListener('wheel', function (event) {
-        event.preventDefault();
-
-        const delta = event.deltaY;
-        const currentSection = getCurrentSection();
-
-        // Определяем направление прокрутки
-        if (delta < 0) {
-            // Прокрутка вверх
-            scrollToSection(currentSection - 1);
-        } else {
-            // Прокрутка вниз
-            scrollToSection(currentSection + 1);
+        if (currentScroll >= footerTop && currentScroll < footerBottom) {
+            headerLinks.forEach(link => link.classList.remove('active'));
+            headerLinks[headerLinks.length - 1].classList.add('active');
         }
-    });
-
-    // Функция для определения текущей секции
-    function getCurrentSection() {
-        let currentSection = null;
-
-        sections.forEach((section, index) => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= 0 && rect.bottom > 0) {
-                currentSection = index + 1;
-            }
-        });
-
-        return currentSection;
     }
 
-    // Функция для прокрутки к указанной секции
-    function scrollToSection(sectionIndex) {
-        // Проверяем, чтобы индекс секции был в допустимых пределах
-        sectionIndex = Math.max(1, Math.min(sections.length, sectionIndex));
-
-        // Прокручиваем к указанной секции
-        sections[sectionIndex - 1].scrollIntoView({ behavior: 'smooth' });
-    }
+    document.addEventListener('scroll', setActiveLink);
 });
