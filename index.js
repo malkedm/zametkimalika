@@ -1,33 +1,44 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Получаем все секции
-    const sections = document.querySelectorAll('main .main-container section');
+    const sections = document.querySelectorAll('section');
+    const footer = document.getElementById('footer-9');
 
-    // Функция для определения видимой секции
-    function getVisibleSection() {
-        let visibleSection = null;
+    function getCurrentSection() {
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-        sections.forEach((section) => {
-            const rect = section.getBoundingClientRect();
-            const isVisible = (
-                rect.top >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-            );
+        for (const section of sections) {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
 
-            if (isVisible) {
-                visibleSection = section;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                return section.id;
             }
-        });
+        }
 
-        return visibleSection;
+        if (scrollPosition >= footer.offsetTop && scrollPosition < footer.offsetTop + footer.offsetHeight) {
+            return footer.id;
+        }
+
+        return null;
     }
 
-    // Обработчик события прокрутки страницы
-    window.addEventListener('scroll', function () {
-        const currentSection = getVisibleSection();
+    function highlightCurrentSection() {
+        const currentSectionId = getCurrentSection();
 
-        // Добавьте свой код для обработки текущей секции
+        // Удалите класс active у всех элементов
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Добавьте класс active к текущей секции
+        const currentSection = document.getElementById(currentSectionId);
         if (currentSection) {
-            console.log('Текущая секция:', currentSection.id);
+            currentSection.classList.add('active');
         }
-    });
+    }
+
+    // Вызывайте функцию при прокрутке страницы
+    document.addEventListener('scroll', highlightCurrentSection);
+
+    // Вызывайте функцию еще раз после загрузки страницы для начальной установки
+    highlightCurrentSection();
 });
