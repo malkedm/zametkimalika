@@ -1,31 +1,31 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('main section');
-    const links = document.querySelectorAll('header a');
+    const headerLinks = document.querySelectorAll('header a');
 
-    function setActiveLink() {
-        const currentSection = Array.from(sections).find(section => {
-            const rect = section.getBoundingClientRect();
-            return rect.top <= 0 && rect.bottom > 0;
-        });
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
 
-        links.forEach(link => {
-            const sectionId = link.getAttribute('href').substring(1);
-            const correspondingSection = document.getElementById(sectionId);
-
-            if (correspondingSection === currentSection) {
+    function updateHeaderLinks() {
+        const sections = document.querySelectorAll('main section, footer');
+        sections.forEach((section, index) => {
+            const link = headerLinks[index];
+            if (isInViewport(section)) {
                 link.classList.add('active');
-                link.style.background = 'green';
             } else {
                 link.classList.remove('active');
-                // Вернуть оригинальный цвет (может потребоваться изменить)
-                link.style.background = '';
             }
         });
     }
 
-    // Вызывать функцию при прокрутке страницы
-    document.addEventListener('scroll', setActiveLink);
-    
-    // Вызывать функцию также при загрузке страницы
-    setActiveLink();
+    document.addEventListener('scroll', updateHeaderLinks);
+    document.addEventListener('resize', updateHeaderLinks);
+
+    // Дополнительно можно добавить обработчик для события загрузки контента
+    window.addEventListener('load', updateHeaderLinks);
 });
