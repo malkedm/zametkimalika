@@ -1,30 +1,29 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const header = document.querySelector('header');
-    const sections = document.querySelectorAll('main .main-container section');
-    const footer = document.querySelector('footer');
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector("header");
+    const sections = document.querySelectorAll("main section");
+    const footer = document.querySelector("footer");
 
-    // Функция для определения видимой секции
-    function getVisibleSection() {
-        let visibleSection = null;
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-                visibleSection = section;
+    function changeHeaderColor() {
+        const scrollPosition = window.scrollY + $height-header;
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                const sectionColor = getComputedStyle(section).backgroundColor;
+                header.style.background = sectionColor;
             }
         });
-        return visibleSection;
+
+        // Check if footer is in the viewport
+        const footerTop = footer.offsetTop;
+        const footerBottom = footerTop + footer.offsetHeight;
+        if (scrollPosition >= footerTop && scrollPosition < footerBottom) {
+            const footerColor = getComputedStyle(footer).backgroundColor;
+            header.style.background = footerColor;
+        }
     }
 
-    // Функция для обновления цвета header
-    function updateHeaderColor() {
-        const visibleSection = getVisibleSection();
-        const color = visibleSection ? window.getComputedStyle(visibleSection).backgroundColor : window.getComputedStyle(footer).backgroundColor;
-        header.style.backgroundColor = color;
-    }
-
-    // Обновление цвета при прокрутке
-    window.addEventListener('scroll', updateHeaderColor);
-
-    // Обновление цвета при загрузке страницы
-    updateHeaderColor();
+    window.addEventListener("scroll", changeHeaderColor);
 });
