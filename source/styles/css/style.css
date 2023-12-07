@@ -16,6 +16,7 @@ body main .main-container .section-4 .bottom-block-4 .block-text-bottom-block-4 
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 18px;
+  text-decoration: none;
 }
 
 body {
@@ -110,6 +111,14 @@ body header .right-container-header {
 body header .right-container-header .mini-img {
   width: 20px;
   height: 20px;
+  text-align: center;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 body header .right-container-header .img-site-1 {
   background: #d5deef;
@@ -789,10 +798,14 @@ body main .main-container .section-8 .right-block-8 .icons-download-official .ic
             order: 1;
   }
 }
-body main .main-container footer {
+body main .main-container .section-9 {
   grid-row: 9/10;
+  background: #DDD8D5;
+  display: grid;
+}
+body main .main-container .section-9 footer {
   width: 100%;
-  min-height: calc(100dvh - 70px);
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -808,7 +821,7 @@ body main .main-container footer {
   padding-left: clamp(3%, 5%, 75px);
   padding-right: clamp(3%, 5%, 75px);
 }
-body main .main-container footer .foot-blocks {
+body main .main-container .section-9 footer .foot-blocks {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -818,6 +831,6 @@ body main .main-container footer .foot-blocks {
           flex-direction: column;
   font-size: 16px;
 }
-body main .main-container footer .foot-blocks span a {
+body main .main-container .section-9 footer .foot-blocks span a {
   font-size: 14px;
 }
