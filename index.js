@@ -46,22 +46,21 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(section);
     });
 
-    window.addEventListener('wheel', function (event) {
-        if (event.deltaY > 0) {
-            scrollToNextSection();
-        }
-    });
-
     let touchStartY = 0;
     window.addEventListener('touchstart', function (event) {
         touchStartY = event.touches[0].clientY;
     });
 
-    window.addEventListener('touchmove', function (event) {
-        const touchEndY = event.touches[0].clientY;
-        const touchMoveDiff = touchEndY - touchStartY;
-        if (touchMoveDiff > 100) {
-            scrollToNextSection();
+    window.addEventListener('touchend', function (event) {
+        const touchEndY = event.changedTouches[0].clientY;
+        const deltaY = touchEndY - touchStartY;
+        
+        // Проверяем, что свайп был достаточно длинным (произвольное значение 50px)
+        if (Math.abs(deltaY) > 50) {
+            // Определяем направление свайпа и прокручиваем соответственно
+            if (deltaY > 0) {
+                scrollToNextSection();
+            }
         }
     });
 });
