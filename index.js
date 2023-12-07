@@ -11,16 +11,29 @@ document.addEventListener('DOMContentLoaded', function () {
                 const backgroundColor = window.getComputedStyle(entry.target).backgroundColor;
                 header.style.backgroundColor = backgroundColor;
 
+                // Меняем цвет активной ссылки на зеленый, а у других возвращаем исходный цвет
                 links.forEach((link) => {
                     const linkSection = link.getAttribute('href').substring(1);
                     if (linkSection === activeSection) {
                         link.style.backgroundColor = 'green';
                     } else {
-                        link.style.backgroundColor = '';
+                        link.style.backgroundColor = ''; // или установите исходный цвет
                     }
                 });
+
+                // Проверяем, если активная секция - последняя, то прокручиваем к первой
+                if (activeSection === 'section-9') {
+                    scrollToSection('section-1');
+                }
             }
         });
+    }
+
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
     const observer = new IntersectionObserver(handleIntersection, {
@@ -31,19 +44,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sections.forEach((section) => {
         observer.observe(section);
-    });
-
-    // Добавим обработчик для бесконечного скролла
-    window.addEventListener('scroll', function () {
-        const lastSection = sections[sections.length - 1];
-        const lastSectionRect = lastSection.getBoundingClientRect();
-
-        if (lastSectionRect.bottom <= window.innerHeight) {
-            // Если достигнут конец страницы, перемещаемся обратно к первой секции
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-            });
-        }
     });
 });
