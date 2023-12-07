@@ -2,11 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('main .main-container section');
     const header = document.querySelector('body header');
     const links = document.querySelectorAll('body header .right-container-header a');
-    const mainContainer = document.querySelector('main .main-container');
-
-    // Добавляем содержимое первой секции в конец контейнера
-    const firstSection = sections[0].cloneNode(true);
-    mainContainer.appendChild(firstSection);
 
     function handleIntersection(entries, observer) {
         entries.forEach((entry) => {
@@ -16,23 +11,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 const backgroundColor = window.getComputedStyle(entry.target).backgroundColor;
                 header.style.backgroundColor = backgroundColor;
 
-                // Меняем цвет активной ссылки на зеленый, а у других возвращаем исходный цвет
                 links.forEach((link) => {
                     const linkSection = link.getAttribute('href').substring(1);
                     if (linkSection === activeSection) {
                         link.style.backgroundColor = 'green';
                     } else {
-                        link.style.backgroundColor = ''; // или установите исходный цвет
+                        link.style.backgroundColor = '';
                     }
                 });
-
-                // Проверяем, если это последняя секция, прокручиваем вверх
-                if (activeSection === 'section-9') {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth',
-                    });
-                }
             }
         });
     }
@@ -45,5 +31,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sections.forEach((section) => {
         observer.observe(section);
+    });
+
+    // Добавляем обработчик события прокрутки для бесконечного скролла вниз
+    window.addEventListener('scroll', function () {
+        const lastSection = sections[sections.length - 1];
+        const rect = lastSection.getBoundingClientRect();
+
+        if (rect.bottom <= window.innerHeight) {
+            // Перемещаем последнюю секцию вверх
+            const firstSection = sections[0];
+            firstSection.insertAdjacentElement('beforebegin', lastSection);
+        }
     });
 });
