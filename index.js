@@ -1,22 +1,22 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('header');
-    const sections = document.querySelectorAll('main .main-container section');
-    const footer = document.querySelector('#footer-9');
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("main .main-container section");
+  const header = document.querySelector("body header");
+  const footer = document.querySelector("main .main-container footer");
 
-    window.addEventListener('scroll', function () {
-        let currentSection = null;
+  function setActiveSection() {
+    const scrollPosition = window.scrollY;
 
-        // Определение текущей видимой секции
-        for (const section of sections) {
-            const rect = section.getBoundingClientRect();
-            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-                currentSection = section;
-                break;
-            }
-        }
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.clientHeight;
 
-        // Установка цвета фона в зависимости от текущей секции или футера
-        const backgroundColor = currentSection ? getComputedStyle(currentSection).backgroundColor : getComputedStyle(footer).backgroundColor;
-        header.style.background = backgroundColor;
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        header.style.background = section.style.background;
+        footer.style.background = section.style.background;
+      }
     });
+  }
+
+  window.addEventListener("scroll", setActiveSection);
+  setActiveSection(); // Set initial active section on page load
 });
