@@ -19,6 +19,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         link.style.backgroundColor = '';
                     }
                 });
+
+                // Если активная секция - последняя, прокрутим пользователя к первой
+                if (activeSection === 'section-9') {
+                    const firstSection = document.getElementById('section-1');
+                    firstSection.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         });
     }
@@ -31,17 +37,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sections.forEach((section) => {
         observer.observe(section);
-    });
-
-    // Добавляем обработчик события прокрутки для бесконечного скролла вниз
-    window.addEventListener('scroll', function () {
-        const lastSection = sections[sections.length - 1];
-        const rect = lastSection.getBoundingClientRect();
-
-        if (rect.bottom <= window.innerHeight) {
-            // Перемещаем последнюю секцию вверх
-            const firstSection = sections[0];
-            firstSection.insertAdjacentElement('beforebegin', lastSection);
-        }
     });
 });
