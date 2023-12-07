@@ -1,59 +1,40 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('.main-container section');
-    const header = document.querySelector('header');
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll(".main-container section");
+  const header = document.querySelector("header");
 
-    // Функция для определения видимой секции
-    function getVisibleSection() {
-        const scrollPosition = window.scrollY + header.offsetHeight;
+  const changeHeaderColor = () => {
+    const scrollPosition = window.scrollY;
 
-        for (const section of sections) {
-            const sectionTop = section.offsetTop;
-            const sectionBottom = sectionTop + section.offsetHeight;
+    sections.forEach((section, index) => {
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.clientHeight;
 
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                return section;
-            }
-        }
-
-        return null;
-    }
-
-    // Функция для обновления цвета header
-    function updateHeaderColor() {
-        const visibleSection = getVisibleSection();
-
-        if (visibleSection) {
-            const sectionNumber = visibleSection.classList[1].split('-')[1];
-            const colorVariable = `--back-section-${sectionNumber}`;
-            const color = getComputedStyle(document.documentElement).getPropertyValue(colorVariable);
-            
-            header.style.background = color;
-        }
-    }
-
-    // Обновление цвета при загрузке страницы
-    updateHeaderColor();
-
-    // Обновление цвета при скролле
-    window.addEventListener('scroll', updateHeaderColor);
-
-    // Обновление цвета при изменении размеров окна
-    window.addEventListener('resize', updateHeaderColor);
-
-    // Обработка события клика на ссылки в header
-    header.addEventListener('click', function (event) {
-        if (event.target.tagName === 'A') {
-            event.preventDefault();
-
-            const targetSectionId = event.target.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetSectionId);
-
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - header.offsetHeight + 1,
-                    behavior: 'smooth'
-                });
-            }
-        }
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        const sectionClass = `section-${index + 1}`;
+        header.style.background = getComputedStyle(document.body).getPropertyValue(`--back-${sectionClass}`);
+      }
     });
+  };
+
+  // Обработка событий прокрутки и изменения цвета header
+  window.addEventListener("scroll", changeHeaderColor);
+  window.addEventListener("resize", changeHeaderColor);
+
+  // Обработка событий клика по ссылкам в header
+  const headerLinks = document.querySelectorAll("header a");
+  headerLinks.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const targetSectionId = this.getAttribute("href").substring(1);
+      const targetSection = document.getElementById(targetSectionId);
+
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop - header.clientHeight,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
 });
