@@ -1,37 +1,19 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Получаем все секции и footer
-  const sections = document.querySelectorAll("main .main-container section");
-  const footer = document.querySelector("main .main-container footer");
+document.addEventListener('DOMContentLoaded', function () {
+  const header = document.querySelector('header');
+  const sections = document.querySelectorAll('main .main-container section, footer');
+  
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
 
-  // Обработчик события прокрутки
-  function handleScroll() {
-    // Получаем текущую позицию прокрутки
-    const scrollPosition = window.scrollY || window.pageYOffset;
-
-    // Находим активную секцию
-    let activeSection;
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
+      const sectionTop = section.offsetTop - header.offsetHeight;
       const sectionBottom = sectionTop + section.clientHeight;
 
       if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        activeSection = section;
+        header.style.background = getComputedStyle(section).background;
       }
     });
+  };
 
-    // Определяем цвет активной секции или footer
-    const activeColor = activeSection
-      ? window.getComputedStyle(activeSection).backgroundColor
-      : window.getComputedStyle(footer).backgroundColor;
-
-    // Устанавливаем цвет header
-    const header = document.querySelector("body header");
-    header.style.background = activeColor;
-  }
-
-  // Добавляем обработчик события прокрутки
-  window.addEventListener("scroll", handleScroll);
-
-  // Вызываем обработчик события прокрутки в начале
-  handleScroll();
+  window.addEventListener('scroll', handleScroll);
 });
