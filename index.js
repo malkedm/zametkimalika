@@ -2,23 +2,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("main .main-container section");
     const header = document.querySelector("body header");
 
-    function changeHeaderColor() {
-        const scrollPosition = window.scrollY;
-
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop - header.offsetHeight;
-            const sectionBottom = sectionTop + section.offsetHeight;
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                const sectionColor = window.getComputedStyle(section).backgroundColor;
-                header.style.background = sectionColor;
-            }
+    function setActiveSection() {
+        let currentScroll = window.scrollY + header.clientHeight;
+        let activeSection = Array.from(sections).findIndex((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.clientHeight;
+            return currentScroll >= sectionTop && currentScroll < sectionBottom;
         });
+
+        if (activeSection !== -1) {
+            updateHeaderColor(activeSection + 1);
+        }
     }
 
-    // Вызывать функцию при прокрутке страницы
-    window.addEventListener("scroll", changeHeaderColor);
+    function updateHeaderColor(sectionNumber) {
+        header.style.background = getComputedStyle(document.querySelector(`.section-${sectionNumber}`)).backgroundColor;
+    }
 
-    // Вызывать функцию при загрузке страницы для установки цвета на старте
-    changeHeaderColor();
+    window.addEventListener("scroll", setActiveSection);
+    setActiveSection(); // Set initial active section color
 });
