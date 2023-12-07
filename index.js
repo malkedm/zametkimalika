@@ -1,31 +1,30 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function() {
+    const header = document.querySelector('header');
     const sections = document.querySelectorAll('main .main-container section');
-    const header = document.querySelector('body header');
+    const footer = document.querySelector('footer');
+
+    // Функция для определения видимой секции
+    function getVisibleSection() {
+        let visibleSection = null;
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                visibleSection = section;
+            }
+        });
+        return visibleSection;
+    }
 
     // Функция для обновления цвета header
     function updateHeaderColor() {
-        const currentSection = Array.from(sections).find(section => {
-            const rect = section.getBoundingClientRect();
-            return rect.top <= $height-header && rect.bottom >= $height-header;
-        });
-
-        const footerRect = document.querySelector('footer').getBoundingClientRect();
-
-        if (currentSection) {
-            header.style.background = window.getComputedStyle(currentSection).backgroundColor;
-        } else if (footerRect.top <= $height-header) {
-            header.style.background = window.getComputedStyle(document.querySelector('#footer-9')).backgroundColor;
-        } else {
-            header.style.background = $back-header;
-        }
+        const visibleSection = getVisibleSection();
+        const color = visibleSection ? window.getComputedStyle(visibleSection).backgroundColor : window.getComputedStyle(footer).backgroundColor;
+        header.style.backgroundColor = color;
     }
 
-    // Обработчик событий для скролла
-    document.addEventListener('scroll', updateHeaderColor);
+    // Обновление цвета при прокрутке
+    window.addEventListener('scroll', updateHeaderColor);
 
-    // Обработчик событий для изменения размеров окна
-    window.addEventListener('resize', updateHeaderColor);
-
-    // Инициализация при загрузке страницы
+    // Обновление цвета при загрузке страницы
     updateHeaderColor();
 });
