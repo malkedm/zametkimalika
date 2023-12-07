@@ -1,18 +1,25 @@
-document.addEventListener("scroll", function() {
-  // Получаем текущую секцию, в которой мы находимся.
-  var currentSection = document.querySelector(".main-container").scrollSnapTarget;
+// Получаем все элементы header
+const headers = document.querySelectorAll("header");
 
-  // Получаем ссылки в header.
-  var links = document.querySelectorAll("header .right-container-header .mini-img");
+// Получаем все элементы section и footer
+const sections = document.querySelectorAll("section");
+const footer = document.querySelector("footer");
 
-  // Циклом перебираем ссылки.
-  for (var i = 0; i < links.length; i++) {
-    // Если ссылка соответствует текущей секции, то устанавливаем ее фон на цвет green.
-    if (links[i].classList.contains(currentSection)) {
-      links[i].style.background = "green";
-    } else {
-      // В противном случае возвращаем исходный цвет.
-      links[i].style.background = links[i].dataset.background;
-    }
+// Создаем функцию, которая будет менять цвет header
+function changeHeaderColor(header, color) {
+  header.style.backgroundColor = color;
+}
+
+// Проходимся по всем элементам header
+headers.forEach((header) => {
+  // Получаем текущий элемент section или footer
+  const currentSection = document.querySelector("#" + header.dataset.section);
+  const currentFooter = document.querySelector("#" + header.dataset.footer);
+
+  // Если текущий элемент section или footer существует, то меняем цвет header
+  if (currentSection) {
+    changeHeaderColor(header, currentSection.style.backgroundColor);
+  } else if (currentFooter) {
+    changeHeaderColor(header, currentFooter.style.backgroundColor);
   }
 });
