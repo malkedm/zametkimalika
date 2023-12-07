@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentSectionIndex !== -1 && currentSectionIndex < sections.length - 1) {
             sections[currentSectionIndex + 1].scrollIntoView({ behavior: 'smooth' });
         } else {
-            // Если достигнут конец страницы, прокручиваем к первой секции
             sections[0].scrollIntoView({ behavior: 'smooth' });
         }
     }
@@ -47,12 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(section);
     });
 
-    window.addEventListener('wheel', function (event) {
-        if (event.deltaY > 0) {
-            scrollToNextSection();
-        }
-    });
-
+    // Добавляем обработчик свайпа на мобильных устройствах
     let touchStartY = 0;
     window.addEventListener('touchstart', function (event) {
         touchStartY = event.touches[0].clientY;
@@ -60,7 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('touchend', function (event) {
         const touchEndY = event.changedTouches[0].clientY;
-        if (touchEndY > touchStartY) {
+        const deltaY = touchEndY - touchStartY;
+
+        if (deltaY > 50) {
+            // Свайп вниз
             scrollToNextSection();
         }
     });
