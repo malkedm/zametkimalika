@@ -1,25 +1,33 @@
-// Получаем все элементы header
-const headers = document.querySelectorAll("header");
+// Слушатель события scroll
+window.addEventListener('scroll', function() {
 
-// Получаем все элементы section и footer
-const sections = document.querySelectorAll("section");
-const footer = document.querySelector("footer");
+  // Получаем текущую позицию прокрутки
+  const scrollY = window.scrollY;
 
-// Создаем функцию, которая будет менять цвет header
-function changeHeaderColor(header, color) {
-  header.style.backgroundColor = color;
-}
+  // Получаем все элементы секции
+  const sections = document.querySelectorAll('.section');
 
-// Проходимся по всем элементам header
-headers.forEach((header) => {
-  // Получаем текущий элемент section или footer
-  const currentSection = document.querySelector("#" + header.dataset.section);
-  const currentFooter = document.querySelector("#" + header.dataset.footer);
+  // Цикл по секциям
+  for (const section of sections) {
 
-  // Если текущий элемент section или footer существует, то меняем цвет header
-  if (currentSection) {
-    changeHeaderColor(header, currentSection.style.backgroundColor);
-  } else if (currentFooter) {
-    changeHeaderColor(header, currentFooter.style.backgroundColor);
+    // Получаем высоту секции
+    const sectionHeight = section.clientHeight;
+
+    // Если текущая позиция прокрутки находится внутри секции
+    if (scrollY >= section.offsetTop && scrollY <= section.offsetTop + sectionHeight) {
+
+      // Изменяем цвет header на цвет секции
+      document.querySelector('header').style.backgroundColor = section.style.backgroundColor;
+    }
+  }
+
+  // Получаем элемент footer
+  const footer = document.querySelector('footer');
+
+  // Если текущая позиция прокрутки находится внутри footer
+  if (scrollY >= footer.offsetTop && scrollY <= footer.offsetTop + footer.clientHeight) {
+
+    // Изменяем цвет header на цвет footer
+    document.querySelector('header').style.backgroundColor = footer.style.backgroundColor;
   }
 });
