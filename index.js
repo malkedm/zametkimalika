@@ -46,18 +46,21 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(section);
     });
 
-    // Добавляем обработчик свайпа на мобильных устройствах
+    window.addEventListener('wheel', function (event) {
+        if (event.deltaY > 0) {
+            scrollToNextSection();
+        }
+    });
+
     let touchStartY = 0;
     window.addEventListener('touchstart', function (event) {
         touchStartY = event.touches[0].clientY;
     });
 
-    window.addEventListener('touchend', function (event) {
-        const touchEndY = event.changedTouches[0].clientY;
-        const deltaY = touchEndY - touchStartY;
-
-        if (deltaY > 50) {
-            // Свайп вниз
+    window.addEventListener('touchmove', function (event) {
+        const touchEndY = event.touches[0].clientY;
+        const touchMoveDiff = touchEndY - touchStartY;
+        if (touchMoveDiff > 100) {
             scrollToNextSection();
         }
     });
