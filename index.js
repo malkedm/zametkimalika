@@ -1,29 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('main section');
-    const footer = document.querySelector('footer');
     const header = document.querySelector('header');
+    const sections = document.querySelectorAll('main .main-container section');
+    const footer = document.querySelector('#footer-9');
 
-    // Функция для обновления фона header
-    function updateHeaderBackground() {
-        sections.forEach((section) => {
+    window.addEventListener('scroll', function () {
+        let currentSection = null;
+
+        // Определение текущей видимой секции
+        for (const section of sections) {
             const rect = section.getBoundingClientRect();
             if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-                header.style.background = section.style.background;
+                currentSection = section;
+                break;
             }
-        });
-
-        // Проверка для футера
-        const rectFooter = footer.getBoundingClientRect();
-        if (rectFooter.top >= 0 && rectFooter.bottom <= window.innerHeight) {
-            header.style.background = footer.style.background;
         }
-    }
 
-    // Вызываем функцию при загрузке страницы
-    updateHeaderBackground();
-
-    // Обновляем фон header при скролле
-    document.addEventListener('scroll', function () {
-        updateHeaderBackground();
+        // Установка цвета фона в зависимости от текущей секции или футера
+        const backgroundColor = currentSection ? getComputedStyle(currentSection).backgroundColor : getComputedStyle(footer).backgroundColor;
+        header.style.background = backgroundColor;
     });
 });
