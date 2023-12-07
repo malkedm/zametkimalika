@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentSectionIndex !== -1 && currentSectionIndex < sections.length - 1) {
             sections[currentSectionIndex + 1].scrollIntoView({ behavior: 'smooth' });
         } else {
-            // Если достигнут конец страницы, прокручиваем к первой секции
             sections[0].scrollIntoView({ behavior: 'smooth' });
         }
     }
@@ -47,12 +46,14 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(section);
     });
 
+    // Обработка событий для прокрутки
     window.addEventListener('wheel', function (event) {
         if (event.deltaY > 0) {
             scrollToNextSection();
         }
     });
 
+    // Обработка событий для мобильных устройств
     let touchStartY = 0;
     window.addEventListener('touchstart', function (event) {
         touchStartY = event.touches[0].clientY;
