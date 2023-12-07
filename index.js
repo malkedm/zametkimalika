@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('main .main-container section');
     const header = document.querySelector('body header');
     const links = document.querySelectorAll('body header .right-container-header a');
+    const mainContainer = document.querySelector('main .main-container');
 
     function handleIntersection(entries, observer) {
         entries.forEach((entry) => {
@@ -32,8 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentSectionIndex !== -1 && currentSectionIndex < sections.length - 1) {
             sections[currentSectionIndex + 1].scrollIntoView({ behavior: 'smooth' });
         } else {
-            // Если достигнут конец страницы, плавно прокручиваем к первой секции
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Перемещаем первую секцию вниз и обновляем Intersection Observer
+            mainContainer.appendChild(sections[0]);
+            sections[sections.length - 1].scrollIntoView({ behavior: 'smooth' });
+            observer.disconnect();
+            sections.forEach((section) => {
+                observer.observe(section);
+            });
         }
     }
 
