@@ -19,14 +19,22 @@ document.addEventListener('DOMContentLoaded', function () {
                         link.style.backgroundColor = '';
                     }
                 });
-
-                // Если активная секция - последняя, прокрутим пользователя к первой
-                if (activeSection === 'section-9') {
-                    const firstSection = document.getElementById('section-1');
-                    firstSection.scrollIntoView({ behavior: 'smooth' });
-                }
             }
         });
+    }
+
+    function scrollToNextSection() {
+        const currentSectionIndex = Array.from(sections).findIndex((section) => {
+            const rect = section.getBoundingClientRect();
+            return rect.top >= 0 && rect.bottom <= window.innerHeight;
+        });
+
+        if (currentSectionIndex !== -1 && currentSectionIndex < sections.length - 1) {
+            sections[currentSectionIndex + 1].scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // Если достигнут конец страницы, прокручиваем к первой секции
+            sections[0].scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
     const observer = new IntersectionObserver(handleIntersection, {
@@ -37,5 +45,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sections.forEach((section) => {
         observer.observe(section);
+    });
+
+    window.addEventListener('wheel', function (event) {
+        if (event.deltaY > 0) {
+            scrollToNextSection();
+        }
+    });
+
+    let touchStartY = 0;
+    window.addEventListener('touchstart', function (event) {
+        touchStartY = event.touches[0].clientY;
+    });
+
+    window.addEventListener('touchend', function (event) {
+        const touchEndY = event.changedTouches[0].clientY;
+        if (touchEndY > touchStartY) {
+            scrollToNextSection();
+        }
     });
 });
