@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentSectionIndex !== -1 && currentSectionIndex < sections.length - 1) {
             sections[currentSectionIndex + 1].scrollIntoView({ behavior: 'smooth' });
         } else {
+            // Если достигнут конец страницы, прокручиваем к первой секции
             sections[0].scrollIntoView({ behavior: 'smooth' });
         }
     }
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     let touchStartY = 0;
+
     window.addEventListener('touchstart', function (event) {
         touchStartY = event.touches[0].clientY;
     });
@@ -54,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('touchend', function (event) {
         const touchEndY = event.changedTouches[0].clientY;
         const deltaY = touchEndY - touchStartY;
-        
+
         // Проверяем, что свайп был достаточно длинным (произвольное значение 50px)
         if (Math.abs(deltaY) > 50) {
             // Определяем направление свайпа и прокручиваем соответственно
