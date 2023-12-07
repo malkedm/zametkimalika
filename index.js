@@ -1,27 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('header');
     const sections = document.querySelectorAll('main .main-container section');
-    const footer = document.querySelector('#footer-9');
+    const header = document.querySelector('body header');
 
-    function setActiveSection() {
-        const scrollPosition = window.scrollY + header.offsetHeight;
+    // Функция для определения видимой секции
+    function getActiveSection() {
+        let maxSection = sections[0];
+        let maxSectionHeight = 0;
 
-        sections.forEach((section, index) => {
-            const sectionTop = section.offsetTop;
-            const sectionBottom = sectionTop + section.offsetHeight;
+        sections.forEach(section => {
+            const sectionRect = section.getBoundingClientRect();
+            const visibleHeight = Math.min(sectionRect.bottom, window.innerHeight) - Math.max(sectionRect.top, 0);
 
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                header.style.background = getComputedStyle(section).background;
+            if (visibleHeight > maxSectionHeight) {
+                maxSectionHeight = visibleHeight;
+                maxSection = section;
             }
         });
 
-        const footerTop = footer.offsetTop;
-        const footerBottom = footerTop + footer.offsetHeight;
-
-        if (scrollPosition >= footerTop && scrollPosition < footerBottom) {
-            header.style.background = getComputedStyle(footer).background;
-        }
+        return maxSection;
     }
 
-    window.addEventListener('scroll', setActiveSection);
+    // Функция для установки цвета фона заголовка
+    function setHeaderBackground() {
+        const activeSection = getActiveSection();
+        const backgroundColor = window.getComputedStyle(activeSection).backgroundColor;
+        header.style.background = backgroundColor;
+    }
+
+    // Обработчик события прокрутки страницы
+    window.addEventListener('scroll', setHeaderBackground);
+
+    // Установим цвет фона заголовка при загрузке страницы
+    setHeaderBackground();
 });
