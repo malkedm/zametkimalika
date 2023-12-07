@@ -1,27 +1,24 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('main section');
-    const header = document.querySelector('body header');
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("main .main-container section");
+    const header = document.querySelector("body header");
 
-    // Функция для обработки событий при прокрутке страницы
-    function handleScroll() {
+    function changeHeaderColor() {
         const scrollPosition = window.scrollY;
 
         sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
-            const sectionBottom = sectionTop + section.clientHeight;
+            const sectionTop = section.offsetTop - header.offsetHeight;
+            const sectionBottom = sectionTop + section.offsetHeight;
 
-            // Проверка, находится ли текущая секция в видимой области
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                // Устанавливаем цвет header в соответствии с цветом текущей секции
                 const sectionColor = window.getComputedStyle(section).backgroundColor;
                 header.style.background = sectionColor;
             }
         });
     }
 
-    // Добавляем обработчик событий прокрутки страницы
-    window.addEventListener('scroll', handleScroll);
+    // Вызывать функцию при прокрутке страницы
+    window.addEventListener("scroll", changeHeaderColor);
 
-    // Вызываем обработчик событий при загрузке страницы, чтобы установить начальный цвет header
-    handleScroll();
+    // Вызывать функцию при загрузке страницы для установки цвета на старте
+    changeHeaderColor();
 });
