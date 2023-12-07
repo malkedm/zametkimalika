@@ -1,28 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('main .main-container section');
 
-    function determineActiveSection() {
-        let activeSection = null;
-
-        sections.forEach((section, index) => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                activeSection = index + 1;
+    // Функция обратного вызова для Intersection Observer
+    function handleIntersection(entries, observer) {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const activeSection = entry.target.getAttribute('id');
+                console.log(`Активная секция: ${activeSection}`);
             }
         });
-
-        return activeSection;
     }
 
-    function updateActiveSection() {
-        const activeSection = determineActiveSection();
-        if (activeSection !== null) {
-            console.log(`Активная секция: section-${activeSection}`);
-        }
-    }
+    // Настройка Intersection Observer
+    const observer = new IntersectionObserver(handleIntersection, {
+        root: null, // используем viewport как корневой элемент
+        rootMargin: '0px',
+        threshold: 0.5, // порог видимости - более 50%
+    });
 
-    document.addEventListener('scroll', updateActiveSection);
-    window.addEventListener('resize', updateActiveSection);
-
-    updateActiveSection();
+    // Регистрация каждой секции в Observer
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
 });
