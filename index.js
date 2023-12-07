@@ -4,36 +4,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const links = document.querySelectorAll('body header .right-container-header a');
 
     function handleIntersection(entries, observer) {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting && entry.intersectionRatio === 1.0) {
-                const activeSection = entry.target.getAttribute('id');
-                console.log(`Активная секция: ${activeSection}`);
-                const backgroundColor = window.getComputedStyle(entry.target).backgroundColor;
-                header.style.backgroundColor = backgroundColor;
+        const visibleSections = entries
+            .filter((entry) => entry.isIntersecting && entry.intersectionRatio > 0.7)
+            .map((entry) => entry.target.getAttribute('id'));
 
-                links.forEach((link) => {
-                    const linkSection = link.getAttribute('href').substring(1);
-                    if (linkSection === activeSection) {
-                        link.style.backgroundColor = 'green';
-                    } else {
-                        link.style.backgroundColor = '';
-                    }
-                });
-            }
-        });
-    }
+        if (visibleSections.length > 0) {
+            const activeSection = visibleSections[0];
+            console.log(`Активная секция: ${activeSection}`);
+            const backgroundColor = window.getComputedStyle(document.getElementById(activeSection)).backgroundColor;
+            header.style.backgroundColor = backgroundColor;
 
-    function scrollToNextSection() {
-        const currentSectionIndex = Array.from(sections).findIndex((section) => {
-            const rect = section.getBoundingClientRect();
-            return rect.top >= 0 && rect.bottom <= window.innerHeight;
-        });
-
-        if (currentSectionIndex !== -1 && currentSectionIndex < sections.length - 1) {
-            sections[currentSectionIndex + 1].scrollIntoView({ behavior: 'smooth' });
-        } else {
-            // Если достигнут конец страницы, прокручиваем к первой секции
-            sections[0].scrollIntoView({ behavior: 'smooth' });
+            links.forEach((link) => {
+                const linkSection = link.getAttribute('href').substring(1);
+                if (linkSection === activeSection) {
+                    link.style.backgroundColor = 'green';
+                } else {
+                    link.style.backgroundColor = ''; // или установите исходный цвет
+                }
+            });
         }
     }
 
@@ -47,21 +35,22 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(section);
     });
 
-    window.addEventListener('wheel', function (event) {
-        if (event.deltaY > 0) {
-            scrollToNextSection();
-        }
-    });
+    // Добавим событие прокрутки для обработки изменений на мобильных устройствах
+    let lastKnownScrollPosition = 0;
+    let ticking = false;
 
-    let touchStartY = 0;
-    window.addEventListener('touchstart', function (event) {
-        touchStartY = event.touches[0].clientY;
-    });
+    function handleScroll() {
+        lastKnownScrollPosition = window.scrollY;
 
-    window.addEventListener('touchend', function (event) {
-        const touchEndY = event.changedTouches[0].clientY;
-        if (touchEndY > touchStartY) {
-            scrollToNextSection();
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                handleIntersection(sections.map((section) => ({ target: section })), observer);
+                ticking = false;
+            });
+
+            ticking = true;
         }
-    });
+    }
+
+    document.addEventListener('scroll', handleScroll);
 });
