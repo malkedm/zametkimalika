@@ -1,28 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("main section");
-  const footer = document.querySelector("footer");
-  const header = document.querySelector("header");
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('header');
+    const sections = document.querySelectorAll('section');
+    const footer = document.querySelector('footer');
 
-  function setActiveSection() {
-    const scrollPosition = window.scrollY + header.offsetHeight;
+    // Функция для обновления фона в шапке
+    function updateHeaderBackground() {
+        const currentSectionId = getCurrentSectionId();
+        const currentFooterBackground = getComputedStyle(footer).backgroundColor;
 
-    for (const section of sections) {
-      const sectionTop = section.offsetTop;
-      const sectionBottom = sectionTop + section.offsetHeight;
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        header.style.background = section.style.background;
-        break;
-      }
+        header.style.background = currentSectionId ? getSectionBackground(currentSectionId) : currentFooterBackground;
     }
 
-    const footerTop = footer.offsetTop;
-    const footerBottom = footerTop + footer.offsetHeight;
-
-    if (scrollPosition >= footerTop && scrollPosition < footerBottom) {
-      header.style.background = footer.style.background;
+    // Функция для получения id активной секции
+    function getCurrentSectionId() {
+        for (const section of sections) {
+            const rect = section.getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                return section.id;
+            }
+        }
+        return null;
     }
-  }
 
-  window.addEventListener("scroll", setActiveSection);
+    // Функция для получения фона активной секции
+    function getSectionBackground(sectionId) {
+        const sectionElement = document.getElementById(sectionId);
+        return getComputedStyle(sectionElement).backgroundColor;
+    }
+
+    // Обновляем фон при прокрутке страницы
+    window.addEventListener('scroll', updateHeaderBackground);
+
+    // Обновляем фон при загрузке страницы
+    window.addEventListener('load', updateHeaderBackground);
 });
