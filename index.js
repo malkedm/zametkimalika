@@ -1,37 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('.main-container section');
-    const header = document.querySelector('header');
+    const sections = document.querySelectorAll('main section');
+    const header = document.querySelector('body header');
 
-    // Функция для обновления цвета header в зависимости от активной секции
-    function updateHeaderColor() {
-        sections.forEach((section, index) => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= 0 && rect.bottom > 0) {
-                header.style.backgroundColor = getComputedStyle(section).backgroundColor;
+    // Функция для обработки событий при прокрутке страницы
+    function handleScroll() {
+        const scrollPosition = window.scrollY;
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.clientHeight;
+
+            // Проверка, находится ли текущая секция в видимой области
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                // Устанавливаем цвет header в соответствии с цветом текущей секции
+                const sectionColor = window.getComputedStyle(section).backgroundColor;
+                header.style.background = sectionColor;
             }
         });
     }
 
-    // Обновляем цвет header при загрузке страницы
-    updateHeaderColor();
+    // Добавляем обработчик событий прокрутки страницы
+    window.addEventListener('scroll', handleScroll);
 
-    // Обновляем цвет header при прокрутке
-    window.addEventListener('scroll', updateHeaderColor);
-
-    // Обработчик события для каждой ссылки в header
-    document.querySelectorAll('header a').forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-
-            // Получаем id секции из атрибута href
-            const sectionId = link.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(sectionId);
-
-            // Прокручиваем до выбранной секции
-            window.scrollTo({
-                top: targetSection.offsetTop - header.offsetHeight,
-                behavior: 'smooth'
-            });
-        });
-    });
+    // Вызываем обработчик событий при загрузке страницы, чтобы установить начальный цвет header
+    handleScroll();
 });
