@@ -1,22 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("main .main-container section");
-  const header = document.querySelector("body header");
-  const footer = document.querySelector("main .main-container footer");
+document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('header');
+    const sections = document.querySelectorAll('main .main-container section');
+    const footer = document.querySelector('#footer-9');
 
-  function setActiveSection() {
-    const scrollPosition = window.scrollY;
+    function setActiveSection() {
+        const scrollPosition = window.scrollY + header.offsetHeight;
 
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionBottom = sectionTop + section.clientHeight;
+        sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
 
-      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        header.style.background = section.style.background;
-        footer.style.background = section.style.background;
-      }
-    });
-  }
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                header.style.background = getComputedStyle(section).background;
+            }
+        });
 
-  window.addEventListener("scroll", setActiveSection);
-  setActiveSection(); // Set initial active section on page load
+        const footerTop = footer.offsetTop;
+        const footerBottom = footerTop + footer.offsetHeight;
+
+        if (scrollPosition >= footerTop && scrollPosition < footerBottom) {
+            header.style.background = getComputedStyle(footer).background;
+        }
+    }
+
+    window.addEventListener('scroll', setActiveSection);
 });
