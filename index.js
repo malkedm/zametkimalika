@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentSectionIndex !== -1 && currentSectionIndex < sections.length - 1) {
             sections[currentSectionIndex + 1].scrollIntoView({ behavior: 'smooth' });
         } else {
-            // Если достигнут конец страницы, прокручиваем к первой секции
-            sections[0].scrollIntoView({ behavior: 'smooth' });
+            // Если достигнут конец страницы, плавно прокручиваем к первой секции
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
 
