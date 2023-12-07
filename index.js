@@ -11,29 +11,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 const backgroundColor = window.getComputedStyle(entry.target).backgroundColor;
                 header.style.backgroundColor = backgroundColor;
 
+                // Меняем цвет активной ссылки на зеленый, а у других возвращаем исходный цвет
                 links.forEach((link) => {
                     const linkSection = link.getAttribute('href').substring(1);
                     if (linkSection === activeSection) {
                         link.style.backgroundColor = 'green';
                     } else {
-                        link.style.backgroundColor = '';
+                        link.style.backgroundColor = ''; // или установите исходный цвет
                     }
                 });
             }
         });
-    }
-
-    function scrollToNextSection() {
-        const currentSectionIndex = Array.from(sections).findIndex((section) => {
-            const rect = section.getBoundingClientRect();
-            return rect.top >= 0 && rect.bottom <= window.innerHeight;
-        });
-
-        if (currentSectionIndex !== -1 && currentSectionIndex < sections.length - 1) {
-            sections[currentSectionIndex + 1].scrollIntoView({ behavior: 'smooth' });
-        } else {
-            sections[0].scrollIntoView({ behavior: 'smooth' });
-        }
     }
 
     const observer = new IntersectionObserver(handleIntersection, {
@@ -44,25 +32,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sections.forEach((section) => {
         observer.observe(section);
-    });
-
-    // Обработка событий для прокрутки
-    window.addEventListener('wheel', function (event) {
-        if (event.deltaY > 0) {
-            scrollToNextSection();
-        }
-    });
-
-    // Обработка событий для мобильных устройств
-    let touchStartY = 0;
-    window.addEventListener('touchstart', function (event) {
-        touchStartY = event.touches[0].clientY;
-    });
-
-    window.addEventListener('touchend', function (event) {
-        const touchEndY = event.changedTouches[0].clientY;
-        if (touchEndY > touchStartY) {
-            scrollToNextSection();
-        }
     });
 });
