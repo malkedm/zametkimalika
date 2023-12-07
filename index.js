@@ -1,29 +1,46 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const header = document.querySelector("header");
-    const sections = document.querySelectorAll("main section");
-    const footer = document.querySelector("footer");
+document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('header');
+    const sections = document.querySelectorAll('main .main-container section');
+    const footer = document.querySelector('footer');
 
     function changeHeaderColor() {
-        const scrollPosition = window.scrollY + $height-header;
+        const currentScroll = window.scrollY;
+        let activeSectionIndex = -1;
 
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
+        sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop - header.offsetHeight;
             const sectionBottom = sectionTop + section.offsetHeight;
 
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                const sectionColor = getComputedStyle(section).backgroundColor;
-                header.style.background = sectionColor;
+            if (currentScroll >= sectionTop && currentScroll < sectionBottom) {
+                activeSectionIndex = index;
             }
         });
 
-        // Check if footer is in the viewport
-        const footerTop = footer.offsetTop;
-        const footerBottom = footerTop + footer.offsetHeight;
-        if (scrollPosition >= footerTop && scrollPosition < footerBottom) {
-            const footerColor = getComputedStyle(footer).backgroundColor;
-            header.style.background = footerColor;
+        if (currentScroll >= footer.offsetTop - header.offsetHeight) {
+            activeSectionIndex = sections.length; // Footer is considered as the last section
+        }
+
+        if (activeSectionIndex !== -1) {
+            const activeColor = getComputedStyle(sections[activeSectionIndex]).backgroundColor;
+            header.style.background = activeColor;
         }
     }
 
-    window.addEventListener("scroll", changeHeaderColor);
+    // Listen for scroll events to trigger color change
+    window.addEventListener('scroll', changeHeaderColor);
+
+    // Smooth scrolling when clicking on header links
+    document.querySelectorAll('header a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetSectionId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetSectionId);
+
+            window.scrollTo({
+                top: targetSection.offsetTop - header.offsetHeight + 1,
+                behavior: 'smooth'
+            });
+        });
+    });
 });
