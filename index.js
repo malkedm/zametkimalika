@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('main .main-container section');
     const header = document.querySelector('body header');
     const links = document.querySelectorAll('body header .right-container-header a');
+    const mainContainer = document.querySelector('main .main-container');
+
+    // Добавляем содержимое первой секции в конец контейнера
+    const firstSection = sections[0].cloneNode(true);
+    mainContainer.appendChild(firstSection);
 
     function handleIntersection(entries, observer) {
         entries.forEach((entry) => {
@@ -21,19 +26,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
 
-                // Проверяем, если активная секция - последняя, то прокручиваем к первой
+                // Проверяем, если это последняя секция, прокручиваем вверх
                 if (activeSection === 'section-9') {
-                    scrollToSection('section-1');
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth',
+                    });
                 }
             }
         });
-    }
-
-    function scrollToSection(sectionId) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
     }
 
     const observer = new IntersectionObserver(handleIntersection, {
