@@ -1,29 +1,31 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("main .main-container section");
-  const footer = document.querySelector("#footer-9");
-  const header = document.querySelector("body header");
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('main .main-container section');
+    const header = document.querySelector('body header');
 
-  function setActiveSection() {
-    let activeSection = null;
+    // Функция для обновления цвета header
+    function updateHeaderColor() {
+        const currentSection = Array.from(sections).find(section => {
+            const rect = section.getBoundingClientRect();
+            return rect.top <= $height-header && rect.bottom >= $height-header;
+        });
 
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-        activeSection = section;
-      }
-    });
+        const footerRect = document.querySelector('footer').getBoundingClientRect();
 
-    if (footer.getBoundingClientRect().top <= window.innerHeight / 2) {
-      activeSection = footer;
+        if (currentSection) {
+            header.style.background = window.getComputedStyle(currentSection).backgroundColor;
+        } else if (footerRect.top <= $height-header) {
+            header.style.background = window.getComputedStyle(document.querySelector('#footer-9')).backgroundColor;
+        } else {
+            header.style.background = $back-header;
+        }
     }
 
-    if (activeSection) {
-      const backgroundColor = window.getComputedStyle(activeSection).backgroundColor;
-      header.style.background = backgroundColor;
-    }
-  }
+    // Обработчик событий для скролла
+    document.addEventListener('scroll', updateHeaderColor);
 
-  // Вызываем setActiveSection при загрузке страницы и при скролле
-  window.addEventListener("scroll", setActiveSection);
-  window.addEventListener("load", setActiveSection);
+    // Обработчик событий для изменения размеров окна
+    window.addEventListener('resize', updateHeaderColor);
+
+    // Инициализация при загрузке страницы
+    updateHeaderColor();
 });
