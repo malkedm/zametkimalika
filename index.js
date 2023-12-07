@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('main .main-container section');
+    const header = document.querySelector('body header');
 
-    // Функция обратного вызова для Intersection Observer
     function handleIntersection(entries, observer) {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 const activeSection = entry.target.getAttribute('id');
                 console.log(`Активная секция: ${activeSection}`);
+                const backgroundColor = window.getComputedStyle(entry.target).backgroundColor;
+                header.style.backgroundColor = backgroundColor;
             }
         });
     }
 
-    // Настройка Intersection Observer
     const observer = new IntersectionObserver(handleIntersection, {
-        root: null, // используем viewport как корневой элемент
+        root: null,
         rootMargin: '0px',
-        threshold: 0.5, // порог видимости - более 50%
+        threshold: 0.5,
     });
 
-    // Регистрация каждой секции в Observer
     sections.forEach((section) => {
         observer.observe(section);
     });
