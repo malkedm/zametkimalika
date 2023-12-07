@@ -1,33 +1,15 @@
-// Слушатель события scroll
-window.addEventListener('scroll', function() {
+document.addEventListener("scroll", function() {
+  // Получаем текущий видимый элемент
+  const currentElement = document.querySelector(".main-container > section.active");
 
-  // Получаем текущую позицию прокрутки
-  const scrollY = window.scrollY;
+  // Получаем цвет текущего видимого элемента
+  const currentColor = currentElement.style.backgroundColor;
 
-  // Получаем все элементы секции
-  const sections = document.querySelectorAll('.section');
+  // Получаем цвет header
+  const headerColor = document.querySelector("header").style.backgroundColor;
 
-  // Цикл по секциям
-  for (const section of sections) {
-
-    // Получаем высоту секции
-    const sectionHeight = section.clientHeight;
-
-    // Если текущая позиция прокрутки находится внутри секции
-    if (scrollY >= section.offsetTop && scrollY <= section.offsetTop + sectionHeight) {
-
-      // Изменяем цвет header на цвет секции
-      document.querySelector('header').style.backgroundColor = section.style.backgroundColor;
-    }
-  }
-
-  // Получаем элемент footer
-  const footer = document.querySelector('footer');
-
-  // Если текущая позиция прокрутки находится внутри footer
-  if (scrollY >= footer.offsetTop && scrollY <= footer.offsetTop + footer.clientHeight) {
-
-    // Изменяем цвет header на цвет footer
-    document.querySelector('header').style.backgroundColor = footer.style.backgroundColor;
+  // Если цвет header отличается от цвета текущего видимого элемента, то меняем его
+  if (headerColor !== currentColor) {
+    document.querySelector("header").style.backgroundColor = currentColor;
   }
 });
