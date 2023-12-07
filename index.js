@@ -1,38 +1,37 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('header');
-    const sections = document.querySelectorAll('main .main-container section');
-    const footer = document.querySelector('footer');
+document.addEventListener("DOMContentLoaded", function () {
+  // Получаем все секции и footer
+  const sections = document.querySelectorAll("main .main-container section");
+  const footer = document.querySelector("main .main-container footer");
 
-    function changeHeaderColor() {
-        const currentScroll = window.scrollY;
+  // Обработчик события прокрутки
+  function handleScroll() {
+    // Получаем текущую позицию прокрутки
+    const scrollPosition = window.scrollY || window.pageYOffset;
 
-        sections.forEach((section, index) => {
-            const sectionTop = section.offsetTop - header.offsetHeight;
-            const sectionBottom = sectionTop + section.offsetHeight;
+    // Находим активную секцию
+    let activeSection;
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.clientHeight;
 
-            if (currentScroll >= sectionTop && currentScroll < sectionBottom) {
-                header.style.backgroundColor = getComputedStyle(section).backgroundColor;
-            }
-        });
-
-        if (currentScroll >= footer.offsetTop - header.offsetHeight) {
-            header.style.backgroundColor = getComputedStyle(footer).backgroundColor;
-        }
-    }
-
-    window.addEventListener('scroll', changeHeaderColor);
-
-    document.querySelectorAll('header a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            const targetSectionId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetSectionId);
-
-            window.scrollTo({
-                top: targetSection.offsetTop - header.offsetHeight + 1,
-                behavior: 'smooth'
-            });
-        });
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        activeSection = section;
+      }
     });
+
+    // Определяем цвет активной секции или footer
+    const activeColor = activeSection
+      ? window.getComputedStyle(activeSection).backgroundColor
+      : window.getComputedStyle(footer).backgroundColor;
+
+    // Устанавливаем цвет header
+    const header = document.querySelector("body header");
+    header.style.background = activeColor;
+  }
+
+  // Добавляем обработчик события прокрутки
+  window.addEventListener("scroll", handleScroll);
+
+  // Вызываем обработчик события прокрутки в начале
+  handleScroll();
 });
