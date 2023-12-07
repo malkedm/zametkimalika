@@ -1,15 +1,28 @@
-document.addEventListener("scroll", function() {
-  // Получаем текущий видимый элемент
-  const currentElement = document.querySelector(".main-container > section.active");
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("main section");
+  const footer = document.querySelector("footer");
+  const header = document.querySelector("header");
 
-  // Получаем цвет текущего видимого элемента
-  const currentColor = currentElement.style.backgroundColor;
+  function setActiveSection() {
+    const scrollPosition = window.scrollY + header.offsetHeight;
 
-  // Получаем цвет header
-  const headerColor = document.querySelector("header").style.backgroundColor;
+    for (const section of sections) {
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.offsetHeight;
 
-  // Если цвет header отличается от цвета текущего видимого элемента, то меняем его
-  if (headerColor !== currentColor) {
-    document.querySelector("header").style.backgroundColor = currentColor;
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        header.style.background = section.style.background;
+        break;
+      }
+    }
+
+    const footerTop = footer.offsetTop;
+    const footerBottom = footerTop + footer.offsetHeight;
+
+    if (scrollPosition >= footerTop && scrollPosition < footerBottom) {
+      header.style.background = footer.style.background;
+    }
   }
+
+  window.addEventListener("scroll", setActiveSection);
 });
