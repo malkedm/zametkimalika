@@ -145,7 +145,7 @@ body header .right-container-header .img-site-8 {
   background: #ffdcc7;
 }
 body header .right-container-header .img-site-9 {
-  background: #DDD8D5;
+  background: #F0F3FA;
 }
 body main {
   min-width: 100%;
@@ -800,7 +800,7 @@ body main .main-container .section-8 .right-block-8 .icons-download-official .ic
 }
 body main .main-container .section-9 {
   grid-row: 9/10;
-  background: #DDD8D5;
+  background: #F0F3FA;
   display: grid;
 }
 body main .main-container .section-9 footer {
@@ -815,7 +815,7 @@ body main .main-container .section-9 footer {
       -ms-flex-pack: justify;
           justify-content: space-between;
   scroll-snap-align: start;
-  background: #DDD8D5;
+  background: #F0F3FA;
   padding-top: 65px;
   padding-bottom: 65px;
   padding-left: clamp(3%, 5%, 75px);

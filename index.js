@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
             links.forEach((link) => {
                 const linkSection = link.getAttribute('href').substring(1);
                 if (linkSection === activeSection) {
-                    link.style.backgroundColor = 'green';
+                    link.style.backgroundColor = '#b7ffe9';
                 } else {
                     link.style.backgroundColor = ''; // или установите исходный цвет
                 }
