@@ -27,7 +27,7 @@ $back-footer: #F0F3FA;
 $main-font-size: 18px;
 $section-padding: clamp(10px, 4%, 10%);
 
-$height-header: 70px;
+$height-header: 90px;
 
 $row-gap-block-main-text: 12px;
 $column-gap-icons: 10px;
@@ -134,12 +134,13 @@ body {
             justify-content: center;
 
             & .mini-img {
-                width: 20px;
-                height: 20px;
+                width: 40px;
+                height: 40px;
                 text-align: center;
                 display: grid;
                 align-items: center;
                 justify-content: center;
+                border-radius: 50%;
             }
 
             & .img-site-1 {
