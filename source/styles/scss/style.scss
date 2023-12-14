@@ -2,7 +2,7 @@ $main-color-text: #2d2d2d;
 $main-back: #F0F4FF;
 $back-header: transparent;
 $back-section-1: #d5deef; // #d5deef // #CBAB61 // #dc9abd // #ecb8d3
-$back-section-2: #b8c5ff; // #a1b3ff
+$back-section-2: #b8c5ff; // #a1b3ff ffbcf3
 $back-section-3: #d2e0ff;
 $back-section-4: #ccccff;
 $back-section-5: #C3E7F4;
@@ -69,6 +69,7 @@ body {
     padding: 0;
     background: $main-back;
     color: $main-color-text;
+    min-width: 210px;
 
     & header {
         width: 100%;
